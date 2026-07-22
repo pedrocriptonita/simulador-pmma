@@ -1,36 +1,78 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Simulador PM MA 2026
 
-## Getting Started
+Plataforma SaaS de preparação para o concurso da Polícia Militar do Maranhão (Edital nº 1 — PMMA/2026). Simulados no formato Cebraspe (Certo/Errado) com **nota líquida** (acertos − erros), dashboard de desempenho por matéria e biblioteca de resumos em PDF.
 
-First, run the development server:
+**Prova:** 11/10/2026 · **Banca:** Cebraspe · **1.000 vagas**
+
+## Stack
+
+- [Next.js 16](https://nextjs.org) (App Router) + React 19 + TypeScript
+- Tailwind CSS v4 + [shadcn/ui](https://ui.shadcn.com)
+- Supabase (Postgres + Auth + Storage)
+- Prisma (ORM)
+- Deploy: Vercel · Pagamento: checkout externo via webhook
+
+## Setup local
+
+Pré-requisitos: Node.js 20+ e npm.
 
 ```bash
+# 1. Instalar dependências
+npm install
+
+# 2. Variáveis de ambiente
+#    Copie .env.example para .env.local e preencha com as chaves
+#    do seu projeto Supabase (a partir da Fase 2)
+cp .env.example .env.local
+
+# 3. Rodar em desenvolvimento
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abra [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Script                 | Descrição                   |
+| ---------------------- | --------------------------- |
+| `npm run dev`          | Servidor de desenvolvimento |
+| `npm run build`        | Build de produção           |
+| `npm run start`        | Servir build de produção    |
+| `npm run lint`         | ESLint                      |
+| `npm run typecheck`    | Checagem de tipos (tsc)     |
+| `npm run format`       | Formatar com Prettier       |
+| `npm run format:check` | Verificar formatação        |
 
-## Learn More
+## Estrutura de pastas
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/
+  app/                  # rotas (App Router)
+    (auth)/             # grupo: login, cadastro, recuperar senha
+    (app)/              # grupo: área logada (dashboard, simulados, pdfs, planos)
+    admin/              # painel administrativo
+    api/                # route handlers (webhook, etc.)
+  components/           # componentes compartilhados (ui/ = shadcn)
+  features/             # código por feature (exam, dashboard, pdf, billing)
+  lib/                  # supabase client, prisma client, utils
+  services/             # regras de negócio server-side
+prisma/
+  schema.prisma         # modelos do banco (a partir da Fase 2)
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## CI/CD e Deploy
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **CI:** GitHub Actions roda lint + typecheck + build em cada PR e push na `main` (`.github/workflows/ci.yml`).
+- **Deploy:** conectar o repositório GitHub à [Vercel](https://vercel.com) — preview em PRs, produção na `main`. Configurar as variáveis do `.env.example` no painel da Vercel.
 
-## Deploy on Vercel
+## Roadmap
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Desenvolvimento por Vertical Slices (ver `roadmap-simulador-pmma.md` na raiz do repositório de planejamento):
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. ✅ **Fase 1** — Setup inicial (projeto, CI, deploy placeholder)
+2. ⏳ **Fase 2** — Autenticação (Supabase Auth + Prisma + RLS)
+3. ⏳ **Fase 3** — Simulados com correção Cebraspe
+4. ⏳ **Fase 4** — Dashboard de desempenho + biblioteca de PDFs
+5. ⏳ **Fase 5** — UI shell e refatoração
+6. ⏳ **Fase 6** — Billing (checkout externo + webhook)
+7. ⏳ **Fase 7** — Polimento (performance, segurança, SEO)
