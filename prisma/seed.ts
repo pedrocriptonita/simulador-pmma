@@ -1,5 +1,6 @@
-import { PrismaClient, Role, SubjectCategory } from "@prisma/client";
+import { PrismaClient, Role, SubjectCategory, QuestionDifficulty } from "@prisma/client";
 import { createClient } from "@supabase/supabase-js";
+import { SEED_QUESTIONS } from "./seed-questions";
 
 // O Prisma CLI carrega apenas o .env; as chaves do Supabase estão no .env.local
 try {
@@ -172,6 +173,41 @@ async function main() {
 
   const freePlan = await prisma.plan.findUniqueOrThrow({ where: { slug: "free" } });
   await seedAdmin(freePlan.id);
+
+  await seedQuestions();
+}
+
+/** Insere as questões iniciais (idempotente: pula enunciados já existentes). */
+async function seedQuestions() {
+  const subjects = await prisma.subject.findMany();
+  const bySlug = new Map(subjects.map((subject) => [subject.slug, subject.id]));
+
+  let created = 0;
+  for (const question of SEED_QUESTIONS) {
+    const subjectId = bySlug.get(question.subjectSlug);
+    if (!subjectId) {
+      console.warn(`⚠ Matéria não encontrada: ${question.subjectSlug}`);
+      continue;
+    }
+    const exists = await prisma.question.findFirst({
+      where: { statement: question.statement },
+      select: { id: true },
+    });
+    if (exists) continue;
+
+    await prisma.question.create({
+      data: {
+        subjectId,
+        statement: question.statement,
+        correctAnswer: question.correctAnswer,
+        explanation: question.explanation,
+        difficulty: QuestionDifficulty[question.difficulty],
+        isPublished: true,
+      },
+    });
+    created += 1;
+  }
+  console.log(`✔ ${created} questões novas (${SEED_QUESTIONS.length} no catálogo do seed)`);
 }
 
 main()

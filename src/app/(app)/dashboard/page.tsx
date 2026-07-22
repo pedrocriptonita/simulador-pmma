@@ -59,14 +59,22 @@ export default async function DashboardPage() {
 
       <Card>
         <CardHeader>
-          <CardTitle className="text-base">Próximos passos</CardTitle>
+          <CardTitle className="text-base">Treinar para a prova</CardTitle>
           <CardDescription>
-            Os simulados com correção Cebraspe chegam na Fase 3. Em breve você poderá gerar um
-            simulado, responder com cronômetro e ver sua nota líquida por matéria.
+            Gere um simulado no formato Cebraspe, responda com cronômetro e veja sua nota líquida
+            com gabarito comentado.
           </CardDescription>
         </CardHeader>
         <CardContent className="flex flex-wrap gap-2">
-          <Button disabled>Fazer simulado (em breve)</Button>
+          <Button asChild>
+            <Link href="/simulados/novo">Fazer simulado</Link>
+          </Button>
+          <Button variant="outline" asChild>
+            <Link href="/simulados">Meus simulados</Link>
+          </Button>
+          <Button variant="outline" asChild>
+            <Link href="/planos">Planos</Link>
+          </Button>
           {user.role === "ADMIN" ? (
             <Button variant="outline" asChild>
               <Link href="/admin">Painel admin</Link>

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { prisma } from "@/lib/prisma";
 
 export const metadata: Metadata = { title: "Admin" };
@@ -41,9 +41,19 @@ export default async function AdminPage() {
 
       <Card>
         <CardHeader>
-          <CardTitle className="text-base">CRUD de questões</CardTitle>
-          <CardDescription>Chega na Fase 3, junto com os simulados.</CardDescription>
+          <CardTitle className="text-base">Banco de questões</CardTitle>
+          <CardDescription>
+            Cadastre, edite, publique e importe questões em lote para os simulados.
+          </CardDescription>
         </CardHeader>
+        <CardContent className="flex flex-wrap gap-2">
+          <Button asChild>
+            <Link href="/admin/questoes">Gerenciar questões</Link>
+          </Button>
+          <Button variant="outline" asChild>
+            <Link href="/admin/questoes/importar">Importar JSON</Link>
+          </Button>
+        </CardContent>
       </Card>
     </main>
   );

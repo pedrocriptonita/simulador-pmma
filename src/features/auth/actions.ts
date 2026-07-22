@@ -2,6 +2,7 @@
 
 import { redirect } from "next/navigation";
 import { headers } from "next/headers";
+import { formatRetryAfter, getClientIp, rateLimit } from "@/lib/rate-limit";
 import { createClient } from "@/lib/supabase/server";
 import { ensureUser } from "@/services/users";
 
@@ -38,6 +39,18 @@ function safeNext(value: FormDataEntryValue | null): string {
   return next.startsWith("/") && !next.startsWith("//") ? next : "/dashboard";
 }
 
+/** Rate limit por IP para conter bots/credential stuffing. */
+async function checkRateLimit(
+  action: string,
+  limit: number,
+  windowMs: number,
+): Promise<string | null> {
+  const ip = await getClientIp();
+  const result = rateLimit(`${action}:${ip}`, limit, windowMs);
+  if (result.ok) return null;
+  return `Muitas tentativas. Tente novamente em ${formatRetryAfter(result.retryAfterSeconds)}.`;
+}
+
 export async function signUp(_prev: AuthActionState, formData: FormData): Promise<AuthActionState> {
   const name = String(formData.get("name") ?? "").trim();
   const email = String(formData.get("email") ?? "").trim();
@@ -49,6 +62,9 @@ export async function signUp(_prev: AuthActionState, formData: FormData): Promis
   if (password.length < 8) {
     return { error: "A senha deve ter pelo menos 8 caracteres." };
   }
+
+  const limited = await checkRateLimit("signup", 5, 30 * 60_000);
+  if (limited) return { error: limited };
 
   const supabase = await createClient();
   const origin = await getOrigin();
@@ -91,6 +107,9 @@ export async function signIn(_prev: AuthActionState, formData: FormData): Promis
     return { error: "Informe e-mail e senha." };
   }
 
+  const limited = await checkRateLimit("signin", 10, 10 * 60_000);
+  if (limited) return { error: limited };
+
   const supabase = await createClient();
   const { data, error } = await supabase.auth.signInWithPassword({ email, password });
 
@@ -116,6 +135,9 @@ export async function requestPasswordReset(
   if (!email) {
     return { error: "Informe seu e-mail." };
   }
+
+  const limited = await checkRateLimit("reset", 3, 30 * 60_000);
+  if (limited) return { error: limited };
 
   const supabase = await createClient();
   const origin = await getOrigin();
@@ -147,6 +169,9 @@ export async function updatePassword(
   if (password !== confirm) {
     return { error: "As senhas não conferem." };
   }
+
+  const limited = await checkRateLimit("update-password", 5, 10 * 60_000);
+  if (limited) return { error: limited };
 
   const supabase = await createClient();
   const {
