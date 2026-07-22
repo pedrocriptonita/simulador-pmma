@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -12,9 +13,14 @@ export default function Home() {
           Treine no formato real do Cebraspe: Certo/Errado com penalização e nota líquida. Descubra
           onde você realmente está antes da prova.
         </p>
-        <Button size="lg" disabled>
-          Em breve — plataforma em construção
-        </Button>
+        <div className="flex flex-wrap justify-center gap-2">
+          <Button size="lg" asChild>
+            <Link href="/cadastro">Criar conta grátis</Link>
+          </Button>
+          <Button size="lg" variant="outline" asChild>
+            <Link href="/login">Entrar</Link>
+          </Button>
+        </div>
       </div>
 
       <div className="grid w-full max-w-3xl gap-4 sm:grid-cols-3">

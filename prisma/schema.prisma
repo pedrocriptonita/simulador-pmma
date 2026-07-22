@@ -1,0 +1,300 @@
+// ============================================================
+//  Simulador PM MA 2026 — Schema Prisma
+//  Banco: PostgreSQL (Supabase)
+//  Convenções:
+//    - Tabelas e colunas em snake_case (@map / @@map)
+//    - Timestamps createdAt / updatedAt em todos os models
+//    - Soft delete (deletedAt) em entidades de catálogo/conteúdo
+//      que você pode querer "remover" sem perder histórico.
+//      Registros transacionais (simulados, respostas, compras)
+//      NÃO usam soft delete — são mantidos para histórico/auditoria.
+// ============================================================
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  // Supabase: conexão direta para migrations (pooler no runtime)
+  directUrl = env("DIRECT_URL")
+}
+
+// ============================================================
+//  ENUMS
+// ============================================================
+
+/// Papel do usuário na plataforma.
+enum Role {
+  USER
+  ADMIN
+}
+
+/// Situação de uma compra vinda do checkout externo (webhook).
+enum PurchaseStatus {
+  PENDING // aguardando pagamento
+  PAID // pago e liberado
+  REFUNDED // estornado
+  CANCELED // cancelado
+  EXPIRED // expirou sem pagamento
+}
+
+/// Blocos do conteúdo programático do edital (Cebraspe).
+enum SubjectCategory {
+  CONHECIMENTOS_GERAIS // 50 itens
+  CONHECIMENTOS_ESPECIFICOS // 70 itens
+}
+
+/// Nível de dificuldade da questão (para montar simulados equilibrados).
+enum QuestionDifficulty {
+  FACIL
+  MEDIO
+  DIFICIL
+}
+
+/// Tipo de simulado gerado.
+enum ExamType {
+  BY_SUBJECT // focado em uma única matéria
+  MIXED // misto entre várias matérias
+}
+
+/// Estado de um simulado (que representa também a tentativa/sessão do usuário).
+enum ExamStatus {
+  IN_PROGRESS // iniciado, ainda não finalizado
+  COMPLETED // finalizado e corrigido
+  ABANDONED // expirou ou foi abandonado sem finalizar
+}
+
+// ============================================================
+//  MODELS
+// ============================================================
+
+/// Plano de acesso (ex.: Free e "Pacote até a prova").
+/// Mantido como tabela (e não enum) para permitir ajustar preço,
+/// nome e descrição sem migration. Não versionamos histórico de
+/// preço aqui no MVP — o valor pago fica registrado em Purchase.
+model Plan {
+  id          String  @id @default(uuid()) @db.Uuid
+  name        String // ex.: "Gratuito", "Acesso até a Prova"
+  slug        String  @unique // ex.: "free", "ate-a-prova"
+  description String?
+  /// Preço em centavos (0 para o plano gratuito). Evita erro de ponto flutuante.
+  priceCents  Int     @default(0) @map("price_cents")
+  /// Se o plano está disponível para compra/exibição.
+  isActive    Boolean @default(true) @map("is_active")
+
+  // Relacionamentos
+  users     User[] // usuários atualmente neste plano
+  purchases Purchase[] // compras associadas a este plano
+
+  createdAt DateTime  @default(now()) @map("created_at")
+  updatedAt DateTime  @updatedAt @map("updated_at")
+  deletedAt DateTime? @map("deleted_at")
+
+  @@map("plans")
+}
+
+/// Usuário da plataforma (candidato ou admin).
+/// O id corresponde ao UID do Supabase Auth (auth.users.id),
+/// então NÃO tem @default — é preenchido no cadastro a partir do Auth.
+model User {
+  id    String @id @db.Uuid // = Supabase auth.users.id
+  email String @unique
+  name  String?
+  role  Role   @default(USER)
+
+  /// Plano atual (nullable: usuário novo pode começar sem plano/free).
+  planId String? @map("plan_id") @db.Uuid
+  plan   Plan?   @relation(fields: [planId], references: [id])
+
+  /// Data em que o acesso pago expira (ex.: dia da prova, 11/10/2026).
+  /// Null = sem acesso pago vigente.
+  accessExpiresAt DateTime? @map("access_expires_at")
+
+  // Relacionamentos
+  exams     Exam[] // simulados feitos pelo usuário
+  purchases Purchase[] // compras do usuário
+
+  createdAt DateTime  @default(now()) @map("created_at")
+  updatedAt DateTime  @updatedAt @map("updated_at")
+  deletedAt DateTime? @map("deleted_at")
+
+  @@index([planId])
+  @@map("users")
+}
+
+/// Compra registrada a partir do checkout externo (Kirvano/Cakto/MP).
+/// O webhook cria/atualiza este registro e, quando PAID, o backend
+/// atualiza o plano e o accessExpiresAt do usuário.
+model Purchase {
+  id     String @id @default(uuid()) @db.Uuid
+  userId String @map("user_id") @db.Uuid
+  user   User   @relation(fields: [userId], references: [id])
+  planId String @map("plan_id") @db.Uuid
+  plan   Plan   @relation(fields: [planId], references: [id])
+
+  /// Identificador da transação no provedor de checkout (para idempotência).
+  externalId String?        @unique @map("external_id")
+  status     PurchaseStatus @default(PENDING)
+  /// Valor efetivamente cobrado, em centavos.
+  amountCents Int           @map("amount_cents")
+  /// Momento da confirmação do pagamento.
+  paidAt     DateTime?      @map("paid_at")
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@index([userId])
+  @@index([status])
+  @@map("purchases")
+}
+
+/// Matéria do edital (ex.: Língua Portuguesa, História do Maranhão...).
+model Subject {
+  id       String          @id @default(uuid()) @db.Uuid
+  name     String // ex.: "Língua Portuguesa"
+  slug     String          @unique // ex.: "lingua-portuguesa"
+  category SubjectCategory
+  /// Peso/quantidade de itens no edital — útil para distribuir questões no simulado misto.
+  weight   Int             @default(1)
+  /// Ordem de exibição na interface.
+  order    Int             @default(0)
+
+  // Relacionamentos
+  questions    Question[] // questões desta matéria
+  pdfResources PdfResource[] // resumos em PDF desta matéria
+  exams        Exam[] // simulados focados nesta matéria (ExamType.BY_SUBJECT)
+
+  createdAt DateTime  @default(now()) @map("created_at")
+  updatedAt DateTime  @updatedAt @map("updated_at")
+  deletedAt DateTime? @map("deleted_at")
+
+  @@map("subjects")
+}
+
+/// Questão no formato Cebraspe (julgamento Certo/Errado).
+model Question {
+  id        String  @id @default(uuid()) @db.Uuid
+  subjectId String  @map("subject_id") @db.Uuid
+  subject   Subject @relation(fields: [subjectId], references: [id])
+
+  /// Enunciado do item a ser julgado.
+  statement     String             @db.Text
+  /// Gabarito: true = CERTO, false = ERRADO.
+  correctAnswer Boolean            @map("correct_answer")
+  /// Gabarito comentado (justificativa exibida após a correção).
+  explanation   String?            @db.Text
+  difficulty    QuestionDifficulty @default(MEDIO)
+
+  /// Controle de publicação: só questões revisadas e publicadas entram nos simulados.
+  isPublished Boolean @default(false) @map("is_published")
+
+  // Relacionamentos
+  examAnswers ExamAnswer[] // aparições desta questão em simulados
+
+  createdAt DateTime  @default(now()) @map("created_at")
+  updatedAt DateTime  @updatedAt @map("updated_at")
+  deletedAt DateTime? @map("deleted_at")
+
+  @@index([subjectId])
+  @@index([isPublished])
+  @@map("questions")
+}
+
+/// Simulado gerado para um usuário. Representa também a TENTATIVA/sessão:
+/// cada simulado pertence a um único usuário e guarda o resultado.
+/// (Simulados-modelo compartilhados entre usuários ficam para a v2.)
+model Exam {
+  id     String @id @default(uuid()) @db.Uuid
+  userId String @map("user_id") @db.Uuid
+  user   User   @relation(fields: [userId], references: [id])
+
+  title String?
+  type  ExamType   @default(MIXED)
+  /// Matéria alvo quando type = BY_SUBJECT (nulo para MIXED).
+  subjectId String?  @map("subject_id") @db.Uuid
+  subject   Subject? @relation(fields: [subjectId], references: [id])
+
+  status ExamStatus @default(IN_PROGRESS)
+
+  /// Duração configurada do cronômetro, em segundos.
+  durationSeconds Int?      @map("duration_seconds")
+  startedAt       DateTime  @default(now()) @map("started_at")
+  finishedAt      DateTime? @map("finished_at")
+
+  /// Resultado (preenchido na correção).
+  /// totalQuestions = nº de itens; correctCount / wrongCount / blankCount.
+  totalQuestions Int? @map("total_questions")
+  correctCount   Int? @map("correct_count")
+  wrongCount     Int? @map("wrong_count")
+  blankCount     Int? @map("blank_count")
+  /// Nota líquida no estilo Cebraspe = acertos − erros (o diferencial do produto).
+  scoreNet       Int? @map("score_net")
+
+  // Relacionamentos
+  answers ExamAnswer[] // itens (questões) deste simulado, com as respostas
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@index([userId])
+  @@index([status])
+  @@map("exams")
+}
+
+/// Item de um simulado: liga uma questão a um simulado, guarda a ordem
+/// e a resposta do usuário. As linhas são criadas quando o simulado é
+/// gerado (userAnswer = null) e atualizadas conforme o usuário responde.
+model ExamAnswer {
+  id     String @id @default(uuid()) @db.Uuid
+  examId String @map("exam_id") @db.Uuid
+  exam   Exam   @relation(fields: [examId], references: [id], onDelete: Cascade)
+
+  questionId String   @map("question_id") @db.Uuid
+  question   Question @relation(fields: [questionId], references: [id])
+
+  /// Ordem da questão dentro do simulado.
+  order Int
+
+  /// Resposta do usuário: true = Certo, false = Errado, null = em branco.
+  userAnswer Boolean?  @map("user_answer")
+  /// Resultado da questão (calculado na correção). Null enquanto em branco/não corrigido.
+  isCorrect  Boolean?  @map("is_correct")
+  answeredAt DateTime? @map("answered_at")
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  /// Uma mesma questão não se repete no mesmo simulado.
+  @@unique([examId, questionId])
+  @@index([examId])
+  @@index([questionId])
+  @@map("exam_answers")
+}
+
+/// Resumo/material em PDF, armazenado no Supabase Storage.
+model PdfResource {
+  id          String  @id @default(uuid()) @db.Uuid
+  title       String
+  description String?
+
+  /// Matéria relacionada (nullable: pode haver material geral, sem matéria).
+  subjectId String?  @map("subject_id") @db.Uuid
+  subject   Subject? @relation(fields: [subjectId], references: [id])
+
+  /// Caminho do arquivo no bucket do Supabase Storage.
+  storagePath String @map("storage_path")
+
+  /// true = material exclusivo de plano pago; false = disponível no free.
+  isPremium Boolean @default(true) @map("is_premium")
+  /// Controle de publicação.
+  isPublished Boolean @default(false) @map("is_published")
+
+  createdAt DateTime  @default(now()) @map("created_at")
+  updatedAt DateTime  @updatedAt @map("updated_at")
+  deletedAt DateTime? @map("deleted_at")
+
+  @@index([subjectId])
+  @@map("pdf_resources")
+}
