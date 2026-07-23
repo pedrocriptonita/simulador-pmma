@@ -2,6 +2,7 @@
 
 import { useState, useTransition } from "react";
 import Link from "next/link";
+import { toast } from "sonner";
 import { Pencil, Trash2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -28,7 +29,12 @@ export function PublishSwitch({
     <Switch
       checked={isPublished}
       disabled={pending}
-      onCheckedChange={() => startTransition(() => togglePublishAction(questionId))}
+      onCheckedChange={() =>
+        startTransition(async () => {
+          await togglePublishAction(questionId);
+          toast.success(isPublished ? "Questão movida para rascunho." : "Questão publicada.");
+        })
+      }
       aria-label="Publicar questão"
     />
   );
@@ -70,6 +76,7 @@ export function RowActions({ questionId }: { questionId: string }) {
                 startTransition(async () => {
                   await deleteQuestionAction(questionId);
                   setOpen(false);
+                  toast.success("Questão excluída.");
                 })
               }
             >

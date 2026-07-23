@@ -5,7 +5,6 @@ import { TrendingDown } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { signOut } from "@/features/auth/actions";
 import { createClient } from "@/lib/supabase/server";
 import { getUserWithPlan } from "@/services/users";
 import { getEvolution, getPerformanceBySubject, getSummary } from "@/services/performance";
@@ -53,36 +52,14 @@ export default async function DashboardPage() {
           <h1 className="text-2xl font-bold tracking-tight">
             Olá, {user.name ?? user.email.split("@")[0]}
           </h1>
-          <p className="text-muted-foreground text-sm">{user.email}</p>
+          <p className="text-muted-foreground text-sm">
+            Prova em 11/10/2026 — cada simulado conta.
+          </p>
         </div>
-        <div className="flex items-center gap-2">
-          <Badge variant={hasPaidAccess ? "default" : "secondary"}>
-            {user.plan?.name ?? "Gratuito"}
-          </Badge>
-          {user.role === "ADMIN" ? (
-            <Button variant="outline" size="sm" asChild>
-              <Link href="/admin">Admin</Link>
-            </Button>
-          ) : null}
-          <form action={signOut}>
-            <Button variant="outline" size="sm" type="submit">
-              Sair
-            </Button>
-          </form>
-        </div>
+        <Badge variant={hasPaidAccess ? "default" : "secondary"}>
+          {user.plan?.name ?? "Gratuito"}
+        </Badge>
       </div>
-
-      <nav className="flex flex-wrap gap-2">
-        <Button variant="secondary" size="sm" asChild>
-          <Link href="/simulados">Meus simulados</Link>
-        </Button>
-        <Button variant="secondary" size="sm" asChild>
-          <Link href="/materiais">Materiais</Link>
-        </Button>
-        <Button variant="secondary" size="sm" asChild>
-          <Link href="/planos">Planos</Link>
-        </Button>
-      </nav>
 
       {!hasData ? (
         <Card>

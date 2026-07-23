@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useTransition } from "react";
+import { toast } from "sonner";
 import { Trash2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -25,7 +26,12 @@ export function PdfPublishSwitch({ pdfId, isPublished }: { pdfId: string; isPubl
     <Switch
       checked={isPublished}
       disabled={pending}
-      onCheckedChange={() => startTransition(() => togglePdfPublishAction(pdfId))}
+      onCheckedChange={() =>
+        startTransition(async () => {
+          await togglePdfPublishAction(pdfId);
+          toast.success(isPublished ? "Material despublicado." : "Material publicado.");
+        })
+      }
       aria-label="Publicar material"
     />
   );
@@ -37,7 +43,14 @@ export function PdfPremiumSwitch({ pdfId, isPremium }: { pdfId: string; isPremiu
     <Switch
       checked={isPremium}
       disabled={pending}
-      onCheckedChange={() => startTransition(() => togglePdfPremiumAction(pdfId))}
+      onCheckedChange={() =>
+        startTransition(async () => {
+          await togglePdfPremiumAction(pdfId);
+          toast.success(
+            isPremium ? "Material liberado no plano free." : "Material marcado como premium.",
+          );
+        })
+      }
       aria-label="Marcar como premium"
     />
   );
@@ -73,6 +86,7 @@ export function PdfDeleteButton({ pdfId }: { pdfId: string }) {
               startTransition(async () => {
                 await deletePdfAction(pdfId);
                 setOpen(false);
+                toast.success("Material excluído.");
               })
             }
           >

@@ -21,12 +21,7 @@ export default async function AdminPage() {
 
   return (
     <main className="mx-auto flex w-full max-w-3xl flex-1 flex-col gap-6 px-4 py-10">
-      <div className="flex flex-wrap items-center justify-between gap-4">
-        <h1 className="text-2xl font-bold tracking-tight">Painel Admin</h1>
-        <Button variant="outline" size="sm" asChild>
-          <Link href="/dashboard">Voltar ao dashboard</Link>
-        </Button>
-      </div>
+      <h1 className="text-2xl font-bold tracking-tight">Painel Admin</h1>
 
       <div className="grid gap-4 sm:grid-cols-3">
         {stats.map((stat) => (

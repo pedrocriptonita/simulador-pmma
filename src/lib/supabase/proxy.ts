@@ -4,8 +4,8 @@ import { NextResponse, type NextRequest } from "next/server";
 /** Rotas que exigem sessão. O gate de role ADMIN fica no layout de /admin. */
 const PROTECTED_PREFIXES = ["/dashboard", "/simulados", "/materiais", "/planos", "/admin"];
 
-/** Rotas de convidado: usuário logado é levado ao dashboard. */
-const GUEST_ONLY_PREFIXES = ["/login", "/cadastro"];
+/** Rotas de convidado: usuário logado é levado ao dashboard (inclui a landing). */
+const GUEST_ONLY_PREFIXES = ["/", "/login", "/cadastro"];
 
 function matchesPrefix(pathname: string, prefixes: string[]) {
   return prefixes.some((p) => pathname === p || pathname.startsWith(`${p}/`));
