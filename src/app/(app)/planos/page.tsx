@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Check } from "lucide-react";
+import { redirect } from "next/navigation";
+import { Check, ShieldCheck } from "lucide-react";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -12,7 +13,12 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { isCheckoutConfigured } from "@/lib/billing/config";
 import { prisma } from "@/lib/prisma";
+import { hasPaidAccess } from "@/services/access";
+import { getAuthUser } from "@/services/auth-guard";
+import { getUserWithPlan } from "@/services/users";
+import { startCheckoutAction } from "@/features/billing/actions";
 
 export const metadata: Metadata = { title: "Planos" };
 
@@ -32,11 +38,20 @@ const PAID_FEATURES = [
 export default async function PlanosPage({
   searchParams,
 }: {
-  searchParams: Promise<{ motivo?: string }>;
+  searchParams: Promise<{ motivo?: string; erro?: string }>;
 }) {
-  const { motivo } = await searchParams;
+  const { motivo, erro } = await searchParams;
 
-  const paidPlan = await prisma.plan.findUnique({ where: { slug: "ate-a-prova" } });
+  const authUser = await getAuthUser();
+  if (!authUser) redirect("/login");
+
+  const [paidPlan, user, paid] = await Promise.all([
+    prisma.plan.findUnique({ where: { slug: "ate-a-prova" } }),
+    getUserWithPlan(authUser.id),
+    hasPaidAccess(authUser.id),
+  ]);
+
+  const checkoutOn = isCheckoutConfigured();
 
   return (
     <main className="mx-auto flex w-full max-w-3xl flex-1 flex-col gap-6 px-4 py-10">
@@ -60,6 +75,26 @@ export default async function PlanosPage({
           <AlertTitle>Material exclusivo do plano até a prova</AlertTitle>
           <AlertDescription>
             Libere todos os PDFs de resumo e os simulados ilimitados com o plano abaixo.
+          </AlertDescription>
+        </Alert>
+      ) : null}
+      {erro === "checkout_indisponivel" ? (
+        <Alert variant="destructive">
+          <AlertTitle>Pagamento indisponível no momento</AlertTitle>
+          <AlertDescription>Tente novamente em instantes.</AlertDescription>
+        </Alert>
+      ) : null}
+
+      {paid ? (
+        <Alert>
+          <ShieldCheck />
+          <AlertTitle>Você já tem acesso completo</AlertTitle>
+          <AlertDescription>
+            Seu plano está ativo
+            {user?.accessExpiresAt
+              ? ` até ${user.accessExpiresAt.toLocaleDateString("pt-BR")}`
+              : ""}
+            . Bons estudos!
           </AlertDescription>
         </Alert>
       ) : null}
@@ -114,12 +149,26 @@ export default async function PlanosPage({
             ))}
           </CardContent>
           <CardFooter className="flex-col gap-2">
-            <Button className="w-full" size="lg" disabled>
-              Assinar (pagamento em breve)
-            </Button>
-            <p className="text-muted-foreground text-center text-xs">
-              O checkout será habilitado na Fase 6 (Billing).
-            </p>
+            {paid ? (
+              <Button className="w-full" size="lg" disabled>
+                Acesso já liberado
+              </Button>
+            ) : checkoutOn ? (
+              <form action={startCheckoutAction} className="w-full">
+                <Button className="w-full" size="lg" type="submit">
+                  Assinar agora
+                </Button>
+              </form>
+            ) : (
+              <>
+                <Button className="w-full" size="lg" disabled>
+                  Assinar (checkout em configuração)
+                </Button>
+                <p className="text-muted-foreground text-center text-xs">
+                  O botão será ativado assim que o provedor de pagamento estiver conectado.
+                </p>
+              </>
+            )}
           </CardFooter>
         </Card>
       </div>
