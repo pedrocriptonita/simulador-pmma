@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server";
+import { handleCaktoWebhook, verifyCaktoSecret } from "@/features/billing/adapters/cakto";
 import { parseWebhookPayload, verifyWebhookSecret } from "@/features/billing/webhook";
+import { PAYMENT_PROVIDER } from "@/lib/billing/config";
 import { logEvent } from "@/lib/logger";
 import { rateLimit } from "@/lib/rate-limit";
 import { processWebhookEvent } from "@/services/billing";
@@ -26,6 +28,30 @@ export async function POST(request: Request) {
   if (!limit.ok) {
     logEvent("checkout_webhook", { result: "rate_limited" });
     return NextResponse.json({ error: "rate limited" }, { status: 429 });
+  }
+
+  if (PAYMENT_PROVIDER === "cakto") {
+    let payload: unknown;
+    try {
+      payload = await request.json();
+    } catch {
+      logEvent("checkout_webhook", { provider: "cakto", result: "invalid_json" });
+      return NextResponse.json({ error: "invalid json" }, { status: 400 });
+    }
+
+    // Na Cakto o segredo vem dentro do corpo, não em header/query.
+    if (!verifyCaktoSecret(payload)) {
+      logEvent("checkout_webhook", { provider: "cakto", result: "rejected_signature" });
+      return NextResponse.json({ error: "invalid signature" }, { status: 401 });
+    }
+
+    const outcome = await handleCaktoWebhook(payload);
+    logEvent("checkout_webhook", {
+      provider: "cakto",
+      status: outcome.httpStatus,
+      body: outcome.body,
+    });
+    return NextResponse.json(outcome.body, { status: outcome.httpStatus });
   }
 
   if (!verifyWebhookSecret(request)) {

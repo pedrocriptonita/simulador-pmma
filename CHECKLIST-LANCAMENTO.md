@@ -61,6 +61,7 @@ Legenda: `[ ]` a fazer · `[x]` feito · 🔴 bloqueia lançamento · 🟡 impor
 ## 5. Testes manuais no ambiente publicado (antes dos ads)
 
 ### Fluxo do candidato (fazer num celular real — mobile-first)
+
 - [ ] Landing carrega, contador de dias aparece, CTAs funcionam.
 - [ ] Cadastro por e-mail/senha → cai direto no dashboard (sem e-mail).
 - [ ] (Se OAuth configurado) Login com Google no **celular** funciona.
@@ -71,15 +72,18 @@ Legenda: `[ ]` a fazer · `[x]` feito · 🔴 bloqueia lançamento · 🟡 impor
 - [ ] Bottom nav funciona em todas as telas; nenhuma tela quebrada em 375px.
 
 ### Billing (compra real de baixo valor)
+
 - [ ] 🔴 Fazer **uma compra real** (ou sandbox) → webhook libera acesso **sem passo manual**
       → `/planos/sucesso` mostra "acesso liberado" → simulados ilimitados destravados.
 - [ ] Testar **estorno** (sandbox) → acesso volta para free.
 - [ ] Verificar nos logs da Vercel que o webhook logou o evento (`scope: checkout_webhook`).
 
 ### Gating premium
+
 - [ ] PDF free baixa no plano free; PDF premium bloqueia free (→ `/planos`) e libera pago.
 
 ### Saúde e segurança
+
 - [ ] `GET /api/health` retorna `{"status":"ok","db":"up"}`.
 - [ ] `robots.txt` e `sitemap.xml` acessíveis; área logada fora do sitemap.
 
@@ -105,15 +109,15 @@ npx tsx scripts/set-plan.ts paid|free           # alternar plano de um usuário 
 
 ## Status das fases (todas testadas)
 
-| Fase | Entrega | Status |
-|---|---|---|
-| 1 | Setup, CI, estrutura | ✅ |
-| 2 | Auth (Supabase + Prisma + RLS) | ✅ |
-| 3 | Simulados + correção Cebraspe | ✅ |
-| 4 | Dashboard + biblioteca de PDFs | ✅ |
-| 5 | UI shell + landing | ✅ |
-| 6 | Billing (webhook idempotente) | ✅ |
-| 7 | Polimento (segurança, SEO, perf) | ✅ |
+| Fase | Entrega                          | Status |
+| ---- | -------------------------------- | ------ |
+| 1    | Setup, CI, estrutura             | ✅     |
+| 2    | Auth (Supabase + Prisma + RLS)   | ✅     |
+| 3    | Simulados + correção Cebraspe    | ✅     |
+| 4    | Dashboard + biblioteca de PDFs   | ✅     |
+| 5    | UI shell + landing               | ✅     |
+| 6    | Billing (webhook idempotente)    | ✅     |
+| 7    | Polimento (segurança, SEO, perf) | ✅     |
 
 **Contas de teste (dev):** `admin@simuladorpmma.dev` / `AdminPMMA-2026!` (admin) ·
 `teste-fase2@simuladorpmma.dev` / `TesteFase2-2026!` (usuário comum).

@@ -17,6 +17,15 @@ export const ACCESS_EXPIRES_AT = new Date("2026-10-11T23:59:59-03:00");
  */
 export const CHECKOUT_URL = process.env.CHECKOUT_URL ?? "";
 
+/**
+ * Provedor de checkout ativo. "generic" = contrato canônico (segredo em
+ * header/query, external_reference = userId) — usado por Kirvano/Cakto
+ * clássico. "cakto" = adapter específico (segredo no corpo do JSON,
+ * identificação do usuário por e-mail — a Cakto não suporta campo
+ * customizado de referência externa no link de checkout).
+ */
+export const PAYMENT_PROVIDER = (process.env.PAYMENT_PROVIDER ?? "generic") as "generic" | "cakto";
+
 /** Segredo compartilhado que o provedor envia no webhook. */
 export function getWebhookSecret(): string {
   return process.env.CHECKOUT_WEBHOOK_SECRET ?? "";

@@ -1,16 +1,22 @@
 "use server";
 
 import { redirect } from "next/navigation";
-import { CHECKOUT_URL, isCheckoutConfigured } from "@/lib/billing/config";
+import { CHECKOUT_URL, PAYMENT_PROVIDER, isCheckoutConfigured } from "@/lib/billing/config";
 import { formatRetryAfter, getClientIp, rateLimit } from "@/lib/rate-limit";
 import { requireUser } from "@/services/auth-guard";
 import { getUserWithPlan } from "@/services/users";
 
 /**
- * Inicia o checkout externo: valida sessão, monta o link do provedor
- * com a identificação do usuário (external_reference = id) e redireciona.
- * O provedor reenvia esse external_reference no webhook, ligando o
- * pagamento ao usuário.
+ * Inicia o checkout externo: valida sessão e redireciona ao link do
+ * provedor, identificando o comprador.
+ *
+ * - Provedor "generic" (contrato canônico): manda `external_reference`
+ *   = userId, reenviado pelo provedor no webhook.
+ * - Provedor "cakto": não existe campo de referência customizável no
+ *   link de checkout dela — só pré-preenchimento de name/email/cpf/
+ *   phone/coupon. Por isso mandamos só `email`, que volta no webhook
+ *   dentro de `data.customer.email` e é usado para identificar o
+ *   usuário lá (ver features/billing/adapters/cakto.ts).
  */
 export async function startCheckoutAction(): Promise<void> {
   const authUser = await requireUser();
@@ -31,8 +37,13 @@ export async function startCheckoutAction(): Promise<void> {
   if (!user) redirect("/login");
 
   const url = new URL(CHECKOUT_URL);
-  url.searchParams.set("external_reference", user.id);
-  if (user.email) url.searchParams.set("email", user.email);
+  if (PAYMENT_PROVIDER === "cakto") {
+    url.searchParams.set("email", user.email);
+    if (user.name) url.searchParams.set("name", user.name);
+  } else {
+    url.searchParams.set("external_reference", user.id);
+    url.searchParams.set("email", user.email);
+  }
 
   redirect(url.toString());
 }
