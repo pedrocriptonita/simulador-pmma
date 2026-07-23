@@ -57,3 +57,18 @@ export async function checkAccess(userId: string): Promise<AccessCheck> {
   }
   return { status: "allowed" };
 }
+
+/**
+ * Acesso pago vigente (para liberar PDFs premium e recursos exclusivos).
+ * ADMIN sempre tem; plano pago com accessExpiresAt no futuro também.
+ */
+export async function hasPaidAccess(userId: string): Promise<boolean> {
+  const user = await prisma.user.findUnique({
+    where: { id: userId },
+    include: { plan: true },
+  });
+  if (!user) return false;
+  if (user.role === "ADMIN") return true;
+  const isPaidPlan = !!user.plan && user.plan.slug !== "free";
+  return isPaidPlan && !!user.accessExpiresAt && user.accessExpiresAt >= new Date();
+}

@@ -55,6 +55,14 @@ export default async function PlanosPage({
           <AlertDescription>Renove para continuar treinando até a prova.</AlertDescription>
         </Alert>
       ) : null}
+      {motivo === "premium" ? (
+        <Alert>
+          <AlertTitle>Material exclusivo do plano até a prova</AlertTitle>
+          <AlertDescription>
+            Libere todos os PDFs de resumo e os simulados ilimitados com o plano abaixo.
+          </AlertDescription>
+        </Alert>
+      ) : null}
 
       <div className="text-center">
         <h1 className="text-2xl font-bold tracking-tight">Escolha seu plano</h1>

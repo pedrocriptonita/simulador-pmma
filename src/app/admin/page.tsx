@@ -55,6 +55,20 @@ export default async function AdminPage() {
           </Button>
         </CardContent>
       </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle className="text-base">Biblioteca de materiais</CardTitle>
+          <CardDescription>
+            Envie PDFs de resumo, defina matéria e controle acesso premium/publicação.
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="flex flex-wrap gap-2">
+          <Button asChild>
+            <Link href="/admin/materiais">Gerenciar materiais</Link>
+          </Button>
+        </CardContent>
+      </Card>
     </main>
   );
 }
