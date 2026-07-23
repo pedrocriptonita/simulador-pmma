@@ -1,13 +1,16 @@
 import { NextResponse } from "next/server";
 import { parseWebhookPayload, verifyWebhookSecret } from "@/features/billing/webhook";
+import { logEvent } from "@/lib/logger";
+import { rateLimit } from "@/lib/rate-limit";
 import { processWebhookEvent } from "@/services/billing";
 
 // Prisma exige runtime Node.js (não edge).
 export const runtime = "nodejs";
 
-/** Log estruturado de auditoria (capturado pelos logs da Vercel). */
-function logEvent(data: Record<string, unknown>) {
-  console.log(JSON.stringify({ scope: "checkout_webhook", ts: new Date().toISOString(), ...data }));
+function clientIp(request: Request): string {
+  const fwd = request.headers.get("x-forwarded-for");
+  if (fwd) return fwd.split(",")[0]!.trim();
+  return request.headers.get("x-real-ip") ?? "unknown";
 }
 
 /**
@@ -17,8 +20,16 @@ function logEvent(data: Record<string, unknown>) {
  * 401 = assinatura inválida · 400 = payload malformado.
  */
 export async function POST(request: Request) {
+  // Rate limit por IP para conter flood (o segredo já barra falsos, mas
+  // isto protege contra abuso mesmo com segredo vazado).
+  const limit = rateLimit(`webhook:${clientIp(request)}`, 120, 60_000);
+  if (!limit.ok) {
+    logEvent("checkout_webhook", { result: "rate_limited" });
+    return NextResponse.json({ error: "rate limited" }, { status: 429 });
+  }
+
   if (!verifyWebhookSecret(request)) {
-    logEvent({ result: "rejected_signature" });
+    logEvent("checkout_webhook", { result: "rejected_signature" });
     return NextResponse.json({ error: "invalid signature" }, { status: 401 });
   }
 
@@ -26,19 +37,19 @@ export async function POST(request: Request) {
   try {
     payload = await request.json();
   } catch {
-    logEvent({ result: "invalid_json" });
+    logEvent("checkout_webhook", { result: "invalid_json" });
     return NextResponse.json({ error: "invalid json" }, { status: 400 });
   }
 
   const event = parseWebhookPayload(payload);
   if (!event) {
-    logEvent({ result: "unparseable_payload" });
+    logEvent("checkout_webhook", { result: "unparseable_payload" });
     return NextResponse.json({ error: "unparseable payload" }, { status: 400 });
   }
 
   const result = await processWebhookEvent(event);
 
-  logEvent({
+  logEvent("checkout_webhook", {
     externalId: event.externalId,
     status: event.status,
     userId: event.userId,

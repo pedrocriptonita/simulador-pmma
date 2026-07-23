@@ -2,8 +2,32 @@ import "server-only";
 
 import { timingSafeEqual } from "node:crypto";
 import { PurchaseStatus } from "@prisma/client";
+import { z } from "zod";
 import { getWebhookSecret } from "@/lib/billing/config";
 import type { NormalizedEvent } from "@/services/billing";
+
+/** Shape mínimo aceito do payload do webhook (tolerante a campos extras). */
+const webhookPayloadSchema = z
+  .object({
+    transaction_id: z.string().trim().min(1).optional(),
+    id: z.string().trim().min(1).optional(),
+    order_id: z.string().trim().min(1).optional(),
+    status: z.string().trim().min(1).optional(),
+    event: z.string().trim().min(1).optional(),
+    external_reference: z.string().trim().min(1).optional(),
+    reference: z.string().trim().min(1).optional(),
+    email: z.string().trim().optional(),
+    amount_cents: z.number().optional(),
+    amount: z.number().optional(),
+    customer: z
+      .object({
+        email: z.string().trim().optional(),
+        external_reference: z.string().trim().optional(),
+      })
+      .partial()
+      .optional(),
+  })
+  .passthrough();
 
 /**
  * Verificação do segredo compartilhado do provedor (constant-time).
@@ -62,8 +86,9 @@ function asString(value: unknown): string | null {
  * adapter que traduza o payload dele para esta forma antes de chamar aqui.
  */
 export function parseWebhookPayload(payload: unknown): NormalizedEvent | null {
-  if (!payload || typeof payload !== "object") return null;
-  const body = payload as Record<string, unknown>;
+  const parsed = webhookPayloadSchema.safeParse(payload);
+  if (!parsed.success) return null;
+  const body = parsed.data;
 
   const externalId = asString(body.transaction_id) ?? asString(body.id) ?? asString(body.order_id);
   if (!externalId) return null;
@@ -76,11 +101,10 @@ export function parseWebhookPayload(payload: unknown): NormalizedEvent | null {
   const userId =
     asString(body.external_reference) ??
     asString(body.reference) ??
-    asString((body.customer as Record<string, unknown> | undefined)?.external_reference);
+    asString(body.customer?.external_reference);
   if (!userId) return null;
 
-  const email =
-    asString(body.email) ?? asString((body.customer as Record<string, unknown> | undefined)?.email);
+  const email = asString(body.email) ?? asString(body.customer?.email);
 
   const amountRaw = body.amount_cents ?? body.amount;
   const amountCents =

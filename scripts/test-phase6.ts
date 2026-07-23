@@ -83,7 +83,11 @@ async function main() {
     { transaction_id: externalId, status: "paid" },
     { secret: SECRET },
   );
-  check("payload sem external_reference => 400", malformed.status === 400, `status ${malformed.status}`);
+  check(
+    "payload sem external_reference => 400",
+    malformed.status === 400,
+    `status ${malformed.status}`,
+  );
 
   // 4. PAID válido => 200 granted, usuário vira pago com expiração no dia da prova
   const paid = await postWebhook(
@@ -96,14 +100,19 @@ async function main() {
     },
     { secret: SECRET },
   );
-  check("PAID => 200 granted", paid.status === 200 && paid.json?.result?.action === "granted", JSON.stringify(paid.json?.result));
+  check(
+    "PAID => 200 granted",
+    paid.status === 200 && paid.json?.result?.action === "granted",
+    JSON.stringify(paid.json?.result),
+  );
 
   const afterPaid = await getUser();
   check("usuário no plano pago", afterPaid.plan?.slug === "ate-a-prova", afterPaid.plan?.slug);
   const expISO = afterPaid.accessExpiresAt?.toISOString();
   check(
     "accessExpiresAt = 11/10/2026 (dia da prova)",
-    !!afterPaid.accessExpiresAt && new Date("2026-10-11T23:59:59-03:00").getTime() === afterPaid.accessExpiresAt.getTime(),
+    !!afterPaid.accessExpiresAt &&
+      new Date("2026-10-11T23:59:59-03:00").getTime() === afterPaid.accessExpiresAt.getTime(),
     expISO,
   );
   const purchase = await prisma.purchase.findUnique({ where: { externalId } });
@@ -114,9 +123,17 @@ async function main() {
     { transaction_id: externalId, status: "paid", external_reference: user.id, amount_cents: 3990 },
     { secret: SECRET },
   );
-  check("PAID duplicado => 200 duplicate", dup.status === 200 && dup.json?.result?.action === "duplicate", JSON.stringify(dup.json?.result));
+  check(
+    "PAID duplicado => 200 duplicate",
+    dup.status === 200 && dup.json?.result?.action === "duplicate",
+    JSON.stringify(dup.json?.result),
+  );
   const purchasesCount = await prisma.purchase.count({ where: { userId: user.id } });
-  check("nenhuma Purchase extra criada (idempotência)", purchasesCount === 1, `${purchasesCount} compras`);
+  check(
+    "nenhuma Purchase extra criada (idempotência)",
+    purchasesCount === 1,
+    `${purchasesCount} compras`,
+  );
   const afterDup = await getUser();
   check("acesso segue pago após duplicata", afterDup.plan?.slug === "ate-a-prova");
 
@@ -125,7 +142,11 @@ async function main() {
     { transaction_id: externalId, status: "refunded", external_reference: user.id },
     { secret: SECRET },
   );
-  check("REFUNDED => 200 revoked", refund.status === 200 && refund.json?.result?.action === "revoked", JSON.stringify(refund.json?.result));
+  check(
+    "REFUNDED => 200 revoked",
+    refund.status === 200 && refund.json?.result?.action === "revoked",
+    JSON.stringify(refund.json?.result),
+  );
   const afterRefund = await getUser();
   check(
     "usuário revertido para free, sem expiração",

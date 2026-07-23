@@ -8,8 +8,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { createClient } from "@/lib/supabase/server";
 import { getUserWithPlan } from "@/services/users";
 import { getEvolution, getPerformanceBySubject, getSummary } from "@/services/performance";
-import { EvolutionLineChart } from "@/features/dashboard/components/evolution-line-chart";
-import { SubjectBarChart } from "@/features/dashboard/components/subject-bar-chart";
+import { EvolutionLineChart, SubjectBarChart } from "@/features/dashboard/components/charts";
 
 export const metadata: Metadata = { title: "Dashboard" };
 

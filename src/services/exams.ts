@@ -1,4 +1,5 @@
 import { ExamStatus, ExamType, type Exam } from "@prisma/client";
+import { logEvent } from "@/lib/logger";
 import { prisma } from "@/lib/prisma";
 import { checkAccess } from "./access";
 
@@ -144,6 +145,13 @@ export async function createExam(params: {
     },
   });
 
+  logEvent("exam_created", {
+    examId: exam.id,
+    userId,
+    type,
+    questionCount: selectedIds.length,
+  });
+
   return { ok: true, examId: exam.id };
 }
 
@@ -232,6 +240,16 @@ export async function finalizeExam(examId: string): Promise<void> {
       },
     }),
   ]);
+
+  logEvent("exam_finalized", {
+    examId,
+    userId: exam.userId,
+    status: abandoned ? "ABANDONED" : "COMPLETED",
+    scoreNet: correctCount - wrongCount,
+    correctCount,
+    wrongCount,
+    blankCount,
+  });
 }
 
 export type FinishExamResult = { ok: true } | { ok: false; reason: "not_found" };

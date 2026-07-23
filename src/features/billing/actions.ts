@@ -2,6 +2,7 @@
 
 import { redirect } from "next/navigation";
 import { CHECKOUT_URL, isCheckoutConfigured } from "@/lib/billing/config";
+import { formatRetryAfter, getClientIp, rateLimit } from "@/lib/rate-limit";
 import { requireUser } from "@/services/auth-guard";
 import { getUserWithPlan } from "@/services/users";
 
@@ -13,6 +14,14 @@ import { getUserWithPlan } from "@/services/users";
  */
 export async function startCheckoutAction(): Promise<void> {
   const authUser = await requireUser();
+
+  const ip = await getClientIp();
+  const limit = rateLimit(`checkout:${ip}`, 10, 10 * 60_000);
+  if (!limit.ok) {
+    redirect(
+      `/planos?erro=checkout_indisponivel&espera=${formatRetryAfter(limit.retryAfterSeconds)}`,
+    );
+  }
 
   if (!isCheckoutConfigured()) {
     redirect("/planos?erro=checkout_indisponivel");

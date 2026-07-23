@@ -14,9 +14,9 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { isCheckoutConfigured } from "@/lib/billing/config";
-import { prisma } from "@/lib/prisma";
 import { hasPaidAccess } from "@/services/access";
 import { getAuthUser } from "@/services/auth-guard";
+import { getPlansCached } from "@/services/catalog";
 import { getUserWithPlan } from "@/services/users";
 import { startCheckoutAction } from "@/features/billing/actions";
 
@@ -45,11 +45,12 @@ export default async function PlanosPage({
   const authUser = await getAuthUser();
   if (!authUser) redirect("/login");
 
-  const [paidPlan, user, paid] = await Promise.all([
-    prisma.plan.findUnique({ where: { slug: "ate-a-prova" } }),
+  const [plans, user, paid] = await Promise.all([
+    getPlansCached(),
     getUserWithPlan(authUser.id),
     hasPaidAccess(authUser.id),
   ]);
+  const paidPlan = plans.find((plan) => plan.slug === "ate-a-prova") ?? null;
 
   const checkoutOn = isCheckoutConfigured();
 
