@@ -3,6 +3,7 @@ import "server-only";
 import { PurchaseStatus } from "@prisma/client";
 import { prisma } from "@/lib/prisma";
 import { ACCESS_EXPIRES_AT, FREE_PLAN_SLUG, PAID_PLAN_SLUG } from "@/lib/billing/config";
+import { sendPurchaseToMeta } from "@/lib/meta/capi";
 
 /** Evento de pagamento normalizado (independente do provedor). */
 export type NormalizedEvent = {
@@ -77,6 +78,16 @@ export async function processWebhookEvent(event: NormalizedEvent): Promise<Proce
       where: { id: user.id },
       data: { planId: paidPlan.id, accessExpiresAt: ACCESS_EXPIRES_AT },
     });
+
+    // Conversão server-side. Só chega aqui numa transição real para PAID —
+    // evento repetido pelo provedor sai antes, como "duplicate". O pixel do
+    // navegador manda o mesmo event_id, então o Meta deduplica.
+    await sendPurchaseToMeta({
+      eventId: event.externalId,
+      amountCents,
+      email: event.email ?? user.email,
+    });
+
     return { ok: true, action: "granted" };
   }
 

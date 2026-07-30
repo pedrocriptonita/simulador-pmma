@@ -17,6 +17,10 @@ type PurchaseTrackerProps = {
  *
  * `email` alimenta a Correspondência Avançada do Meta: o próprio pixel
  * aplica hash antes de enviar — nada em texto puro sai do navegador.
+ *
+ * `event_id` é o mesmo ID que a Conversions API manda do webhook
+ * (lib/meta/capi.ts). É por ele que o Meta deduplica: se o comprador voltar
+ * para esta tela, os dois disparos viram uma conversão só.
  */
 export function PurchaseTracker({
   transactionId,
@@ -32,6 +36,7 @@ export function PurchaseTracker({
       value,
       currency,
       transaction_id: transactionId,
+      event_id: transactionId,
       user_email: email,
     });
     sessionStorage.setItem(key, "1");
