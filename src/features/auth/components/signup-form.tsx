@@ -1,12 +1,13 @@
 "use client";
 
-import { useActionState } from "react";
+import { useActionState, useEffect } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
 import { signUp, type AuthActionState } from "@/features/auth/actions";
+import { GTM_EVENTS, pushToDataLayer } from "@/lib/gtm";
 import { AuthMessage } from "./auth-message";
 import { GoogleButton } from "./google-button";
 
@@ -14,6 +15,15 @@ const initialState: AuthActionState = {};
 
 export function SignupForm() {
   const [state, formAction, pending] = useActionState(signUp, initialState);
+
+  // Caminho com confirmação por e-mail: a sessão não é criada na hora, então
+  // o redirect com ?cadastro=sucesso (RegistrationTracker) não roda. O
+  // cadastro em si já foi concluído aqui, então disparamos o evento direto.
+  useEffect(() => {
+    if (state.success) {
+      pushToDataLayer({ event: GTM_EVENTS.registrationComplete });
+    }
+  }, [state.success]);
 
   return (
     <div className="flex flex-col gap-4">

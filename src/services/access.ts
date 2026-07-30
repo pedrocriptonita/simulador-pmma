@@ -1,3 +1,4 @@
+import { PurchaseStatus } from "@prisma/client";
 import { prisma } from "@/lib/prisma";
 
 export type AccessCheck =
@@ -71,4 +72,15 @@ export async function hasPaidAccess(userId: string): Promise<boolean> {
   if (user.role === "ADMIN") return true;
   const isPaidPlan = !!user.plan && user.plan.slug !== "free";
   return isPaidPlan && !!user.accessExpiresAt && user.accessExpiresAt >= new Date();
+}
+
+/**
+ * Última compra paga do usuário — usada na tela de sucesso do checkout
+ * para reportar valor e ID da transação ao Meta Pixel (ver PurchaseTracker).
+ */
+export async function getLatestPaidPurchase(userId: string) {
+  return prisma.purchase.findFirst({
+    where: { userId, status: PurchaseStatus.PAID },
+    orderBy: { paidAt: "desc" },
+  });
 }

@@ -4,7 +4,8 @@ import { redirect } from "next/navigation";
 import { Clock, PartyPopper } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { hasPaidAccess } from "@/services/access";
+import { PurchaseTracker } from "@/components/analytics/purchase-tracker";
+import { getLatestPaidPurchase, hasPaidAccess } from "@/services/access";
 import { getAuthUser } from "@/services/auth-guard";
 
 export const metadata: Metadata = { title: "Compra concluída" };
@@ -18,9 +19,16 @@ export default async function CheckoutSucessoPage() {
   if (!authUser) redirect("/login");
 
   const paid = await hasPaidAccess(authUser.id);
+  const purchase = paid ? await getLatestPaidPurchase(authUser.id) : null;
 
   return (
     <main className="mx-auto flex w-full max-w-xl flex-1 flex-col gap-6 px-4 py-16">
+      {purchase ? (
+        <PurchaseTracker
+          transactionId={purchase.externalId ?? purchase.id}
+          value={purchase.amountCents / 100}
+        />
+      ) : null}
       <Card>
         <CardHeader className="items-center text-center">
           {paid ? (

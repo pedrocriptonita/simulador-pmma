@@ -87,10 +87,11 @@ export async function signUp(_prev: AuthActionState, formData: FormData): Promis
     return { error: "Este e-mail já está cadastrado. Faça login." };
   }
 
-  // Confirmação de e-mail desativada: sessão criada direto
+  // Confirmação de e-mail desativada: sessão criada direto.
+  // O param dispara o CompleteRegistration no GTM (ver RegistrationTracker).
   if (data.session && data.user) {
     await ensureUser(data.user);
-    redirect("/dashboard");
+    redirect("/dashboard?cadastro=sucesso");
   }
 
   return {

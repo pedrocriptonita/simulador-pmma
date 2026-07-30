@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { redirect } from "next/navigation";
+import { Suspense } from "react";
 import { TrendingDown } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { RegistrationTracker } from "@/components/analytics/registration-tracker";
 import { createClient } from "@/lib/supabase/server";
 import { getUserWithPlan } from "@/services/users";
 import { getEvolution, getPerformanceBySubject, getSummary } from "@/services/performance";
@@ -46,6 +48,9 @@ export default async function DashboardPage() {
 
   return (
     <main className="mx-auto flex w-full max-w-4xl flex-1 flex-col gap-6 px-4 py-10">
+      <Suspense fallback={null}>
+        <RegistrationTracker />
+      </Suspense>
       <div className="flex flex-wrap items-center justify-between gap-4">
         <div>
           <h1 className="text-2xl font-bold tracking-tight">
