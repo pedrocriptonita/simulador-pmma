@@ -108,9 +108,11 @@ via `lib/gtm.ts`; o GTM escuta e dispara as tags.
       Legislação) para não repetir questão em simulados seguidos. Use o **Importar JSON**.
 - [ ] 🟡 Subir os primeiros **PDFs de resumo** em `/admin/materiais` (a biblioteca mostra
       empty state até ter conteúdo).
-- [ ] 🔴 **Alinhar o preço**: a oferta de mídia trabalha com **R$ 37** (âncora R$ 97). Conferir
-      se o seed, a `/planos` e o produto na Cakto batem — divergência confunde o comprador e
-      registra valor errado no `Purchase` do pixel.
+- [x] 🔴 **Preço definido: R$ 39,90** (âncora R$ 97). Banco, seed e `/planos` já conferem
+      (`priceCents: 3990`).
+- [ ] 🔴 Conferir se o produto **na Cakto** também está R$ 39,90 — se o payload vier sem
+      `amount`, o código usa `plan.priceCents` como fallback, e valores divergentes
+      registram compra com valor errado (e ROAS errado no Meta).
 
 ## 6. Testes manuais no ambiente publicado (antes dos ads)
 
