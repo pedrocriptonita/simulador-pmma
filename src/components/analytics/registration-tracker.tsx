@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { GTM_EVENTS, pushToDataLayer } from "@/lib/gtm";
 
@@ -14,9 +14,13 @@ export function RegistrationTracker() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const justRegistered = searchParams.get("cadastro") === "sucesso";
+  // Conversão não pode duplicar: o StrictMode (dev) roda o efeito duas vezes,
+  // e o replace da URL não chega a tempo de barrar a segunda execução.
+  const sent = useRef(false);
 
   useEffect(() => {
-    if (!justRegistered) return;
+    if (!justRegistered || sent.current) return;
+    sent.current = true;
     pushToDataLayer({ event: GTM_EVENTS.registrationComplete });
     router.replace("/dashboard");
   }, [justRegistered, router]);
