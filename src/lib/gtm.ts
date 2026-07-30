@@ -5,9 +5,12 @@ export const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID;
  * Nomes dos eventos personalizados enviados ao dataLayer. Precisam bater
  * exatamente com os acionadores de "Evento personalizado" configurados
  * no container do GTM para disparar as tags do Meta Pixel.
+ *
+ * O PageView de navegação SPA NÃO está aqui de propósito: quem cuida dele
+ * é o próprio Meta Pixel (History Event Tracking do template), senão o
+ * evento dispara duas vezes por navegação.
  */
 export const GTM_EVENTS = {
-  pageView: "page_view",
   registrationComplete: "cadastro_completo",
   purchase: "compra_concluida",
 } as const;

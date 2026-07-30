@@ -23,10 +23,11 @@ export default async function CheckoutSucessoPage() {
 
   return (
     <main className="mx-auto flex w-full max-w-xl flex-1 flex-col gap-6 px-4 py-16">
-      {purchase ? (
+      {purchase && authUser.email ? (
         <PurchaseTracker
           transactionId={purchase.externalId ?? purchase.id}
           value={purchase.amountCents / 100}
+          email={authUser.email}
         />
       ) : null}
       <Card>

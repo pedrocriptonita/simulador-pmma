@@ -9,8 +9,11 @@ import { GTM_EVENTS, pushToDataLayer } from "@/lib/gtm";
  * dashboard vindo do cadastro com sessão criada na hora (signUp em
  * features/auth/actions.ts redireciona para /dashboard?cadastro=sucesso).
  * Limpa o parâmetro da URL depois, para não disparar de novo em um refresh.
+ *
+ * `email` alimenta a Correspondência Avançada do Meta: o próprio pixel
+ * aplica hash antes de enviar — nada em texto puro sai do navegador.
  */
-export function RegistrationTracker() {
+export function RegistrationTracker({ email }: { email: string }) {
   const searchParams = useSearchParams();
   const router = useRouter();
   const justRegistered = searchParams.get("cadastro") === "sucesso";
@@ -21,9 +24,9 @@ export function RegistrationTracker() {
   useEffect(() => {
     if (!justRegistered || sent.current) return;
     sent.current = true;
-    pushToDataLayer({ event: GTM_EVENTS.registrationComplete });
+    pushToDataLayer({ event: GTM_EVENTS.registrationComplete, user_email: email });
     router.replace("/dashboard");
-  }, [justRegistered, router]);
+  }, [justRegistered, router, email]);
 
   return null;
 }
