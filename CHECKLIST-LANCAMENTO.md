@@ -84,8 +84,12 @@ via `lib/gtm.ts`; o GTM escuta e dispara as tags.
 - [x] 🟡 Domínio `barvoxdigital.com.br` verificado no Meta (registro TXT no Registro.br).
       **Não remova esse TXT** — o Meta revalida periodicamente. Verificar o domínio raiz
       cobre todos os subdomínios, inclusive projetos futuros da agência.
-- [ ] 🔴 **AEM** (Eventos Agregados), prioridade: `Purchase` → `CompleteRegistration` →
-      `PageView`. Define o que o Meta contabiliza em iOS sem consentimento de rastreio.
+- [~] 🟢 **AEM** (Eventos Agregados) — a tela de configuração manual **não existe** nesta
+      conta (30/07/2026); o Meta passou a gerenciar a priorização automaticamente em parte
+      das contas. Se reaparecer, a ordem desejada é `Purchase` → `CompleteRegistration` →
+      `PageView`. Afeta só atribuição de iOS sem consentimento — não bloqueia campanha.
+      ⚠️ Se for configurar depois, cada alteração congela a otimização por 72h: mexer com
+      campanha no ar dói, mexer sem campanha rodando é de graça.
 - [ ] 🔴 **Criar os 3 públicos** de remarketing **antes** de ligar os anúncios (eles só
       acumulam gente a partir da criação):
       quente (visitou 30d, não cadastrou) · morno (cadastrou, não comprou) ·
