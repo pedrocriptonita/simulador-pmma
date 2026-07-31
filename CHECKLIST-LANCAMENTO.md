@@ -70,7 +70,13 @@ via `lib/gtm.ts`; o GTM escuta e dispara as tags.
 | `compra_concluida`  | Purchase          | `/planos/sucesso` (com valor real)  |
 
 - [x] 🔴 Container GTM (`GTM-TCFLFMMH`) instalado e **publicado**, com as 3 tags.
-- [x] 🔴 Meta Pixel `1081791014277389` configurado nas 3 tags.
+- [ ] 🔴 Meta Pixel **`1535969941543053`** ("Simulador PMMA 26") nas 3 tags do GTM e na
+      `META_PIXEL_ID` da Vercel.
+      ⚠️ O pixel original (`1081791014277389`) foi criado **fora** do portfólio Barvox
+      Digital. Consequência: não dava para gerar token da CAPI nem configurar o AEM,
+      porque o domínio verificado está no portfólio e o pixel não. Regra para os próximos
+      projetos: **crie o pixel dentro do portfólio** e atribua controle total a si mesmo
+      logo na criação.
 - [x] 🔴 `Purchase` mapeando `value` / `currency` / `transaction_id` via variáveis de camada
       de dados. O valor vem do banco (`purchase.amountCents`), não de um número fixo.
 - [x] 🔴 Correspondência Avançada: `user_email` no dataLayer + ativado nas tags de conversão.
