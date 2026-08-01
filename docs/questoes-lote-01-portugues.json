@@ -1,0 +1,191 @@
+[
+  {
+    "materia": "lingua-portuguesa",
+    "enunciado": "As palavras \"amazônico\" e \"viúva\" acentuam-se de acordo com a mesma regra de acentuação gráfica.",
+    "gabarito": "ERRADO",
+    "explicacao": "São regras diferentes. \"Amazônico\" é proparoxítona (todas são acentuadas). \"Viúva\" recebe acento porque o \"u\" tônico forma hiato com a vogal anterior (vi-ú-va).",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "lingua-portuguesa",
+    "enunciado": "Nas palavras \"fitoterápico\", \"líquido\" e \"álcool\", foi empregada a mesma regra de acentuação gráfica.",
+    "gabarito": "CERTO",
+    "explicacao": "As três são proparoxítonas (fi-to-te-RÁ-pi-co, LÍ-qui-do, ÁL-co-ol) e toda proparoxítona é acentuada.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "lingua-portuguesa",
+    "enunciado": "O emprego do acento agudo nos vocábulos país e aí justifica-se pela mesma regra de acentuação gráfica.",
+    "gabarito": "CERTO",
+    "explicacao": "Nos dois casos o \"i\" é tônico e forma hiato com a vogal anterior (pa-ís, a-í), o que exige o acento.",
+    "dificuldade": "FACIL"
+  },
+  {
+    "materia": "lingua-portuguesa",
+    "enunciado": "As palavras \"estágio\", \"diária\" e \"após\" são graficamente acentuadas devido à mesma regra.",
+    "gabarito": "ERRADO",
+    "explicacao": "\"Estágio\" e \"diária\" são paroxítonas terminadas em ditongo. \"Após\" é oxítona terminada em -os. São regras distintas.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "lingua-portuguesa",
+    "enunciado": "O plural de \"detém\" grafa-se detem.",
+    "gabarito": "ERRADO",
+    "explicacao": "O plural é \"detêm\", com acento circunflexo. O circunflexo no plural marca a distinção entre ele detém e eles detêm.",
+    "dificuldade": "FACIL"
+  },
+  {
+    "materia": "lingua-portuguesa",
+    "enunciado": "As palavras \"líderes\", \"empréstimo\", \"econômico\" e \"públicas\" recebem acento gráfico com base na mesma justificativa gramatical.",
+    "gabarito": "CERTO",
+    "explicacao": "Todas são proparoxítonas, e toda proparoxítona é acentuada — sem exceção.",
+    "dificuldade": "FACIL"
+  },
+  {
+    "materia": "lingua-portuguesa",
+    "enunciado": "As palavras \"inúmeras\", \"críticas\" e \"científica\" acentuam-se graficamente porque são paroxítonas terminadas em a, seguidas ou não de s.",
+    "gabarito": "ERRADO",
+    "explicacao": "A justificativa está errada: as três são proparoxítonas, não paroxítonas. Além disso, paroxítona terminada em -a não é acentuada (casa, mesa).",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "lingua-portuguesa",
+    "enunciado": "A palavra \"ciência\" é acentuada pelo mesmo motivo que a palavra \"perícias\".",
+    "gabarito": "CERTO",
+    "explicacao": "Ambas são paroxítonas terminadas em ditongo (ci-ÊN-cia, pe-RÍ-cias), caso que exige acento.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "lingua-portuguesa",
+    "enunciado": "As palavras \"Tamuataí\", \"Uruará\" e \"Guajará\" são acentuadas de acordo com a mesma regra de acentuação gráfica.",
+    "gabarito": "ERRADO",
+    "explicacao": "\"Tamuataí\" leva acento pelo \"i\" tônico em hiato. \"Uruará\" e \"Guajará\" são oxítonas terminadas em -a. São regras diferentes.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "lingua-portuguesa",
+    "enunciado": "As palavras \"público\", \"créditos\", \"dióxido\" e \"domésticas\" exigem acento gráfico com base na mesma regra gramatical.",
+    "gabarito": "CERTO",
+    "explicacao": "Todas são proparoxítonas, e proparoxítona é sempre acentuada.",
+    "dificuldade": "FACIL"
+  },
+  {
+    "materia": "lingua-portuguesa",
+    "enunciado": "Os vocábulos a seguir são acentuados porque são palavras proparoxítonas: \"números\", \"créditos\", \"públicas\", \"elétrica\" e \"técnica\".",
+    "gabarito": "CERTO",
+    "explicacao": "Confirma-se a classificação: NÚ-me-ros, CRÉ-di-tos, PÚ-bli-cas, e-LÉ-tri-ca, TÉC-ni-ca — todas com tônica na antepenúltima sílaba.",
+    "dificuldade": "FACIL"
+  },
+  {
+    "materia": "lingua-portuguesa",
+    "enunciado": "Diferentes regras de acentuação justificam o emprego de acento gráfico em \"princípios\" e \"fenômenos\".",
+    "gabarito": "CERTO",
+    "explicacao": "\"Princípios\" é paroxítona terminada em ditongo; \"fenômenos\" é proparoxítona. As regras são, de fato, diferentes.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "lingua-portuguesa",
+    "enunciado": "As palavras \"última\", \"década\" e \"islâmica\" recebem acento gráfico com base em regras gramaticais diferentes.",
+    "gabarito": "ERRADO",
+    "explicacao": "As três são proparoxítonas, ou seja, seguem a mesma regra. O item afirma o contrário.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "lingua-portuguesa",
+    "enunciado": "Nas palavras \"histórico\", \"pedagógica\" e \"didático\", foi empregada a mesma regra de acentuação gráfica.",
+    "gabarito": "CERTO",
+    "explicacao": "As três são proparoxítonas e, por isso, acentuadas pela mesma regra.",
+    "dificuldade": "FACIL"
+  },
+  {
+    "materia": "lingua-portuguesa",
+    "enunciado": "Os termos \"competência\", \"círculo\", \"mínimo\" e \"máximo\" acentuam-se graficamente porque terminam em vogal átona.",
+    "gabarito": "ERRADO",
+    "explicacao": "A justificativa é falsa. \"Círculo\", \"mínimo\" e \"máximo\" são proparoxítonas; \"competência\" é paroxítona terminada em ditongo. Terminar em vogal átona não é o critério.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "lingua-portuguesa",
+    "enunciado": "As palavras \"único\", \"críticas\" e \"público\" recebem acento gráfico porque têm sílaba tônica na antepenúltima sílaba.",
+    "gabarito": "CERTO",
+    "explicacao": "Tônica na antepenúltima sílaba é a definição de proparoxítona — e toda proparoxítona é acentuada.",
+    "dificuldade": "FACIL"
+  },
+  {
+    "materia": "lingua-portuguesa",
+    "enunciado": "Nas palavras \"referência\" e \"espécie\", o emprego do acento atende à mesma regra de acentuação gráfica.",
+    "gabarito": "CERTO",
+    "explicacao": "As duas são paroxítonas terminadas em ditongo crescente (-ia, -ie), caso previsto na mesma regra.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "lingua-portuguesa",
+    "enunciado": "As palavras \"pública\" e \"órgãos\" são acentuadas de acordo com a mesma regra de acentuação gráfica.",
+    "gabarito": "ERRADO",
+    "explicacao": "\"Pública\" é proparoxítona. \"Órgãos\" é paroxítona terminada em ditongo. Regras distintas.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "lingua-portuguesa",
+    "enunciado": "As palavras \"política\", \"América\" e \"intérpretes\" são acentuadas de acordo com a mesma regra de acentuação.",
+    "gabarito": "CERTO",
+    "explicacao": "As três são proparoxítonas: po-LÍ-ti-ca, a-MÉ-ri-ca, in-TÉR-pre-tes.",
+    "dificuldade": "FACIL"
+  },
+  {
+    "materia": "lingua-portuguesa",
+    "enunciado": "No sentido de fazer ou realizar algo, o verbo proceder admite dois empregos, de acordo com a norma culta: \"proceder a busca\" e \"proceder à busca\", sem alteração de sentido.",
+    "gabarito": "ERRADO",
+    "explicacao": "No sentido de realizar, proceder é transitivo indireto e exige a preposição \"a\". Diante do substantivo feminino determinado ocorre crase: proceder à busca. A forma sem crase está incorreta.",
+    "dificuldade": "DIFICIL"
+  },
+  {
+    "materia": "lingua-portuguesa",
+    "enunciado": "Tal como o substantivo \"objeção\", o verbo objetar exige complemento introduzido pela preposição de, como, por exemplo, na seguinte frase: Os críticos objetaram de que a definição de democracia processual é indiferente aos valores.",
+    "gabarito": "ERRADO",
+    "explicacao": "Objetar não rege a preposição \"de\" antes da oração. O correto é \"objetaram que\". O uso de \"de que\" aqui configura o desvio conhecido como dequeísmo.",
+    "dificuldade": "DIFICIL"
+  },
+  {
+    "materia": "lingua-portuguesa",
+    "enunciado": "Com a mesma correção gramatical de \"Se nos dedicarmos\", estão conjugados os verbos ver, em Se vermos uma estrela cadente, faremos um pedido, e pôr, em Se pusermos a mão no fogo, nos queimaremos.",
+    "gabarito": "ERRADO",
+    "explicacao": "\"Pusermos\" está correto, mas \"vermos\" não. O futuro do subjuntivo de ver é \"virmos\" (se nós virmos). \"Vermos\" é infinitivo pessoal, que não cabe após \"se\" condicional.",
+    "dificuldade": "DIFICIL"
+  },
+  {
+    "materia": "lingua-portuguesa",
+    "enunciado": "Grafam-se como \"discuti-lo\" as seguintes formas pronominais de verbos da terceira conjugação: persegui-lo, instrui-lo, destrui-lo.",
+    "gabarito": "ERRADO",
+    "explicacao": "As formas corretas são instruí-lo e destruí-lo, com acento agudo no \"i\" tônico em hiato. Apenas \"persegui-lo\" segue o modelo de \"discuti-lo\".",
+    "dificuldade": "DIFICIL"
+  },
+  {
+    "materia": "lingua-portuguesa",
+    "enunciado": "Na oração \"Segue anexa a nota editorial\", foi atendida regra de concordância nominal, visto que o adjetivo \"anexa\" está no feminino para concordar com a expressão \"a nota editorial\", que exerce a função de sujeito da oração.",
+    "gabarito": "CERTO",
+    "explicacao": "\"Anexo\" é adjetivo e concorda em gênero e número com o substantivo a que se refere. Como o sujeito é \"a nota editorial\", a forma correta é \"anexa\".",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "lingua-portuguesa",
+    "enunciado": "Em vez de \"Não fui eu quem disse isso\", estaria igualmente correto escrever Não fui eu aquele que disse isso.",
+    "gabarito": "CERTO",
+    "explicacao": "As duas construções são aceitas pela norma culta. Com \"quem\", o verbo pode concordar com o pronome ou com o antecedente; com \"aquele que\", a concordância se dá com o antecedente.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "lingua-portuguesa",
+    "enunciado": "A correção gramatical da oração será mantida se, no trecho \"Não há cânulas nem agulhas\", a forma verbal \"há\" for substituída pela forma verbal existe.",
+    "gabarito": "ERRADO",
+    "explicacao": "Haver no sentido de existir é impessoal e fica no singular, mas existir é verbo pessoal e concorda com o sujeito. O correto seria \"não existem cânulas nem agulhas\".",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "lingua-portuguesa",
+    "enunciado": "A oração \"Trata-se de um procedimento invasivo\" permanece sintaticamente correta se reescrita da seguinte forma: Tratam-se de procedimentos invasivos.",
+    "gabarito": "ERRADO",
+    "explicacao": "Em \"tratar-se de\", o \"se\" é índice de indeterminação do sujeito e o verbo fica obrigatoriamente no singular: trata-se de procedimentos invasivos.",
+    "dificuldade": "DIFICIL"
+  }
+]

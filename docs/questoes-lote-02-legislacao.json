@@ -1,0 +1,86 @@
+[
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "A hierarquia e o comando são as bases institucionais da Polícia Militar, sendo que a autoridade e a responsabilidade crescem com o grau hierárquico.",
+    "gabarito": "ERRADO",
+    "explicacao": "O art. 17 do Estatuto (Lei nº 6.513/95) estabelece que as bases institucionais da Polícia Militar são a hierarquia e a DISCIPLINA — não o comando. A segunda parte do item está correta, mas a troca de \"disciplina\" por \"comando\" torna o item errado.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "Posto é o grau hierárquico do oficial, conferido por decreto do Governador do Estado e confirmado em Carta Patente.",
+    "gabarito": "CERTO",
+    "explicacao": "É a definição literal do Estatuto: o posto é o grau hierárquico do oficial, conferido por decreto do Governador do Estado e confirmado em Carta Patente.",
+    "dificuldade": "FACIL"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "Graduação exprime o grau hierárquico da praça, conferido pelo Comandante-Geral da corporação, enquanto posto é o grau hierárquico do oficial, conferido por ato do Governador do Maranhão e confirmado em Carta Patente.",
+    "gabarito": "CERTO",
+    "explicacao": "O item reproduz corretamente a distinção do Estatuto: graduação é da praça e vem de ato do Comandante-Geral; posto é do oficial e vem de decreto do Governador, confirmado em Carta Patente.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "Os alunos do Curso de Formação de Sargentos são denominados praças especiais.",
+    "gabarito": "ERRADO",
+    "explicacao": "São praças especiais os Aspirantes-a-Oficial e os Cadetes. Os alunos do Curso de Formação de Sargentos não integram essa categoria.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "O Subtenente PM é hierarquicamente superior ao Aspirante-a-Oficial.",
+    "gabarito": "ERRADO",
+    "explicacao": "O Aspirante-a-Oficial é praça especial e tem precedência hierárquica sobre o Subtenente, que é praça. A relação afirmada no item está invertida.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "O Subtenente PM é hierarquicamente superior ao Cadete.",
+    "gabarito": "ERRADO",
+    "explicacao": "O Cadete é praça especial e tem precedência sobre o Subtenente. A hierarquia coloca as praças especiais acima das demais praças.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "Um Sargento PM e seu pai, Subtenente PM, frequentam o mesmo círculo hierárquico: o Círculo de Subtenentes e Sargentos.",
+    "gabarito": "CERTO",
+    "explicacao": "O Estatuto reúne subtenentes e sargentos em um mesmo círculo hierárquico. O parentesco é irrelevante: o círculo é definido pelo grau hierárquico.",
+    "dificuldade": "FACIL"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "A mera subordinação decorrente da estrutura hierarquizada da Polícia Militar não pode servir de motivo para alegação de ofensa à dignidade da pessoa do subordinado, por não afetá-la de modo algum.",
+    "gabarito": "CERTO",
+    "explicacao": "O Estatuto é expresso ao afirmar que a subordinação não afeta de modo algum a dignidade pessoal do policial-militar. Hierarquia e dignidade convivem sem conflito.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "O policial militar que cumpre uma ordem não pode se eximir da responsabilidade das omissões, erros e excessos que cometer, devendo ainda assumir integralmente a responsabilidade pelas decisões que tomar, pelas ordens que emitir e pelos atos que praticar.",
+    "gabarito": "CERTO",
+    "explicacao": "É a redação do Estatuto sobre responsabilidade. Cumprir ordem não afasta a responsabilidade por excessos, erros e omissões cometidos na execução.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "O policial militar, enquanto em atividade, não pode estar filiado a partido político.",
+    "gabarito": "CERTO",
+    "explicacao": "A vedação decorre da Constituição Federal, aplicável aos militares estaduais: enquanto em serviço ativo, o militar não pode estar filiado a partido político.",
+    "dificuldade": "FACIL"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "O oficial da PM poderá se sindicalizar, no entanto, não poderá fazer greve.",
+    "gabarito": "ERRADO",
+    "explicacao": "A Constituição proíbe aos militares TANTO a sindicalização QUANTO a greve. O item acerta a greve, mas erra ao admitir a sindicalização.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "São alistáveis como eleitores todos os policiais-militares, exceto os soldados.",
+    "gabarito": "ERRADO",
+    "explicacao": "Os policiais-militares são alistáveis como eleitores, incluindo os soldados de carreira. A inelegibilidade e a vedação de alistamento alcançam os conscritos durante o serviço militar obrigatório, situação diversa da do soldado PM.",
+    "dificuldade": "MEDIO"
+  }
+]

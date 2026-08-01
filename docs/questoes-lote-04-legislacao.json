@@ -1,0 +1,716 @@
+[
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "Militares de carreira são os que, no desempenho voluntário e permanente do serviço policial-militar, têm estabilidade assegurada ou presumida.",
+    "gabarito": "CERTO",
+    "explicacao": "Reprodução literal do art. 2º, § 3º, da Lei nº 6.513/95.",
+    "dificuldade": "FACIL"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "João Souza, brasileiro, 26 anos de idade, resolveu prestar concurso público para Soldado da PM. No entanto, o fato de ser casado e ter dois filhos inviabilizará a realização do seu sonho, já que um dos requisitos para o concurso de soldado PM é ser solteiro.",
+    "gabarito": "ERRADO",
+    "explicacao": "O inciso II do art. 9º, que exigia ser solteiro, foi REVOGADO pela Lei nº 8.362/2005. Estado civil não é mais requisito para o ingresso.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "O ingresso no Quadro de Oficiais de Saúde (QOS) será mediante aprovação em concurso público e nos exames médico, físico e psicotécnico. Aprovados em todos os exames, os candidatos serão submetidos a estágio não inferior a 90 dias, findo o qual serão nomeados no posto de Capitão.",
+    "gabarito": "ERRADO",
+    "explicacao": "O art. 13, § 2º, prevê nomeação no posto de 1º TENENTE PM (Médico, Dentista, Veterinário ou Psicólogo), e não de Capitão. O estágio de 90 dias está correto.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "A disciplina e o respeito à hierarquia devem ser mantidos em todas as circunstâncias entre militares da ativa e da reserva remunerada, ficando apenas os reformados isentos de tal obrigação.",
+    "gabarito": "ERRADO",
+    "explicacao": "O art. 17, § 3º, alcança expressamente os militares da ativa, da reserva remunerada E os reformados. Não há isenção para os reformados.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "João Martins é aluno do Curso de Formação de Soldados. Nesse caso, poderá, excepcionalmente ou em reuniões sociais, ter acesso ao Círculo de Subtenentes e Sargentos.",
+    "gabarito": "ERRADO",
+    "explicacao": "Pelo quadro do art. 19, quem tem acesso excepcional ao Círculo de Subtenentes e Sargentos são os alunos do Curso de Formação de SARGENTOS. Os alunos do Curso de Formação de Cabos e Soldados frequentam o Círculo de Cabos e Soldados.",
+    "dificuldade": "DIFICIL"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "Júlia Martins concluiu com êxito o Curso de Formação de Soldados e então lhe foi conferida a graduação por ato do Comandante-Geral da Polícia Militar.",
+    "gabarito": "CERTO",
+    "explicacao": "Art. 19, § 2º: graduação é o grau hierárquico da praça, conferido por ato do Comandante-Geral da Polícia Militar.",
+    "dificuldade": "FACIL"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "Em igualdade de posto ou graduação, a precedência entre militares da ativa e os da reserva remunerada, quando convocados, é definida pelo tempo de serviço no posto ou graduação.",
+    "gabarito": "CERTO",
+    "explicacao": "Art. 21, § 4º. Não confundir com o § 3º, que trata da precedência dos militares da ativa sobre os da inatividade em geral.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "Os Cadetes são declarados Aspirantes-a-Oficial pelo Governador do Estado do Maranhão, observadas as disposições legais.",
+    "gabarito": "ERRADO",
+    "explicacao": "Art. 24: a declaração de Aspirante-a-Oficial é feita pelo COMANDANTE-GERAL da Polícia Militar do Maranhão. Ao Governador cabe conferir o posto, por decreto (art. 19, § 1º).",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "Cargo policial-militar é o exercício das atividades e obrigações inerentes à função policial-militar.",
+    "gabarito": "ERRADO",
+    "explicacao": "Os conceitos estão invertidos. Pelo art. 28, é a FUNÇÃO policial-militar que consiste no exercício das atividades inerentes ao CARGO. Cargo, pelo art. 25, é aquele criado por lei.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "O Comandante-Geral da Polícia Militar será nomeado pelo Governador do Estado, escolhido dentre oficiais da ativa do último ou penúltimo posto do Quadro de Combatentes.",
+    "gabarito": "ERRADO",
+    "explicacao": "O art. 31 admite a escolha apenas entre oficiais da ativa do ÚLTIMO posto do Quadro de Combatentes, ou seja, Coronéis. A inclusão do penúltimo posto torna o item errado.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "O servidor militar poderá encontrar-se, em relação ao cargo, nas situações de efetivo e interino. Efetivo é a situação do militar nomeado ou designado para exercer um cargo quando satisfaz aos requisitos do grau hierárquico, do quadro e da especialização.",
+    "gabarito": "CERTO",
+    "explicacao": "Art. 33, inciso I. O interino, por oposição (inciso II), é o que desempenha as obrigações do cargo SEM satisfazer esses requisitos.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "O servidor militar poderá encontrar-se, em relação ao cargo, nas situações de efetivo e interino. Interino é a situação do militar nomeado ou designado para exercer um cargo quando satisfaz aos requisitos do grau hierárquico, do quadro e da especialização.",
+    "gabarito": "ERRADO",
+    "explicacao": "A definição transcrita é a de EFETIVO (art. 33, I). Interino, pelo inciso II, é justamente quem desempenha as obrigações do cargo sem satisfazer esses requisitos.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "Na falta de militar qualificado para determinada função, poderá ser designado para o exercício dela outro militar de posto ou graduação inferior, obedecida a precedência hierárquica.",
+    "gabarito": "CERTO",
+    "explicacao": "Art. 34, reproduzido literalmente.",
+    "dificuldade": "FACIL"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "O Sargento PM Almeida está atuando como instrutor de tiro na Escola de Cadetes do Exército; logo, deverá ser considerado no exercício de função policial-militar.",
+    "gabarito": "CERTO",
+    "explicacao": "Art. 35, II: são considerados no exercício de função policial-militar os instrutores ou alunos de estabelecimento de ensino das Forças Armadas ou de outras corporações militares, no País ou no exterior.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "É vedado ao militar estadual da ativa desenvolver atividade comercial, tomar parte na administração ou gerência de sociedade ou dela ser sócio, exceto na situação em que ele seja acionista ou cotista em sociedade anônima ou por quotas de responsabilidade limitada.",
+    "gabarito": "CERTO",
+    "explicacao": "Art. 41, que veda o comércio e a gerência, ressalvando expressamente a posição de acionista ou quotista em S.A. ou sociedade limitada.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "O policial militar em atividade pode exercer diretamente a gestão de seus bens, participando de uma sociedade por cotas de responsabilidade limitada.",
+    "gabarito": "CERTO",
+    "explicacao": "O art. 41, § 2º, autoriza o militar da ativa a gerir diretamente seus bens, e o caput ressalva a participação como quotista em sociedade por quotas de responsabilidade limitada.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "No intuito de desenvolver a prática profissional dos integrantes do Quadro de Saúde, é lhes permitido o exercício da atividade técnico-profissional no meio civil, desde que tal prática não prejudique o serviço.",
+    "gabarito": "CERTO",
+    "explicacao": "Art. 41, § 3º. É exceção expressa à vedação geral de atividade paralela imposta ao militar da ativa.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "O Comando é a soma de autoridade, deveres e responsabilidades de que o militar é investido legalmente quando conduz homens ou dirige uma Organização Policial-Militar. O Comando é vinculado ao grau hierárquico e constitui uma prerrogativa impessoal, em cujo exercício o policial-militar se define e se caracteriza como chefe.",
+    "gabarito": "CERTO",
+    "explicacao": "Art. 48, reproduzido literalmente.",
+    "dificuldade": "FACIL"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "No PMMA, as responsabilidades dos cabos e dos soldados concernem essencialmente às atividades de execução, ao passo que as responsabilidades dos oficiais referem-se ao comando, à chefia e à direção das organizações militares.",
+    "gabarito": "CERTO",
+    "explicacao": "Combinação dos arts. 50 (oficial preparado para o comando, a chefia e a direção) e 52 (cabos e soldados são essencialmente os elementos de execução).",
+    "dificuldade": "FACIL"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "A violação dos preceitos da ética policial-militar é tão mais grave quanto menos elevado for o grau hierárquico de quem a cometer.",
+    "gabarito": "ERRADO",
+    "explicacao": "Art. 55, § 1º: é tão mais grave quanto MAIS elevado for o grau hierárquico. A lógica é a inversa da afirmada — de quem tem mais autoridade se exige mais.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "No concurso de crime militar e de transgressão disciplinar será aplicada somente a pena relativa ao crime.",
+    "gabarito": "CERTO",
+    "explicacao": "Art. 55, § 2º, reproduzido literalmente.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "Enquanto o estado do Maranhão não dispuser de Tribunal Militar, a Auditoria da Justiça Militar Estadual é o órgão competente para processar e julgar os militares estaduais nos crimes definidos em lei como militares, tendo o Tribunal Regional Federal como órgão para julgar em segunda instância.",
+    "gabarito": "ERRADO",
+    "explicacao": "Art. 58: a segunda instância é o TRIBUNAL DE JUSTIÇA DO ESTADO, e não o Tribunal Regional Federal. A primeira parte do item está correta.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "O Estatuto dos Policiais-Militares da Polícia Militar do Maranhão (Lei nº 6.513/1995) especifica as transgressões disciplinares e estabelece as normas relativas à amplitude e à aplicação das penas disciplinares e à classificação do comportamento dos policiais-militares.",
+    "gabarito": "ERRADO",
+    "explicacao": "Art. 59: quem especifica as transgressões e disciplina as penas é o REGULAMENTO DISCIPLINAR da Polícia Militar, não o Estatuto. O Estatuto apenas remete a ele.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "As penas disciplinares de detenção ou prisão não podem ultrapassar trinta dias.",
+    "gabarito": "CERTO",
+    "explicacao": "Art. 59, § 1º, reproduzido literalmente.",
+    "dificuldade": "FACIL"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "Será submetido a Conselho de Justificação, na forma da legislação específica e peculiar, o capitão PM presumivelmente incapaz de permanecer como policial-militar da ativa.",
+    "gabarito": "CERTO",
+    "explicacao": "Art. 60: o OFICIAL presumivelmente incapaz vai a Conselho de Justificação. Capitão é oficial. Já o Aspirante-a-Oficial e as praças com estabilidade vão a Conselho de Disciplina (art. 61).",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "Compete ao Tribunal de Justiça do Estado julgar os processos oriundos dos Conselhos de Justificação, na forma da lei peculiar.",
+    "gabarito": "CERTO",
+    "explicacao": "Art. 60, § 2º. Atenção ao contraste: os Conselhos de DISCIPLINA são julgados em última instância pelo Conselho Superior de Polícia (art. 61, § 2º).",
+    "dificuldade": "DIFICIL"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "Compete ao Tribunal de Justiça do Estado julgar, em última instância, os processos oriundos dos Conselhos de Disciplina convocados no âmbito da Corporação.",
+    "gabarito": "ERRADO",
+    "explicacao": "Art. 61, § 2º: quem julga em última instância os Conselhos de DISCIPLINA é o Conselho Superior de Polícia. Ao Tribunal de Justiça compete julgar os Conselhos de JUSTIFICAÇÃO (art. 60, § 2º).",
+    "dificuldade": "DIFICIL"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "O Aspirante-a-Oficial PM, bem como as praças com estabilidade assegurada, presumivelmente incapazes de permanecerem como policiais-militares da ativa, serão submetidos a Conselho de Disciplina, na forma da legislação específica e peculiar.",
+    "gabarito": "CERTO",
+    "explicacao": "Art. 61, reproduzido literalmente.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "A praça na reserva remunerada pode ser submetida a Conselho de Disciplina.",
+    "gabarito": "CERTO",
+    "explicacao": "Art. 61, § 3º: o Conselho de Disciplina também poderá ser aplicado às praças da reserva remunerada e aos reformados.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "É considerado direito dos policiais-militares, entre outros, os proventos calculados com base no soldo integral do posto ou graduação que possuir quando da transferência para a inatividade remunerada, se contar com 30 anos de contribuição, se do sexo masculino, e 25 anos de contribuição, se do sexo feminino.",
+    "gabarito": "CERTO",
+    "explicacao": "Art. 62, II, com a redação dada pela Lei nº 8.080/2004.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "Praça adquire estabilidade com, no mínimo, três anos de tempo de efetivo serviço.",
+    "gabarito": "ERRADO",
+    "explicacao": "Art. 62, III, alínea 'a': a estabilidade da praça exige 10 (dez) anos de efetivo serviço, conforme redação da Lei nº 8.080/2004.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "É considerado direito dos policiais-militares a estabilidade, quando praças, com 10 anos de efetivo serviço.",
+    "gabarito": "CERTO",
+    "explicacao": "Art. 62, III, alínea 'a'.",
+    "dificuldade": "FACIL"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "A transferência voluntária para a reserva remunerada aos 30 anos de serviço, se do sexo masculino, e aos 25 anos, se do sexo feminino, é um direito assegurado ao policial militar do Maranhão.",
+    "gabarito": "CERTO",
+    "explicacao": "Art. 62, III, alínea 'h', combinado com o art. 119.",
+    "dificuldade": "FACIL"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "O porte de arma pelas praças será concedido observando-se as restrições impostas pelas normas do Comando-Geral da Polícia Militar.",
+    "gabarito": "CERTO",
+    "explicacao": "Art. 62, III, alínea 'm'. Para os oficiais, a regra é a alínea 'l', com ressalvas específicas.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "Augusto é tenente da PMMA e está na inatividade há mais de dois anos, tendo se destacado como instrutor de tiro. Nessa situação, ao entrar na inatividade, Augusto perdeu automaticamente o porte de arma.",
+    "gabarito": "ERRADO",
+    "explicacao": "Art. 62, III, alínea 'l': o porte de arma é direito do oficial, e as únicas exceções são o reformado por alienação mental, o condenado por crime contra a Segurança Nacional ou o que exerça atividade que desaconselhe o porte. Não há perda automática pela inatividade.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "O servidor militar que se julgar prejudicado ou ofendido por qualquer ato administrativo ou disciplinar de superior hierárquico poderá recorrer ou interpor pedido de reconsideração, queixa ou representação, segundo a legislação vigente na Corporação. O pedido de reconsideração, a queixa e a representação podem ser feitos coletivamente.",
+    "gabarito": "ERRADO",
+    "explicacao": "Art. 63, § 2º: o pedido de reconsideração, a queixa e a representação NÃO podem ser feitos coletivamente. A primeira parte do item está correta.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "Um policial militar sentiu-se prejudicado por designação do Comandante-Geral e ingressou diretamente com ação judicial. Nessa situação, ele violou o Estatuto da PMMA, que exige, antes do ingresso no Poder Judiciário, o esgotamento dos recursos na esfera administrativa.",
+    "gabarito": "ERRADO",
+    "explicacao": "Art. 63, § 3º: o militar da ativa que se dirigir ao Poder Judiciário deve apenas COMUNICAR antecipadamente a iniciativa à autoridade a que estiver subordinado. Não há exigência de esgotamento da via administrativa — o que, aliás, violaria a inafastabilidade da jurisdição.",
+    "dificuldade": "DIFICIL"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "São alistáveis como eleitores todos os policiais-militares.",
+    "gabarito": "CERTO",
+    "explicacao": "Art. 64, caput. O § 2º acrescenta que o militar em atividade não pode ser filiado a partido político, e o § 3º proíbe sindicalização e greve — mas o alistamento eleitoral é assegurado.",
+    "dificuldade": "FACIL"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "Além do subsídio, os policiais militares têm direito a diversas verbas indenizatórias, entre as quais as diárias e a ajuda de curso.",
+    "gabarito": "CERTO",
+    "explicacao": "Art. 69, incisos I e III, que preveem diárias, ajuda de custo, ajuda de curso, salário-família, fardamento e adicional de férias.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "O acesso à hierarquia militar é seletivo, gradual e sucessivo, e será feito mediante promoções. O planejamento da carreira dos oficiais e das praças é atribuição do Governador do Estado.",
+    "gabarito": "ERRADO",
+    "explicacao": "Art. 77, § 1º: o planejamento da carreira é atribuição do COMANDO-GERAL da Polícia Militar. A primeira parte do item está correta.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "As promoções serão efetuadas pelos critérios de antiguidade, merecimento, tempo de serviço, por bravura e post mortem, mediante ato do Governador do Estado tanto para oficiais quanto para praças.",
+    "gabarito": "ERRADO",
+    "explicacao": "Art. 78: o ato é do Governador do Estado apenas para os OFICIAIS. Para as praças, a promoção é feita por ato do Gerente de Estado de Segurança Pública.",
+    "dificuldade": "DIFICIL"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "O policial-militar, por ocasião de sua transferência para a reserva remunerada ou de sua reforma, deverá ser promovido; no entanto, essa promoção não poderá ter efeitos sobre a sua remuneração.",
+    "gabarito": "ERRADO",
+    "explicacao": "Art. 79 é categórico: NÃO haverá promoção de policial-militar por ocasião da transferência para a reserva remunerada ou da reforma.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "O militar gozará por ano, obrigatoriamente, 30 dias de férias remuneradas, que poderão ser fracionadas em dois períodos, um dos quais não poderá ser inferior a dez dias.",
+    "gabarito": "ERRADO",
+    "explicacao": "Art. 80: são 30 dias CONSECUTIVOS, observada escala previamente organizada. O Estatuto não prevê fracionamento das férias do policial-militar.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "Durante as férias, o militar terá direito a todas as vantagens do seu cargo.",
+    "gabarito": "CERTO",
+    "explicacao": "Art. 81, reproduzido literalmente.",
+    "dificuldade": "FACIL"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "Só é permitida a acumulação de férias até o máximo de três anos, no caso de imperiosa necessidade de serviço.",
+    "gabarito": "ERRADO",
+    "explicacao": "Art. 82: a acumulação é permitida até o máximo de DOIS anos, e apenas em caso de imperiosa necessidade de serviço.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "O pagamento da remuneração das férias será efetuado no mês referente ao gozo delas.",
+    "gabarito": "ERRADO",
+    "explicacao": "Art. 83: o pagamento é feito no mês ANTECEDENTE ao gozo das férias.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "Os militares têm direito ao período de 8 dias de afastamento total do serviço e da instrução por motivo de núpcias.",
+    "gabarito": "CERTO",
+    "explicacao": "Art. 84, I. O mesmo prazo de 8 dias vale para o luto (inciso II).",
+    "dificuldade": "FACIL"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "Os militares têm direito ao período de até 10 dias de afastamento total do serviço e da instrução por motivo de instalação.",
+    "gabarito": "CERTO",
+    "explicacao": "Art. 84, IV. Não confundir com o trânsito, de até 30 dias (inciso III), que ocorre ANTES da instalação.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "Os militares têm direito ao período de 10 dias de afastamento total do serviço e da instrução por motivo de trânsito.",
+    "gabarito": "ERRADO",
+    "explicacao": "Art. 84, III: o trânsito é de até 30 dias. O prazo de até 10 dias é o da instalação (inciso IV).",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "Trânsito é o período de afastamento total do serviço concedido ao militar cuja movimentação implique, obrigatoriamente, mudança de sede, e destina-se aos preparativos decorrentes da mudança.",
+    "gabarito": "CERTO",
+    "explicacao": "Art. 84, § 2º. Já a instalação (§ 3º) é o período concedido APÓS o término do trânsito, na apresentação à nova OPM.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "Trânsito é o período de afastamento total do serviço concedido ao militar após o término da instalação, quando de sua apresentação na Organização Policial-Militar para onde foi transferido.",
+    "gabarito": "ERRADO",
+    "explicacao": "A definição transcrita é a de INSTALAÇÃO (art. 84, § 3º) — e ainda com a ordem invertida: a instalação vem depois do trânsito, não o contrário.",
+    "dificuldade": "DIFICIL"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "Alice é mãe de Osvaldo, adolescente de 13 anos de idade, e casou-se com Joaquim, que ingressou no quadro de oficiais da PMMA. Nessa situação, Osvaldo, enteado de Joaquim, pode ser considerado seu dependente pela PMMA.",
+    "gabarito": "CERTO",
+    "explicacao": "Art. 87, II: consideram-se dependentes econômicos os filhos, INCLUSIVE os enteados e adotivos, até 21 anos de idade. Osvaldo, com 13 anos, se enquadra.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "Os filhos, inclusive os enteados e adotivos, até 18 anos de idade ou, se estudantes, até 24 anos ou, se inválidos, de qualquer idade, são considerados dependentes econômicos para efeito de percepção do salário-família.",
+    "gabarito": "ERRADO",
+    "explicacao": "Art. 87, II: o limite geral é de 21 anos, e não de 18. Os demais marcos (24 anos se estudante, qualquer idade se inválido) estão corretos.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "Não se configura a dependência econômica quando o beneficiário do salário-família perceber rendimento do trabalho ou de qualquer outra fonte, inclusive pensão ou proventos de aposentadoria, em valor igual ou superior ao salário mínimo.",
+    "gabarito": "CERTO",
+    "explicacao": "Art. 88, reproduzido literalmente.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "O salário-família não está sujeito a qualquer tributo nem servirá de base a contribuição previdenciária.",
+    "gabarito": "CERTO",
+    "explicacao": "Art. 90, reproduzido literalmente.",
+    "dificuldade": "FACIL"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "Licença-prêmio é a autorização para afastamento total do serviço, relativa a cada triênio de tempo de efetivo serviço prestado, concedida ao militar que a requerer.",
+    "gabarito": "ERRADO",
+    "explicacao": "Art. 93: a licença-prêmio é relativa a cada QUINQUÊNIO de efetivo serviço, não a cada triênio.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "A licença-prêmio tem a duração de 5 meses, gozada de uma só vez, a cada triênio de serviço prestado, quando solicitada pelo interessado.",
+    "gabarito": "ERRADO",
+    "explicacao": "Art. 93, § 1º: são 3 (três) meses a cada QUINQUÊNIO. O item erra duas vezes — na duração e na periodicidade.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "A licença para tratamento de saúde de pessoa da família não poderá exceder 6 meses e será concedida com os vencimentos e vantagens percebidos à data de sua concessão até 3 meses, sofrendo, se superior a tal período, o desconto de um terço.",
+    "gabarito": "CERTO",
+    "explicacao": "Art. 94, parágrafo único, com a redação dada pela Lei nº 8.362/2005.",
+    "dificuldade": "DIFICIL"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "A licença à gestante será concedida sem prejuízo da remuneração e terá a duração de 120 dias.",
+    "gabarito": "CERTO",
+    "explicacao": "Art. 97, reproduzido literalmente.",
+    "dificuldade": "FACIL"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "A licença-prêmio, a licença-paternidade e a licença para tratar de interesse particular não poderão ser interrompidas.",
+    "gabarito": "ERRADO",
+    "explicacao": "Art. 98: essas três licenças PODERÃO ser interrompidas, entre outras hipóteses, em caso de mobilização, estado de defesa, estado de sítio, cumprimento de sentença ou de punição disciplinar.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "O Estatuto assegura ao militar o cumprimento de pena privativa de liberdade em Organização Policial-Militar cujo comandante, chefe ou diretor tenha precedência hierárquica sobre o apenado.",
+    "gabarito": "CERTO",
+    "explicacao": "Art. 99, III, que trata das prerrogativas dos policiais-militares.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "Nos termos do Estatuto, somente em caso de flagrante delito o policial militar poderá ser preso por autoridade policial, ficando esta obrigada a entregá-lo imediatamente à autoridade policial militar mais próxima, só podendo retê-lo na delegacia ou posto policial durante o tempo necessário à lavratura do flagrante.",
+    "gabarito": "CERTO",
+    "explicacao": "Art. 100, caput e § 1º.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "As praças, diferentemente dos oficiais, são dispensadas do corpo de jurados da justiça comum e do serviço da Justiça Eleitoral.",
+    "gabarito": "ERRADO",
+    "explicacao": "Art. 101: a dispensa alcança TODOS os servidores militares da ativa, sem distinção entre praças e oficiais.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "Um policial militar utiliza suas horas de folga para exercer segurança particular de um vereador, fardado, apresentando-se no comitê político e escoltando-o na campanha eleitoral. Nessa situação, o uso do uniforme está em conformidade com o Estatuto, contanto que o militar preserve as obrigações correspondentes ao uniforme que usa.",
+    "gabarito": "ERRADO",
+    "explicacao": "Art. 103, § 1º, I: é expressamente PROIBIDO ao policial-militar o uso de uniforme em reuniões, propaganda ou qualquer manifestação de caráter político-partidário. A ressalva do art. 104 não convalida o uso proibido.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "É vedado a qualquer cidadão civil ou organização civil usar uniforme ou ostentar distintivos, equipamentos, insígnias ou emblemas que possam ser confundidos com os adotados na Polícia Militar do Maranhão.",
+    "gabarito": "CERTO",
+    "explicacao": "Art. 105, reproduzido literalmente.",
+    "dificuldade": "FACIL"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "Agregação é a situação na qual o policial-militar da ativa deixa de ocupar vaga na escala hierárquica do seu quadro, nela permanecendo sem número.",
+    "gabarito": "CERTO",
+    "explicacao": "Art. 106, caput, reproduzido literalmente.",
+    "dificuldade": "FACIL"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "Reversão é a situação na qual o policial-militar da ativa deixa de ocupar vaga na escala hierárquica do seu quadro, nela permanecendo sem número.",
+    "gabarito": "ERRADO",
+    "explicacao": "A definição transcrita é a de AGREGAÇÃO (art. 106). Reversão, pelo art. 108, é o ato pelo qual o militar agregado RETORNA ao respectivo quadro, cessado o motivo da agregação.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "Um cabo PM encontra-se afastado temporariamente do serviço ativo por ter permanecido, por mais de nove meses contínuos, em licença para tratar de interesse particular. Nessa situação, o cabo deverá ser agregado.",
+    "gabarito": "CERTO",
+    "explicacao": "Art. 106, § 1º, I, alínea 'e': deve ser agregado o militar que ultrapassar 6 meses de licença para tratar de interesse particular. Nove meses superam esse limite.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "Estando agregado, o policial militar não poderá ser promovido enquanto durar a agregação.",
+    "gabarito": "CERTO",
+    "explicacao": "Art. 106, § 8º, com a redação dada pela Lei nº 8.080/2004.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "A reversão é o ato pelo qual o militar agregado retorna ao respectivo quadro tão logo cesse o motivo que determinou a sua agregação, voltando a ocupar o lugar que lhe couber na respectiva escala numérica.",
+    "gabarito": "CERTO",
+    "explicacao": "Art. 108, reproduzido literalmente.",
+    "dificuldade": "FACIL"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "Roberto foi promovido, por bravura, a capitão PM. Verificou-se posteriormente que não havia vaga, ficando Roberto na situação de excedente.",
+    "gabarito": "CERTO",
+    "explicacao": "Art. 110, III: passa automaticamente à situação de excedente o militar promovido por bravura sem haver vaga. Pelo § 3º, ele ocupará a primeira vaga aberta.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "Um cabo PM deixou de comparecer por 48 horas consecutivas à Organização Policial-Militar onde servia, sem comunicar nenhum motivo de impedimento. Nessa situação, o cabo será considerado desertor.",
+    "gabarito": "ERRADO",
+    "explicacao": "Art. 111: quem deixa de comparecer por mais de 24 horas consecutivas é considerado AUSENTE, não desertor. A deserção segue os prazos da legislação penal militar (art. 112).",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "A soldado Filomena ausentou-se por mais de 24 horas consecutivas, sem licença, do batalhão onde deveria permanecer; logo, ela é considerada ausente.",
+    "gabarito": "CERTO",
+    "explicacao": "Art. 111, II: é considerado ausente o militar que, por mais de 24 horas consecutivas, ausentar-se sem licença da OPM onde deve permanecer.",
+    "dificuldade": "FACIL"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "Um policial militar na inatividade encontra-se em viagem com paradeiro ignorado por mais de oito dias. Nessa situação, ele será considerado desaparecido.",
+    "gabarito": "ERRADO",
+    "explicacao": "Art. 113: a figura do desaparecido alcança apenas o militar DA ATIVA, no desempenho de serviço, em viagens, em operações militares ou em calamidade pública. O militar na inatividade não se enquadra.",
+    "dificuldade": "DIFICIL"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "Uma sargento PM participava de operação militar quando desapareceu, e seu paradeiro é desconhecido pela corporação há mais de 8 dias consecutivos. Nesse caso, necessariamente, ela deverá ser considerada desertora.",
+    "gabarito": "ERRADO",
+    "explicacao": "Art. 113: nessa situação ela é considerada DESAPARECIDA, e não desertora. O parágrafo único ressalva que a situação de desaparecido só se configura quando não houver indícios de deserção.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "Um subtenente PM da ativa desapareceu durante uma operação policial-militar, permanecendo com o paradeiro ignorado há mais de trinta e nove dias. Nessa situação, ele será oficialmente considerado extraviado.",
+    "gabarito": "CERTO",
+    "explicacao": "Art. 114: o militar que permanecer desaparecido por mais de 30 dias será oficialmente considerado extraviado. Trinta e nove dias superam esse prazo.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "A transferência para a reserva remunerada ou a reforma não isenta o militar da indenização dos prejuízos causados à Fazenda Estadual ou a terceiros, nem do pagamento das pensões decorrentes de sentença judicial.",
+    "gabarito": "CERTO",
+    "explicacao": "Art. 116, reproduzido literalmente.",
+    "dificuldade": "FACIL"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "A passagem do militar à situação de inatividade mediante transferência para a reserva remunerada somente se efetuará a pedido.",
+    "gabarito": "ERRADO",
+    "explicacao": "Art. 118: a transferência para a reserva remunerada se efetua a pedido OU ex-officio. A reforma, sim, é que se efetua apenas ex-officio (art. 124).",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "Um sargento PM acaba de completar 30 anos de contribuição previdenciária. Para ser transferido para a reserva remunerada, deverá indenizar as despesas de um estágio de 7 meses que acabou de realizar por conta da corporação, ou aguardar 12 meses da conclusão do estágio.",
+    "gabarito": "ERRADO",
+    "explicacao": "Art. 119, § 1º: para curso ou estágio de duração superior a 6 meses e até 1 ano, o prazo de espera é de 18 MESES, e não de 12.",
+    "dificuldade": "DIFICIL"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "Uma sargento PM completará na próxima semana 52 anos de idade; logo, deverá ser compulsoriamente transferida para a reserva remunerada.",
+    "gabarito": "ERRADO",
+    "explicacao": "Art. 120, I, alínea 'b': a idade-limite para as praças do sexo feminino é de 55 anos. Aos 52 anos ela ainda não atingiu o limite.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "Um major PM completará na próxima semana 62 anos de idade; logo, deverá ser compulsoriamente transferido para a reserva remunerada.",
+    "gabarito": "CERTO",
+    "explicacao": "Art. 120, I, alínea 'a': a idade-limite para os oficiais do sexo masculino é de 62 anos. Para praças do sexo masculino é de 60 anos.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "Ato do Governador do Estado pode convocar para o serviço ativo o militar da reserva remunerada, em caráter temporário, em período não superior a 12 meses, caso em que não poderá haver recusa por parte do militar.",
+    "gabarito": "ERRADO",
+    "explicacao": "Art. 122: a convocação depende de ACEITAÇÃO VOLUNTÁRIA — logo, cabe recusa — e não pode exceder 6 MESES, e não 12. O item erra duas vezes.",
+    "dificuldade": "DIFICIL"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "Em determinadas situações, o servidor militar da reserva remunerada poderá ser convocado para o serviço ativo em caráter permanente e mediante aceitação voluntária, por ato do Governador do Estado.",
+    "gabarito": "ERRADO",
+    "explicacao": "Art. 122: a convocação é em caráter TRANSITÓRIO, jamais permanente, e limitada a 6 meses pelo § 2º.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "O servidor militar da ativa que aceitar cargo público civil permanente será transferido para a reserva não-remunerada.",
+    "gabarito": "CERTO",
+    "explicacao": "Art. 123, caput. Pelo § 1º, o militar transferido nessas condições não faz jus à remuneração.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "A passagem do militar à situação de inatividade mediante reforma se efetua a pedido ou ex-officio.",
+    "gabarito": "ERRADO",
+    "explicacao": "Art. 124: a reforma se efetua EXCLUSIVAMENTE ex-officio. Quem admite as duas modalidades é a transferência para a reserva remunerada (art. 118).",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "O subtenente PM, do sexo masculino, da reserva remunerada, que atingir a idade de 61 anos deverá ser reformado.",
+    "gabarito": "ERRADO",
+    "explicacao": "Art. 125, I, alínea 'c': a idade-limite de permanência na reserva para praças do sexo masculino é de 64 anos. O subtenente é praça. Os 61 anos correspondem à oficial do sexo feminino (alínea 'b').",
+    "dificuldade": "DIFICIL"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "Anualmente, no mês de janeiro, o órgão de pessoal da Corporação organizará a relação dos militares que houverem atingido a idade-limite para a reserva remunerada, a fim de serem reformados.",
+    "gabarito": "ERRADO",
+    "explicacao": "Art. 126: a relação é organizada anualmente no mês de FEVEREIRO, e não em janeiro.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "O policial-militar reformado por alienação mental, enquanto não ocorrer designação judicial do curador, terá sua remuneração paga aos seus beneficiários, desde que estejam sob sua guarda e responsabilidade e lhe dispensem tratamento humano e condigno.",
+    "gabarito": "CERTO",
+    "explicacao": "Art. 132, caput.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "A demissão na Polícia Militar, aplicada exclusivamente às praças, se efetua a pedido ou ex-officio.",
+    "gabarito": "ERRADO",
+    "explicacao": "Art. 133: a demissão é aplicada exclusivamente aos OFICIAIS. Para as praças, o instituto correspondente é o licenciamento (art. 139).",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "Consta como direito do policial militar a demissão voluntária, no caso de oficial, ou o licenciamento voluntário, no caso de praça. Em ambos os casos, proceder-se-á a pedido, ocorrendo sempre com indenização aos cofres públicos.",
+    "gabarito": "ERRADO",
+    "explicacao": "Art. 134, I: a demissão a pedido é concedida SEM indenização aos cofres públicos quando o oficial contar mais de 5 anos de oficialato. Logo, não é 'sempre' com indenização.",
+    "dificuldade": "DIFICIL"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "O oficial demissionário a pedido não terá direito a qualquer remuneração.",
+    "gabarito": "CERTO",
+    "explicacao": "Art. 134, § 3º, reproduzido literalmente.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "O oficial PM só perderá o posto e a patente se for declarado indigno do oficialato ou com ele incompatível, por decisão do Tribunal de Justiça do Estado do Maranhão.",
+    "gabarito": "CERTO",
+    "explicacao": "Art. 137, caput.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "O oficial declarado indigno do oficialato ou com ele incompatível e condenado à perda do posto e da patente só poderá readquirir a sua situação militar por outra sentença do Supremo Tribunal Federal, julgada em grau de recurso.",
+    "gabarito": "ERRADO",
+    "explicacao": "Art. 138: a reaquisição depende de outra sentença do TRIBUNAL DE JUSTIÇA DO ESTADO, julgada em grau de recurso, e não do Supremo Tribunal Federal.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "O licenciamento a bem da disciplina será aplicado às praças sem estabilidade assegurada que ingressarem no mau comportamento, sendo de competência do Governador do Estado ou de autoridade delegada o ato de licenciamento.",
+    "gabarito": "CERTO",
+    "explicacao": "Art. 139, § 4º, com a redação dada pela Lei nº 8.080/2004. Note o contraste com a EXCLUSÃO a bem da disciplina (art. 141), aplicável às praças COM estabilidade.",
+    "dificuldade": "DIFICIL"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "A exclusão a bem da disciplina poderá ser aplicada aos oficiais.",
+    "gabarito": "ERRADO",
+    "explicacao": "Art. 141: a exclusão a bem da disciplina é aplicada ao Aspirante-a-Oficial e às demais praças com estabilidade assegurada. Para o oficial, a via é a demissão ex-officio (art. 133).",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "É de competência do Comandante-Geral da PM o ato de exclusão a bem da disciplina do Aspirante-a-Oficial, bem como das praças com estabilidade assegurada.",
+    "gabarito": "ERRADO",
+    "explicacao": "Art. 142: a competência é do GOVERNADOR DO ESTADO, conforme redação dada pela Lei nº 8.080/2004.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "A exclusão da praça a bem da disciplina acarreta a perda do seu grau hierárquico, mas a isenta das indenizações dos prejuízos causados à Fazenda Estadual ou a terceiros.",
+    "gabarito": "ERRADO",
+    "explicacao": "Art. 143: a exclusão acarreta a perda do grau hierárquico e NÃO isenta das indenizações nem das pensões decorrentes de sentença judicial.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "A deserção do militar acarreta interrupção do serviço militar, com a consequente exclusão do serviço ativo para o oficial ou demissão ex-officio para a praça.",
+    "gabarito": "ERRADO",
+    "explicacao": "Art. 144: as consequências estão invertidas. A deserção acarreta DEMISSÃO ex-officio para o OFICIAL e EXCLUSÃO do serviço ativo para a PRAÇA.",
+    "dificuldade": "DIFICIL"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "Em caso de naufrágio, sinistro aéreo, catástrofe, calamidade pública e outros acidentes oficialmente reconhecidos, o extravio ou desaparecimento do militar da ativa será considerado como falecimento, para fins do Estatuto, tão logo sejam esgotados os prazos máximos de possível sobrevivência ou quando se derem por encerradas as providências de salvamento.",
+    "gabarito": "CERTO",
+    "explicacao": "Art. 146, § 2º, reproduzido literalmente.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "Os militares começam a contar tempo de serviço na Polícia Militar a partir da data de seu ingresso.",
+    "gabarito": "CERTO",
+    "explicacao": "Art. 148, caput. O § 1º detalha o que se considera data de ingresso.",
+    "dificuldade": "FACIL"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "Na apuração do tempo do militar será feita a distinção entre tempo de efetivo serviço e anos de serviço. Tempo de efetivo serviço é o espaço de tempo computado dia a dia entre a data de ingresso e a data-limite estabelecida para a contagem ou a data do desligamento do serviço ativo, mesmo que tal espaço de tempo seja parcelado.",
+    "gabarito": "CERTO",
+    "explicacao": "Arts. 149 e 150, reproduzidos literalmente.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "legislacao-institucional",
+    "enunciado": "As recompensas constituem reconhecimento dos bons serviços prestados pelos militares. São recompensas militares, entre outras, o prêmio de Honra ao Mérito e as dispensas do serviço.",
+    "gabarito": "CERTO",
+    "explicacao": "Art. 158, § 1º, que arrola o prêmio de Honra ao Mérito, as condecorações, os elogios e louvores e as dispensas do serviço.",
+    "dificuldade": "MEDIO"
+  }
+]

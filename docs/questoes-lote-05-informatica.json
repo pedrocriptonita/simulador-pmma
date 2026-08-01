@@ -1,0 +1,352 @@
+[
+  {
+    "materia": "nocoes-de-informatica",
+    "enunciado": "Intranet é uma rede privada que utiliza os mesmos protocolos da internet, como o TCP/IP, mas cujo acesso é restrito aos usuários autorizados de uma organização.",
+    "gabarito": "CERTO",
+    "explicacao": "A diferença entre internet e intranet não está na tecnologia — os protocolos são os mesmos —, mas no alcance: a intranet é de uso interno e controlado.",
+    "dificuldade": "FACIL"
+  },
+  {
+    "materia": "nocoes-de-informatica",
+    "enunciado": "Extranet é uma rede totalmente pública, acessível a qualquer usuário da internet, sem necessidade de autenticação.",
+    "gabarito": "ERRADO",
+    "explicacao": "A extranet é uma extensão CONTROLADA da intranet: permite que parceiros externos autorizados (fornecedores, clientes) acessem parte dos recursos internos pela internet, sempre mediante autenticação.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "nocoes-de-informatica",
+    "enunciado": "O protocolo HTTPS difere do HTTP por acrescentar uma camada de criptografia (TLS/SSL), protegendo os dados trafegados entre o navegador e o servidor.",
+    "gabarito": "CERTO",
+    "explicacao": "O 'S' de HTTPS vem de secure. O conteúdo trafega cifrado, o que impede a leitura por quem intercepte a comunicação.",
+    "dificuldade": "FACIL"
+  },
+  {
+    "materia": "nocoes-de-informatica",
+    "enunciado": "A navegação anônima, também chamada de janela privativa, impede que o provedor de acesso à internet e o site visitado identifiquem o usuário.",
+    "gabarito": "ERRADO",
+    "explicacao": "A navegação anônima atua apenas LOCALMENTE: não grava histórico, cookies e dados de formulário no dispositivo. O provedor de acesso, o empregador e o site visitado continuam podendo identificar o tráfego.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "nocoes-de-informatica",
+    "enunciado": "O DNS é o serviço responsável por traduzir nomes de domínio, como www.exemplo.com.br, nos endereços IP correspondentes.",
+    "gabarito": "CERTO",
+    "explicacao": "Sem o DNS, o usuário precisaria decorar o endereço IP de cada site. Ele funciona como a lista telefônica da internet.",
+    "dificuldade": "FACIL"
+  },
+  {
+    "materia": "nocoes-de-informatica",
+    "enunciado": "Cookies são programas executáveis transferidos pelos sites ao computador do usuário, capazes de executar rotinas automaticamente e infectar o sistema.",
+    "gabarito": "ERRADO",
+    "explicacao": "Cookies são pequenos ARQUIVOS DE TEXTO, não programas. Não executam nada por si próprios e, portanto, não infectam o computador — embora possam ser usados para rastrear a navegação.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "nocoes-de-informatica",
+    "enunciado": "Em uma pesquisa no Google, colocar a expressão entre aspas, como \"segurança pública\", faz que sejam retornados apenas resultados que contenham exatamente essa expressão, na ordem informada.",
+    "gabarito": "CERTO",
+    "explicacao": "As aspas forçam a busca por expressão exata. Sem elas, o buscador retorna páginas que contenham os termos isoladamente e em qualquer ordem.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "nocoes-de-informatica",
+    "enunciado": "Deep web é a parcela da internet composta pelas páginas indexadas pelos mecanismos de busca convencionais, como Google e Bing.",
+    "gabarito": "ERRADO",
+    "explicacao": "A deep web é justamente o contrário: o conjunto de conteúdos NÃO indexados pelos buscadores, como páginas protegidas por senha, bancos de dados internos e intranets.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "nocoes-de-informatica",
+    "enunciado": "O protocolo SMTP é utilizado para o envio de mensagens de correio eletrônico.",
+    "gabarito": "CERTO",
+    "explicacao": "Regra prática: SMTP envia; POP3 e IMAP recebem.",
+    "dificuldade": "FACIL"
+  },
+  {
+    "materia": "nocoes-de-informatica",
+    "enunciado": "Diferentemente do POP3, o protocolo IMAP mantém as mensagens armazenadas no servidor, o que permite sincronizá-las entre vários dispositivos.",
+    "gabarito": "CERTO",
+    "explicacao": "É por isso que, com IMAP, uma mensagem lida no celular aparece como lida no computador. O POP3, em sua configuração padrão, baixa e remove as mensagens do servidor.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "nocoes-de-informatica",
+    "enunciado": "Ao utilizar a opção Responder a Todos, o remetente da resposta atingirá também os destinatários que constavam no campo Cco da mensagem original.",
+    "gabarito": "ERRADO",
+    "explicacao": "Os endereços em Cco são ocultos e não são propagados na resposta. Responder a Todos alcança apenas o remetente e os destinatários dos campos Para e Cc.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "nocoes-de-informatica",
+    "enunciado": "A utilização de webmail exige a instalação prévia de um programa cliente de correio eletrônico no computador do usuário.",
+    "gabarito": "ERRADO",
+    "explicacao": "Webmail é acessado pelo NAVEGADOR, sem instalação de software. A exigência de programa cliente é característica de aplicativos como o Outlook ou o Thunderbird.",
+    "dificuldade": "FACIL"
+  },
+  {
+    "materia": "nocoes-de-informatica",
+    "enunciado": "No Windows, os arquivos excluídos de um pen drive são enviados para a Lixeira, podendo ser restaurados posteriormente.",
+    "gabarito": "ERRADO",
+    "explicacao": "A Lixeira, por padrão, atende apenas às unidades internas. Arquivos excluídos de unidades removíveis (pen drive, cartão de memória) e de unidades de rede são removidos DIRETAMENTE, sem passar pela Lixeira.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "nocoes-de-informatica",
+    "enunciado": "No Windows, a combinação de teclas Shift+Delete exclui o arquivo selecionado sem enviá-lo à Lixeira.",
+    "gabarito": "CERTO",
+    "explicacao": "É a exclusão permanente. O sistema apresenta caixa de confirmação, pois a operação não pode ser desfeita pela Lixeira.",
+    "dificuldade": "FACIL"
+  },
+  {
+    "materia": "nocoes-de-informatica",
+    "enunciado": "No Explorador de Arquivos do Windows, arrastar um arquivo de uma pasta para outra situada na MESMA unidade de disco resulta na cópia do arquivo, mantendo-se o original no local de origem.",
+    "gabarito": "ERRADO",
+    "explicacao": "Na mesma unidade, arrastar MOVE o arquivo. A cópia é o comportamento padrão quando o destino está em unidade DIFERENTE — ou quando se mantém a tecla Ctrl pressionada durante o arraste.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "nocoes-de-informatica",
+    "enunciado": "O Windows diferencia letras maiúsculas de minúsculas nos nomes de arquivos, de modo que Relatorio.docx e relatorio.docx podem coexistir na mesma pasta.",
+    "gabarito": "ERRADO",
+    "explicacao": "O sistema de arquivos do Windows NÃO diferencia maiúsculas de minúsculas para esse fim: os dois nomes são tratados como o mesmo arquivo. O Linux, sim, faz essa distinção.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "nocoes-de-informatica",
+    "enunciado": "O Gerenciador de Tarefas do Windows permite visualizar os processos em execução e encerrar aplicativos que não estejam respondendo.",
+    "gabarito": "CERTO",
+    "explicacao": "Além disso, exibe o consumo de CPU, memória, disco e rede, e permite controlar os programas iniciados junto com o sistema.",
+    "dificuldade": "FACIL"
+  },
+  {
+    "materia": "nocoes-de-informatica",
+    "enunciado": "O sistema de arquivos FAT32 permite definir permissões de acesso individualizadas por usuário, recurso indisponível no NTFS.",
+    "gabarito": "ERRADO",
+    "explicacao": "A relação é inversa: o NTFS é que oferece controle de permissões, criptografia e suporte a arquivos grandes. O FAT32 não tem controle de permissões e limita arquivos a 4 GB.",
+    "dificuldade": "DIFICIL"
+  },
+  {
+    "materia": "nocoes-de-informatica",
+    "enunciado": "No Microsoft Word, em português, o atalho Ctrl+S salva o documento em edição.",
+    "gabarito": "ERRADO",
+    "explicacao": "Na versão em português, Ctrl+S aplica SUBLINHADO. O comando salvar corresponde a Ctrl+B.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "nocoes-de-informatica",
+    "enunciado": "No Microsoft Word, o recurso Controlar Alterações registra as modificações feitas no documento, permitindo que sejam posteriormente aceitas ou rejeitadas.",
+    "gabarito": "CERTO",
+    "explicacao": "Recurso central em fluxos de revisão: as alterações ficam destacadas e identificadas por autor até que alguém as aceite ou rejeite.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "nocoes-de-informatica",
+    "enunciado": "No Microsoft Excel, toda fórmula deve ser iniciada pelo sinal de igual (=).",
+    "gabarito": "CERTO",
+    "explicacao": "Sem o sinal de igual, o Excel interpreta o conteúdo como texto. Os sinais + e - também iniciam fórmulas, mas o Excel os converte automaticamente acrescentando o =.",
+    "dificuldade": "FACIL"
+  },
+  {
+    "materia": "nocoes-de-informatica",
+    "enunciado": "No Microsoft Excel, a referência $A$1 é absoluta e não se altera quando a fórmula que a contém é copiada para outras células.",
+    "gabarito": "CERTO",
+    "explicacao": "O cifrão trava o que vem imediatamente após ele. Em $A$1, tanto a coluna quanto a linha estão travadas.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "nocoes-de-informatica",
+    "enunciado": "No Microsoft Excel, ao se copiar para as linhas de baixo uma fórmula que contenha a referência A$1, o número da linha será automaticamente ajustado para A$2, A$3 e assim por diante.",
+    "gabarito": "ERRADO",
+    "explicacao": "O cifrão antes do 1 TRAVA a linha. A referência permanecerá A$1 em todas as cópias. Nesse caso a coluna é que seria ajustada, caso a cópia fosse feita na horizontal.",
+    "dificuldade": "DIFICIL"
+  },
+  {
+    "materia": "nocoes-de-informatica",
+    "enunciado": "No Microsoft Excel, a fórmula =SOMA(A1;A10) retorna a soma dos valores contidos em todas as células do intervalo de A1 até A10.",
+    "gabarito": "ERRADO",
+    "explicacao": "O ponto e vírgula separa ARGUMENTOS individuais: a fórmula soma apenas A1 e A10, ignorando as células intermediárias. Para o intervalo completo é preciso usar dois-pontos: =SOMA(A1:A10).",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "nocoes-de-informatica",
+    "enunciado": "No Microsoft Excel, a mensagem de erro #DIV/0! indica que a fórmula faz referência a uma célula que foi excluída da planilha.",
+    "gabarito": "ERRADO",
+    "explicacao": "#DIV/0! indica DIVISÃO POR ZERO. O erro decorrente de referência inválida, inclusive por exclusão de célula, é o #REF!.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "nocoes-de-informatica",
+    "enunciado": "No Microsoft Excel, a função PROCV busca um valor na primeira coluna de um intervalo e retorna o conteúdo de outra coluna, na mesma linha em que o valor foi localizado.",
+    "gabarito": "CERTO",
+    "explicacao": "O V é de vertical. Uma limitação clássica: o PROCV só procura na PRIMEIRA coluna do intervalo, da esquerda para a direita.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "nocoes-de-informatica",
+    "enunciado": "No Microsoft PowerPoint, transição é o efeito aplicado a um objeto dentro do slide, ao passo que animação é o efeito exibido na passagem de um slide para outro.",
+    "gabarito": "ERRADO",
+    "explicacao": "Os conceitos estão invertidos: TRANSIÇÃO é o efeito de passagem entre slides; ANIMAÇÃO é o efeito aplicado a objetos dentro do slide.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "nocoes-de-informatica",
+    "enunciado": "O endereço MAC é atribuído dinamicamente pelo roteador a cada vez que o dispositivo se conecta à rede.",
+    "gabarito": "ERRADO",
+    "explicacao": "O MAC é o endereço FÍSICO, gravado pelo fabricante na placa de rede, e não muda a cada conexão. Quem é atribuído dinamicamente, por meio do DHCP, é o endereço IP.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "nocoes-de-informatica",
+    "enunciado": "O switch encaminha os quadros somente para a porta em que se encontra o destinatário, enquanto o hub replica o sinal recebido para todas as suas portas.",
+    "gabarito": "CERTO",
+    "explicacao": "É por essa razão que o switch é mais eficiente e mais seguro que o hub — este último expõe o tráfego a todos os dispositivos conectados.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "nocoes-de-informatica",
+    "enunciado": "O protocolo TCP é orientado à conexão e garante a entrega ordenada dos pacotes, ao passo que o UDP não oferece essa garantia.",
+    "gabarito": "CERTO",
+    "explicacao": "Por dispensar controles, o UDP é mais rápido e por isso preferido em transmissões de voz e vídeo em tempo real, nas quais a perda de um pacote é menos danosa que o atraso.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "nocoes-de-informatica",
+    "enunciado": "O modelo TCP/IP é composto por sete camadas, ao passo que o modelo OSI é composto por quatro.",
+    "gabarito": "ERRADO",
+    "explicacao": "É o inverso: o modelo OSI tem SETE camadas e o TCP/IP, QUATRO (acesso à rede, internet, transporte e aplicação).",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "nocoes-de-informatica",
+    "enunciado": "Vírus é o código malicioso que se propaga inserindo cópias de si mesmo em outros arquivos ou programas, dependendo da execução do hospedeiro para se ativar.",
+    "gabarito": "CERTO",
+    "explicacao": "A dependência do hospedeiro é justamente o que distingue o vírus do worm.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "nocoes-de-informatica",
+    "enunciado": "O worm depende da execução de um arquivo hospedeiro pelo usuário para se propagar de um computador a outro.",
+    "gabarito": "ERRADO",
+    "explicacao": "O worm é AUTÔNOMO: propaga-se sozinho pela rede, explorando vulnerabilidades, sem necessidade de hospedeiro nem de ação do usuário. Quem depende do hospedeiro é o vírus.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "nocoes-de-informatica",
+    "enunciado": "Cavalo de Troia é o programa que, além de executar as funções para as quais aparenta ter sido criado, executa outras funções, maliciosas, sem o conhecimento do usuário.",
+    "gabarito": "CERTO",
+    "explicacao": "O disfarce é a característica definidora: o usuário instala voluntariamente, acreditando tratar-se de programa legítimo.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "nocoes-de-informatica",
+    "enunciado": "Ransomware é o código malicioso que criptografa os dados da vítima e exige pagamento de resgate para a restauração do acesso.",
+    "gabarito": "CERTO",
+    "explicacao": "É a razão pela qual o backup desconectado (offline) é a defesa mais eficaz contra esse tipo de ataque.",
+    "dificuldade": "FACIL"
+  },
+  {
+    "materia": "nocoes-de-informatica",
+    "enunciado": "Keylogger é o programa que apaga permanentemente os arquivos do disco rígido da vítima logo após a infecção.",
+    "gabarito": "ERRADO",
+    "explicacao": "Keylogger CAPTURA AS TECLAS digitadas pelo usuário, com o objetivo de obter senhas e dados sigilosos. Sua eficácia depende justamente de passar despercebido.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "nocoes-de-informatica",
+    "enunciado": "Phishing é a técnica pela qual o atacante explora falhas de criptografia do servidor para interceptar dados sigilosos, sem qualquer interação com a vítima.",
+    "gabarito": "ERRADO",
+    "explicacao": "Phishing é fraude por ENGANO: mensagens que se passam por instituições legítimas para induzir a própria vítima a fornecer seus dados. Depende justamente da interação com ela.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "nocoes-de-informatica",
+    "enunciado": "A engenharia social é a técnica de ataque que explora vulnerabilidades técnicas dos sistemas operacionais, sem envolver qualquer contato com pessoas.",
+    "gabarito": "ERRADO",
+    "explicacao": "A engenharia social explora justamente o FATOR HUMANO — confiança, pressa, medo, autoridade — para obter informações ou acessos, e não falhas técnicas.",
+    "dificuldade": "FACIL"
+  },
+  {
+    "materia": "nocoes-de-informatica",
+    "enunciado": "O backup incremental copia apenas os arquivos criados ou alterados desde o último backup realizado, seja ele completo ou incremental.",
+    "gabarito": "CERTO",
+    "explicacao": "Por isso é o mais rápido de executar e o mais lento de restaurar: a recuperação exige o backup completo mais TODOS os incrementais posteriores, na ordem.",
+    "dificuldade": "DIFICIL"
+  },
+  {
+    "materia": "nocoes-de-informatica",
+    "enunciado": "O backup diferencial copia apenas os arquivos criados ou alterados desde o último backup diferencial realizado.",
+    "gabarito": "ERRADO",
+    "explicacao": "O diferencial toma como referência o último backup COMPLETO, e não o último diferencial. Por isso cresce a cada execução, mas a restauração exige apenas dois conjuntos: o completo e o último diferencial.",
+    "dificuldade": "DIFICIL"
+  },
+  {
+    "materia": "nocoes-de-informatica",
+    "enunciado": "Na criptografia assimétrica, a mensagem cifrada com a chave pública do destinatário somente poderá ser decifrada com a chave privada correspondente.",
+    "gabarito": "CERTO",
+    "explicacao": "É o mecanismo que garante a CONFIDENCIALIDADE: qualquer um pode cifrar com a chave pública, mas só o titular da chave privada consegue ler.",
+    "dificuldade": "DIFICIL"
+  },
+  {
+    "materia": "nocoes-de-informatica",
+    "enunciado": "A assinatura digital garante a autenticidade, a integridade e o não repúdio do documento, mas não assegura, por si só, a confidencialidade de seu conteúdo.",
+    "gabarito": "CERTO",
+    "explicacao": "Um documento assinado digitalmente continua legível por qualquer pessoa. Para torná-lo sigiloso é necessário cifrá-lo adicionalmente.",
+    "dificuldade": "DIFICIL"
+  },
+  {
+    "materia": "nocoes-de-informatica",
+    "enunciado": "O certificado digital é o documento eletrônico, emitido por autoridade certificadora, que vincula uma chave pública ao seu respectivo titular.",
+    "gabarito": "CERTO",
+    "explicacao": "Sem essa vinculação atestada por terceiro de confiança, não haveria como saber se a chave pública apresentada pertence de fato a quem alega ser seu titular.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "nocoes-de-informatica",
+    "enunciado": "O princípio da integridade, no âmbito da segurança da informação, assegura que a informação esteja acessível sempre que necessária a quem tenha autorização para acessá-la.",
+    "gabarito": "ERRADO",
+    "explicacao": "A definição transcrita é a de DISPONIBILIDADE. Integridade é a garantia de que a informação não foi alterada indevidamente.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "nocoes-de-informatica",
+    "enunciado": "A autenticação em dois fatores combina elementos de categorias distintas, como algo que o usuário sabe e algo que ele possui.",
+    "gabarito": "CERTO",
+    "explicacao": "As três categorias são: o que se sabe (senha), o que se tem (token, celular) e o que se é (biometria). Duas senhas não constituem dois fatores, pois pertencem à mesma categoria.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "nocoes-de-informatica",
+    "enunciado": "A memória RAM é volátil, o que significa que seu conteúdo é perdido quando o computador é desligado.",
+    "gabarito": "CERTO",
+    "explicacao": "É por isso que o trabalho não salvo se perde em uma queda de energia: ele estava apenas na RAM.",
+    "dificuldade": "FACIL"
+  },
+  {
+    "materia": "nocoes-de-informatica",
+    "enunciado": "Software livre é sinônimo de software gratuito, de modo que todo programa distribuído sem custo pode ser classificado como livre.",
+    "gabarito": "ERRADO",
+    "explicacao": "Software livre diz respeito às LIBERDADES de usar, estudar, modificar e redistribuir o programa — não ao preço. Existem programas gratuitos que não são livres (freeware) e programas livres vendidos comercialmente.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "nocoes-de-informatica",
+    "enunciado": "O uso do protocolo HTTPS em um sítio da internet assegura ao usuário que a instituição responsável pela página é legítima e que não se trata de página fraudulenta.",
+    "gabarito": "ERRADO",
+    "explicacao": "O HTTPS garante apenas que o CANAL de comunicação está cifrado. Páginas de phishing também utilizam HTTPS. O cadeado indica conexão segura, não idoneidade do site.",
+    "dificuldade": "DIFICIL"
+  },
+  {
+    "materia": "nocoes-de-informatica",
+    "enunciado": "No Microsoft Word, a ferramenta Pincel de Formatação copia o conteúdo do trecho selecionado para posterior colagem em outro ponto do documento.",
+    "gabarito": "ERRADO",
+    "explicacao": "O Pincel de Formatação copia a FORMATAÇÃO (fonte, tamanho, cor, espaçamento), e não o conteúdo. Aplicando-o a outro trecho, o texto de destino permanece o mesmo e apenas assume a aparência copiada.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "nocoes-de-informatica",
+    "enunciado": "O bit é a maior unidade de armazenamento de dados de um computador, correspondendo a oito bytes.",
+    "gabarito": "ERRADO",
+    "explicacao": "A relação é inversa e o bit é a MENOR unidade: 1 byte equivale a 8 bits. A escala segue com KB, MB, GB e TB.",
+    "dificuldade": "FACIL"
+  }
+]
