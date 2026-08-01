@@ -88,23 +88,49 @@ export async function handleCaktoWebhook(payload: unknown): Promise<CaktoHandleR
     };
   }
 
-  const email = body.data.customer?.email;
-  if (!email) {
+  const rawEmail = body.data.customer?.email;
+  if (!rawEmail) {
     return { httpStatus: 400, body: { error: "missing customer email" } };
   }
 
+  // Normaliza o caixa: o Supabase Auth grava o e-mail em minúsculo no
+  // cadastro, mas a Cakto repassa o que o comprador digitou. Sem isto,
+  // "Pedro@Gmail.com" não encontra "pedro@gmail.com" e o pagamento cai
+  // como órfão — cliente pagou, e-mail certo, sem acesso.
+  const email = rawEmail.toLowerCase();
+
+  const amountCents =
+    typeof body.data.amount === "number" && Number.isFinite(body.data.amount)
+      ? Math.round(body.data.amount * 100)
+      : null;
+
   const user = await prisma.user.findUnique({ where: { email } });
   if (!user) {
+    // Registra em vez de descartar: o provedor já cobrou o cliente. Fica
+    // pendente em /admin/pagamentos para vinculação manual.
+    await prisma.unmatchedPayment.upsert({
+      where: { externalId: body.data.id },
+      update: { status, amountCents, event: body.event, payerEmail: email },
+      create: {
+        externalId: body.data.id,
+        payerEmail: email,
+        event: body.event,
+        status,
+        amountCents,
+      },
+    });
     return {
       httpStatus: 200,
       body: { received: true, result: { ok: false, reason: "user_not_found" } },
     };
   }
 
-  const amountCents =
-    typeof body.data.amount === "number" && Number.isFinite(body.data.amount)
-      ? Math.round(body.data.amount * 100)
-      : null;
+  // O usuário pode ter se cadastrado depois de um evento órfão desta mesma
+  // transação: fecha a pendência para o painel não mostrar ruído.
+  await prisma.unmatchedPayment.updateMany({
+    where: { externalId: body.data.id, resolvedAt: null },
+    data: { resolvedAt: new Date(), resolvedUserId: user.id },
+  });
 
   const result = await processWebhookEvent({
     externalId: body.data.id,

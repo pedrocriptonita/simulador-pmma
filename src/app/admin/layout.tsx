@@ -41,6 +41,9 @@ export default async function AdminLayout({ children }: { children: React.ReactN
               <Button variant="ghost" size="sm" asChild>
                 <Link href="/admin/materiais">Materiais</Link>
               </Button>
+              <Button variant="ghost" size="sm" asChild>
+                <Link href="/admin/pagamentos">Pagamentos</Link>
+              </Button>
             </nav>
           </div>
           <Button variant="outline" size="sm" asChild>

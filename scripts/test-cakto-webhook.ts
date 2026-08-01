@@ -18,6 +18,7 @@ const BASE_URL = process.env.BASE_URL ?? "http://localhost:3100";
 const WEBHOOK_URL = `${BASE_URL}/api/webhooks/checkout`;
 const SECRET = process.env.CHECKOUT_WEBHOOK_SECRET!;
 const TEST_EMAIL = "teste-fase2@simuladorpmma.dev";
+const ORPHAN_EMAIL = "ninguem-com-esse-email@example.com";
 
 let failures = 0;
 function check(label: string, condition: boolean, detail?: string) {
@@ -75,15 +76,52 @@ async function main() {
     JSON.stringify(ignored.json?.result),
   );
 
-  // 3. E-mail desconhecido => 200 user_not_found, sem criar nada
+  // 3. E-mail desconhecido => 200 user_not_found, mas REGISTRADO como órfão
+  const orphanTx = `cakto_${randomUUID()}`;
   const unknownEmail = await post(
-    caktoEvent("purchase_approved", { customer: { email: "ninguem-com-esse-email@example.com" } }),
+    caktoEvent("purchase_approved", {
+      id: orphanTx,
+      customer: { email: ORPHAN_EMAIL },
+    }),
   );
   check(
     "e-mail desconhecido => 200 user_not_found",
     unknownEmail.status === 200 && unknownEmail.json?.result?.reason === "user_not_found",
     JSON.stringify(unknownEmail.json?.result),
   );
+
+  const orphan = await prisma.unmatchedPayment.findUnique({ where: { externalId: orphanTx } });
+  check(
+    "pagamento órfão registrado para vinculação manual",
+    orphan?.payerEmail === ORPHAN_EMAIL && orphan?.resolvedAt === null,
+    `payerEmail=${orphan?.payerEmail} resolvedAt=${orphan?.resolvedAt}`,
+  );
+
+  // 3b. Mesmo evento órfão de novo => upsert, não duplica linha no painel
+  await post(caktoEvent("purchase_approved", { id: orphanTx, customer: { email: ORPHAN_EMAIL } }));
+  const orphanCount = await prisma.unmatchedPayment.count({ where: { externalId: orphanTx } });
+  check("órfão reenviado não duplica no painel", orphanCount === 1, `linhas=${orphanCount}`);
+
+  // 3c. E-mail em CAIXA ALTA deve encontrar o usuário (Supabase grava minúsculo)
+  const upperTx = `cakto_${randomUUID()}`;
+  const upper = await post(
+    caktoEvent("purchase_approved", {
+      id: upperTx,
+      customer: { email: TEST_EMAIL.toUpperCase() },
+    }),
+  );
+  check(
+    "e-mail em maiúsculas => encontra o usuário e libera",
+    upper.status === 200 && upper.json?.result?.action === "granted",
+    JSON.stringify(upper.json?.result),
+  );
+
+  // volta ao estado inicial para os testes seguintes
+  await prisma.purchase.deleteMany({ where: { userId: user.id } });
+  await prisma.user.update({
+    where: { id: user.id },
+    data: { planId: freePlan.id, accessExpiresAt: null },
+  });
 
   // 4. purchase_approved válido => acesso liberado, amount 39.9 reais => 3990 centavos
   const txId = `cakto_${randomUUID()}`;
@@ -124,8 +162,9 @@ async function main() {
     afterChargeback.plan?.slug === "free" && afterChargeback.accessExpiresAt === null,
   );
 
-  // limpeza
+  // limpeza — inclui os órfãos, senão eles ficam sinalizados no painel do admin
   await prisma.purchase.deleteMany({ where: { userId: user.id } });
+  await prisma.unmatchedPayment.deleteMany({ where: { payerEmail: ORPHAN_EMAIL } });
   await prisma.user.update({
     where: { id: user.id },
     data: { planId: freePlan.id, accessExpiresAt: null },

@@ -115,6 +115,7 @@ model User {
   // Relacionamentos
   exams     Exam[] // simulados feitos pelo usuário
   purchases Purchase[] // compras do usuário
+  resolvedPayments UnmatchedPayment[] // pagamentos órfãos vinculados a este usuário
 
   createdAt DateTime  @default(now()) @map("created_at")
   updatedAt DateTime  @updatedAt @map("updated_at")
@@ -148,6 +149,44 @@ model Purchase {
   @@index([userId])
   @@index([status])
   @@map("purchases")
+}
+
+/// Pagamento confirmado pelo provedor cujo e-mail do comprador não bate com
+/// nenhum usuário cadastrado.
+///
+/// Existe porque o adapter da Cakto identifica o comprador PELO E-MAIL (não
+/// há campo de referência externa no checkout dela). Se a pessoa paga com um
+/// e-mail diferente do cadastro — Google Pay, e-mail do cônjuge, um typo — o
+/// webhook respondia 200 e o pagamento simplesmente não existia no sistema:
+/// cliente sem acesso, e nada sinalizando o problema.
+///
+/// Aqui o dinheiro fica visível em /admin/pagamentos até alguém vincular ao
+/// usuário correto. Não substitui a prevenção (campo de e-mail travado no
+/// checkout), é a rede de segurança para quando ela falhar.
+model UnmatchedPayment {
+  id String @id @default(uuid()) @db.Uuid
+
+  /// Transação no provedor. Único: o provedor reenvia o mesmo evento.
+  externalId String @unique @map("external_id")
+  /// E-mail que o comprador informou no checkout (normalizado minúsculo).
+  payerEmail String @map("payer_email")
+  /// Evento cru do provedor, para diagnóstico (purchase_approved, chargeback…).
+  event      String
+  /// Status normalizado a aplicar quando for vinculado.
+  status     PurchaseStatus
+  /// Nulo quando o provedor não informou valor.
+  amountCents Int? @map("amount_cents")
+
+  /// Preenchidos quando um admin vincula o pagamento a um usuário.
+  resolvedAt     DateTime? @map("resolved_at")
+  resolvedUserId String?   @map("resolved_user_id") @db.Uuid
+  resolvedUser   User?     @relation(fields: [resolvedUserId], references: [id])
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@index([resolvedAt])
+  @@map("unmatched_payments")
 }
 
 /// Matéria do edital (ex.: Língua Portuguesa, História do Maranhão...).
