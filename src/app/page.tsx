@@ -5,13 +5,20 @@ import {
   BookOpenCheck,
   CalendarDays,
   CheckCircle2,
+  ChevronDown,
   FileText,
   Target,
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { DashboardPreview } from "@/components/landing/dashboard-preview";
 import { DaysUntilExam } from "@/components/landing/days-until-exam";
+import { getLandingStatsCached } from "@/services/landing";
+
+function formatPrice(cents: number) {
+  return (cents / 100).toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+}
 
 const STATS = [
   { value: "1.000", label: "vagas de Soldado" },
@@ -32,6 +39,41 @@ const STEPS = [
   {
     title: "Veja sua nota líquida",
     description: "Descubra em quais matérias focar e acompanhe sua evolução até a prova.",
+  },
+];
+
+const COMPARISON = [
+  { feature: "Simula a penalização do Cebraspe", alone: "❌", courses: "❌ Genérico", us: "✅" },
+  { feature: "Focado 100% no edital PM MA", alone: "❌", courses: "❌", us: "✅" },
+  { feature: "Mostra sua nota líquida real", alone: "❌", courses: "❌", us: "✅" },
+  { feature: "Diz em qual matéria focar", alone: "❌", courses: "❌", us: "✅" },
+];
+
+/** Objeções reais do público (nível médio, sensível a preço, desconfiado com compra online). */
+const FAQ = [
+  {
+    q: "O simulado é igual à prova de verdade?",
+    a: "Sim — formato Certo/Errado do Cebraspe, cronometrado e com a mesma regra de correção do Edital nº 1 – PMMA/2026: cada erro anula um acerto.",
+  },
+  {
+    q: "Preciso pagar para testar?",
+    a: "Não. Você tem 1 simulado grátis por semana, sem cadastrar cartão de crédito.",
+  },
+  {
+    q: "O pagamento é mensal?",
+    a: "Não. É pagamento único de R$ 39,90 e o acesso vale até o dia da prova, 11/10/2026.",
+  },
+  {
+    q: "Funciona no celular?",
+    a: "Sim, 100% — foi feito para celular. Não precisa instalar nada, é só abrir no navegador.",
+  },
+  {
+    q: "As questões são do nível do concurso?",
+    a: "Sim. São criadas matéria por matéria conforme o conteúdo programático do edital, no nível médio exigido.",
+  },
+  {
+    q: "E se eu não gostar?",
+    a: "Você tem 7 dias de garantia total. Pediu, devolvemos 100% do valor, sem perguntas.",
   },
 ];
 
@@ -68,7 +110,9 @@ const FEATURES = [
   },
 ];
 
-export default function Home() {
+export default async function Home() {
+  const { examsCorrected, paidPriceCents } = await getLandingStatsCached();
+
   return (
     <div className="flex flex-1 flex-col">
       {/* Header público */}
@@ -89,33 +133,40 @@ export default function Home() {
       </header>
 
       <main className="flex flex-1 flex-col">
-        {/* Hero */}
-        <section className="mx-auto flex w-full max-w-3xl flex-col items-center gap-6 px-4 pt-14 pb-10 text-center sm:pt-20">
-          <Badge variant="secondary">Edital nº 1 — PMMA/2026 · Banca Cebraspe</Badge>
-          <h1 className="text-3xl font-bold tracking-tight text-balance sm:text-5xl">
-            Na prova da PM MA, <span className="text-primary">cada erro anula um acerto.</span> Você
-            está treinando do jeito certo?
-          </h1>
-          <p className="text-muted-foreground max-w-xl text-lg text-balance">
-            Simulados fiéis ao formato Certo/Errado do Cebraspe, com a penalização de verdade.
-            Descubra sua <strong className="text-foreground">nota líquida</strong> e o que priorizar
-            antes do dia 11 de outubro.
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-2">
-            <Button size="lg" asChild>
-              <Link href="/cadastro">Fazer simulado grátis</Link>
-            </Button>
-            <Button size="lg" variant="outline" asChild>
-              <Link href="/login">Já tenho conta</Link>
-            </Button>
+        {/* Hero — CTA único: o público vem de anúncio e quase ninguém já tem conta,
+            então "Entrar" fica só no header para não competir com a conversão. */}
+        <section className="mx-auto w-full max-w-5xl px-4 pt-12 pb-10 sm:pt-16">
+          <div className="grid items-center gap-10 lg:grid-cols-2">
+            <div className="flex flex-col items-center gap-5 text-center lg:items-start lg:text-left">
+              <Badge variant="secondary">Edital nº 1 — PMMA/2026 · Banca Cebraspe</Badge>
+              <h1 className="text-3xl font-bold tracking-tight text-balance sm:text-5xl">
+                Na prova da PM MA, <span className="text-primary">cada erro anula um acerto.</span>{" "}
+                Você está treinando do jeito certo?
+              </h1>
+              <p className="text-muted-foreground max-w-xl text-lg text-balance">
+                Simulados fiéis ao formato Certo/Errado do Cebraspe, com a penalização de verdade.
+                Descubra sua <strong className="text-foreground">nota líquida</strong> e o que
+                priorizar antes do dia 11 de outubro.
+              </p>
+              <div className="flex flex-col items-center gap-2 lg:items-start">
+                <Button size="lg" asChild>
+                  <Link href="/cadastro">Fazer meu simulado grátis</Link>
+                </Button>
+                <p className="text-muted-foreground text-sm">
+                  Sem cartão de crédito · Leva 2 minutos para começar
+                </p>
+              </div>
+              <p className="text-muted-foreground text-sm">
+                Faltam{" "}
+                <strong className="text-foreground tabular-nums">
+                  <DaysUntilExam />
+                </strong>{" "}
+                dias para a prova. Cada semana de treino conta.
+              </p>
+            </div>
+
+            <DashboardPreview />
           </div>
-          <p className="text-muted-foreground text-sm">
-            Faltam{" "}
-            <strong className="text-foreground tabular-nums">
-              <DaysUntilExam />
-            </strong>{" "}
-            dias para a prova. Cada semana de treino conta.
-          </p>
         </section>
 
         {/* Stats */}
@@ -207,6 +258,158 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Prova social — só dados reais. Sem depoimento inventado: além de
+            violar CDC/CONAR e política do Meta, é o tipo de coisa que derruba
+            conta de anúncios. O contador se esconde sozinho enquanto o número
+            for baixo demais para ajudar (ver services/landing.ts). */}
+        <section className="border-t">
+          <div className="mx-auto flex w-full max-w-3xl flex-col items-center gap-3 px-4 py-12 text-center">
+            {examsCorrected !== null ? (
+              <p className="text-2xl font-bold tracking-tight tabular-nums sm:text-3xl">
+                📊 {examsCorrected.toLocaleString("pt-BR")} simulados já corrigidos na plataforma
+              </p>
+            ) : null}
+            <p className="text-muted-foreground max-w-xl text-balance">
+              Candidatos de <strong className="text-foreground">São Luís</strong>,{" "}
+              <strong className="text-foreground">Imperatriz</strong>,{" "}
+              <strong className="text-foreground">Caxias</strong> e todo o Maranhão já treinam por
+              aqui.
+            </p>
+          </div>
+        </section>
+
+        {/* Comparativo */}
+        <section className="bg-secondary/50 border-y">
+          <div className="mx-auto flex w-full max-w-4xl flex-col items-center gap-8 px-4 py-14">
+            <h2 className="text-center text-2xl font-bold tracking-tight sm:text-3xl">
+              Por que não basta estudar por questões comuns
+            </h2>
+            <div className="w-full overflow-x-auto">
+              <table className="w-full min-w-[560px] border-collapse text-sm">
+                <thead>
+                  <tr className="border-b">
+                    <th className="p-3 text-left font-medium" />
+                    <th className="text-muted-foreground p-3 text-center font-medium">
+                      Estudar sozinho
+                    </th>
+                    <th className="text-muted-foreground p-3 text-center font-medium">
+                      Cursos genéricos
+                    </th>
+                    <th className="text-primary p-3 text-center font-bold">Simulador PM MA</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {COMPARISON.map((row) => (
+                    <tr key={row.feature} className="border-b">
+                      <td className="p-3 font-medium">{row.feature}</td>
+                      <td className="text-muted-foreground p-3 text-center">{row.alone}</td>
+                      <td className="text-muted-foreground p-3 text-center">{row.courses}</td>
+                      <td className="p-3 text-center font-medium">{row.us}</td>
+                    </tr>
+                  ))}
+                  <tr>
+                    <td className="p-3 font-medium">Preço</td>
+                    <td className="text-muted-foreground p-3 text-center">
+                      &quot;Grátis&quot;
+                      <br />
+                      <span className="text-xs">(custa a aprovação)</span>
+                    </td>
+                    <td className="text-muted-foreground p-3 text-center">R$ 400–900/ano</td>
+                    <td className="text-primary p-3 text-center font-bold">
+                      {paidPriceCents ? formatPrice(paidPriceCents) : "—"}
+                      <br />
+                      <span className="text-foreground text-xs font-normal">
+                        único, até a prova
+                      </span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        {/* Oferta — o objetivo da página continua sendo o cadastro grátis, por
+            isso o CTA principal aqui é o gratuito e o pago aparece como
+            informação, não como barreira. */}
+        <section className="mx-auto w-full max-w-2xl px-4 py-14">
+          <Card className="border-primary/40">
+            <CardHeader className="items-center gap-2 text-center">
+              <Badge>Acesso completo</Badge>
+              <CardTitle className="text-3xl font-bold tabular-nums">
+                {paidPriceCents ? formatPrice(paidPriceCents) : "—"}
+              </CardTitle>
+              <CardDescription className="text-base">
+                Pagamento único · acesso total até o dia da prova (11/10/2026)
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="flex flex-col gap-4">
+              <ul className="flex flex-col gap-2 text-sm">
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="text-primary mt-0.5 size-4 shrink-0" aria-hidden />
+                  Simulados ilimitados até a prova
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="text-primary mt-0.5 size-4 shrink-0" aria-hidden />
+                  Dashboard completo por matéria
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="text-primary mt-0.5 size-4 shrink-0" aria-hidden />
+                  Gabarito comentado em cada questão
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="text-primary mt-0.5 size-4 shrink-0" aria-hidden />
+                  🎁 Biblioteca de PDFs por matéria do edital (incluída)
+                </li>
+              </ul>
+              <p className="bg-secondary/60 rounded-lg p-3 text-center text-sm">
+                🛡️ <strong>7 dias de garantia incondicional.</strong> Não gostou? Devolvemos 100%,
+                sem perguntas.
+              </p>
+              <div className="flex flex-col items-center gap-2 pt-1">
+                <Button size="lg" asChild>
+                  <Link href="/cadastro">Começar pelo simulado grátis</Link>
+                </Button>
+                <p className="text-muted-foreground text-center text-sm text-balance">
+                  Ainda em dúvida? Comece grátis, sem cartão. Você decide depois de ver sua nota
+                  real.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+        </section>
+
+        {/* FAQ — <details> nativo: acessível, funciona sem JS e não adiciona
+            dependência nova ao bundle da landing. */}
+        <section className="bg-secondary/50 border-y">
+          <div className="mx-auto flex w-full max-w-3xl flex-col items-center gap-8 px-4 py-14">
+            <h2 className="text-center text-2xl font-bold tracking-tight sm:text-3xl">
+              Perguntas frequentes
+            </h2>
+            <div className="flex w-full flex-col gap-3">
+              {FAQ.map((item) => (
+                <details
+                  key={item.q}
+                  className="bg-background group rounded-lg border px-4 py-3 [&_summary::-webkit-details-marker]:hidden"
+                >
+                  <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-sm font-medium">
+                    {item.q}
+                    <ChevronDown
+                      className="text-muted-foreground size-4 shrink-0 transition-transform group-open:rotate-180"
+                      aria-hidden
+                    />
+                  </summary>
+                  <p className="text-muted-foreground mt-2 text-sm leading-relaxed">{item.a}</p>
+                </details>
+              ))}
+            </div>
+            <p className="text-muted-foreground text-center text-sm text-balance">
+              🛡️ <strong className="text-foreground">7 dias de garantia incondicional</strong> no
+              acesso pago. Não gostou? Devolvemos 100%, sem perguntas.
+            </p>
+          </div>
+        </section>
+
         {/* CTA final */}
         <section className="border-t">
           <div className="mx-auto flex w-full max-w-3xl flex-col items-center gap-5 px-4 py-14 text-center">
@@ -233,12 +436,18 @@ export default function Home() {
             Plataforma de estudos independente. Não possui vínculo com a Polícia Militar do
             Maranhão, o Governo do Estado ou a banca Cebraspe.
           </p>
-          <div className="flex gap-4 pt-1">
+          <div className="flex flex-wrap justify-center gap-4 pt-1">
             <Link href="/login" className="hover:text-foreground underline underline-offset-4">
               Entrar
             </Link>
             <Link href="/cadastro" className="hover:text-foreground underline underline-offset-4">
               Criar conta
+            </Link>
+            <Link
+              href="/privacidade"
+              className="hover:text-foreground underline underline-offset-4"
+            >
+              Política de Privacidade
             </Link>
           </div>
         </div>
