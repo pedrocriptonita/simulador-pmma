@@ -1,0 +1,681 @@
+[
+  {
+    "materia": "historia-do-maranhao",
+    "enunciado": "São Luís foi fundada em 1612 por franceses comandados por Daniel de la Touche, o Senhor de La Ravardière, sendo a única capital brasileira de fundação francesa.",
+    "gabarito": "CERTO",
+    "explicacao": "A fundação integrou o projeto da França Equinocial. O nome da cidade homenageia o rei Luís XIII.",
+    "dificuldade": "FACIL"
+  },
+  {
+    "materia": "historia-do-maranhao",
+    "enunciado": "O projeto de colonização francesa que resultou na fundação de São Luís ficou conhecido como França Antártica.",
+    "gabarito": "ERRADO",
+    "explicacao": "O projeto no Maranhão foi a FRANÇA EQUINOCIAL (1612). A França Antártica foi a tentativa francesa anterior, na baía de Guanabara (1555), desarticulada por Estácio de Sá.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "historia-do-maranhao",
+    "enunciado": "O nome da cidade de São Luís constitui homenagem ao rei Luís XIV, da França, conhecido como Rei Sol.",
+    "gabarito": "ERRADO",
+    "explicacao": "A homenagem é a LUÍS XIII, monarca francês à época da fundação, em 1612. Luís XIV, o Rei Sol, sequer havia nascido — viria ao mundo apenas em 1638.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "historia-do-maranhao",
+    "enunciado": "Daniel de la Touche comandou as forças luso-brasileiras que derrotaram os invasores na Batalha de Guaxenduba, em 1614.",
+    "gabarito": "ERRADO",
+    "explicacao": "Daniel de la Touche era o líder FRANCÊS, ou seja, o invasor. As forças luso-brasileiras em Guaxenduba foram comandadas por JERÔNIMO DE ALBUQUERQUE.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "historia-do-maranhao",
+    "enunciado": "A expulsão definitiva dos franceses do Maranhão consolidou-se em 1615, com a atuação da expedição comandada por Alexandre de Moura.",
+    "gabarito": "CERTO",
+    "explicacao": "Após a derrota francesa em Guaxenduba (1614), a chegada da esquadra de Alexandre de Moura levou à capitulação e à retirada definitiva dos franceses.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "historia-do-maranhao",
+    "enunciado": "Ao contrário do que ocorreu em Pernambuco, o território maranhense jamais foi ocupado por forças holandesas.",
+    "gabarito": "ERRADO",
+    "explicacao": "Os holandeses ocuparam São Luís entre 1641 e 1644, sendo expulsos por uma resistência local. A ocupação foi mais curta que a pernambucana, mas existiu.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "historia-do-maranhao",
+    "enunciado": "Em 1621, a Coroa portuguesa criou o Estado do Maranhão, unidade administrativa separada do Estado do Brasil e subordinada diretamente a Lisboa.",
+    "gabarito": "CERTO",
+    "explicacao": "A separação decorria da dificuldade de navegação entre São Luís e Salvador em razão das correntes marítimas: era mais rápido chegar a Lisboa do que à então capital do Brasil.",
+    "dificuldade": "DIFICIL"
+  },
+  {
+    "materia": "historia-do-maranhao",
+    "enunciado": "A Revolta de Beckman, ocorrida em 1684, teve entre suas causas a insatisfação dos colonos com o monopólio comercial da Companhia de Comércio do Estado do Maranhão e com a atuação dos jesuítas na defesa dos indígenas.",
+    "gabarito": "CERTO",
+    "explicacao": "Os colonos queriam liberdade para escravizar indígenas, ao que se opunham os jesuítas, notadamente o padre Antônio Vieira, e reclamavam do desabastecimento promovido pela Companhia.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "historia-do-maranhao",
+    "enunciado": "Ao final da Revolta de Beckman, seu principal líder, Manuel Beckman, foi anistiado pela Coroa portuguesa e manteve seus bens e cargos.",
+    "gabarito": "ERRADO",
+    "explicacao": "Manuel Beckman foi preso e ENFORCADO em 1685. A repressão portuguesa à revolta foi exemplar, ainda que a Companhia de Comércio tenha sido posteriormente extinta.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "historia-do-maranhao",
+    "enunciado": "A Cabanagem foi a grande revolta popular ocorrida no Maranhão durante o período regencial.",
+    "gabarito": "ERRADO",
+    "explicacao": "A Cabanagem ocorreu na província do GRÃO-PARÁ (1835-1840). A grande revolta regencial maranhense foi a BALAIADA (1838-1841).",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "historia-do-maranhao",
+    "enunciado": "A Balaiada foi um movimento ocorrido entre 1838 e 1841, durante o período regencial, que reuniu vaqueiros, sertanejos e escravizados contra as elites locais.",
+    "gabarito": "CERTO",
+    "explicacao": "O nome deriva de Manuel Francisco dos Anjos Ferreira, o Balaio, artesão que fabricava balaios (cestos).",
+    "dificuldade": "FACIL"
+  },
+  {
+    "materia": "historia-do-maranhao",
+    "enunciado": "Cosme Bento das Chagas, o Negro Cosme, liderou na Balaiada um contingente formado por escravizados fugidos, tendo sido enforcado após a derrota do movimento.",
+    "gabarito": "CERTO",
+    "explicacao": "Autointitulado 'Tutor e Imperador das Liberdades Bem-Te-Vis', foi o líder que sofreu a repressão mais dura — os demais chefes chegaram a ser anistiados.",
+    "dificuldade": "DIFICIL"
+  },
+  {
+    "materia": "historia-do-maranhao",
+    "enunciado": "A repressão à Balaiada foi comandada por Luís Alves de Lima e Silva, que, em razão desse feito, recebeu o título de Barão de Caxias.",
+    "gabarito": "CERTO",
+    "explicacao": "O futuro Duque de Caxias e patrono do Exército Brasileiro iniciou ali sua trajetória de pacificador de revoltas provinciais. A cidade maranhense de Caxias dá nome ao título.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "historia-do-maranhao",
+    "enunciado": "O Maranhão aderiu à Independência do Brasil imediatamente após o 7 de setembro de 1822, sendo uma das primeiras províncias a reconhecer o novo governo.",
+    "gabarito": "ERRADO",
+    "explicacao": "A adesão maranhense foi TARDIA, ocorrendo apenas em 28 de julho de 1823, após pressão militar. A província mantinha fortes vínculos comerciais diretos com Portugal.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "historia-do-maranhao",
+    "enunciado": "A adesão do Maranhão à Independência do Brasil, em 1823, contou com a atuação decisiva do almirante Lord Cochrane, a serviço de d. Pedro I.",
+    "gabarito": "CERTO",
+    "explicacao": "Cochrane obteve a rendição com uma manobra de blóqueio e blefe, fazendo crer que dispunha de uma esquadra muito superior à que de fato comandava.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "historia-do-maranhao",
+    "enunciado": "A Companhia Geral do Comércio do Grão-Pará e Maranhão, criada em 1755 durante a administração do Marquês de Pombal, dedicou-se exclusivamente ao comércio de açúcar e proibiu a entrada de africanos escravizados na província.",
+    "gabarito": "ERRADO",
+    "explicacao": "A companhia impulsionou a produção de ALGODÃO e ARROZ e, longe de proibir, FINANCIOU a importação de mão de obra escravizada africana, o que reconfigurou a demografia maranhense na segunda metade do século XVIII.",
+    "dificuldade": "DIFICIL"
+  },
+  {
+    "materia": "historia-do-maranhao",
+    "enunciado": "O auge da economia algodoeira maranhense no século XIX foi favorecido pela Guerra de Secessão dos Estados Unidos, que retirou temporariamente o concorrente norte-americano do mercado internacional.",
+    "gabarito": "CERTO",
+    "explicacao": "Encerrado o conflito (1865) e retomada a produção norte-americana, o algodão maranhense entrou em declínio acentuado.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "historia-do-maranhao",
+    "enunciado": "São Luís recebeu a alcunha de Atenas Brasileira em razão de seu parque industrial, o mais avançado do Norte e Nordeste no século XIX.",
+    "gabarito": "ERRADO",
+    "explicacao": "A alcunha deve-se à intensa produção INTELECTUAL E LITERÁRIA da cidade no século XIX, que revelou nomes como Gonçalves Dias, Aluísio Azevedo e João Francisco Lisboa.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "historia-do-maranhao",
+    "enunciado": "Gonçalves Dias, Aluísio Azevedo, Graça Aranha e Ferreira Gullar são escritores nascidos no Maranhão.",
+    "gabarito": "CERTO",
+    "explicacao": "Gonçalves Dias nasceu em Caxias; Aluísio Azevedo, Graça Aranha e Ferreira Gullar, em São Luís. Somam-se a eles Coelho Neto e Josué Montello.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "historia-do-maranhao",
+    "enunciado": "Machado de Assis e José de Alencar integram o grupo de escritores maranhenses que consagrou São Luís como Atenas Brasileira.",
+    "gabarito": "ERRADO",
+    "explicacao": "Machado de Assis era carioca e José de Alencar, cearense. Nenhum dos dois é maranhense.",
+    "dificuldade": "FACIL"
+  },
+  {
+    "materia": "historia-do-maranhao",
+    "enunciado": "O Centro Histórico de São Luís foi inscrito na lista de Patrimônio Cultural da Humanidade da UNESCO em 1997.",
+    "gabarito": "CERTO",
+    "explicacao": "O reconhecimento decorre do conjunto arquitetônico colonial português, com destaque para os sobrados revestidos de azulejos.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "historia-do-maranhao",
+    "enunciado": "O Tambor de Crioula é manifestação cultural maranhense de origem indígena, associada aos rituais dos povos Tupinambá.",
+    "gabarito": "ERRADO",
+    "explicacao": "O Tambor de Crioula é de matriz AFRICANA, praticado historicamente por descendentes de escravizados e associado à devoção a São Benedito. É registrado como patrimônio imaterial pelo IPHAN desde 2007.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "historia-do-maranhao",
+    "enunciado": "O Bumba meu boi do Maranhão foi reconhecido pela UNESCO como Patrimônio Cultural Imaterial da Humanidade.",
+    "gabarito": "CERTO",
+    "explicacao": "O reconhecimento ocorreu em 2019. A manifestação organiza-se em diferentes sotaques, como o de matraca, o de zabumba, o de orquestra, o da baixada e o de costa de mão.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "historia-do-maranhao",
+    "enunciado": "José Sarney, político maranhense, assumiu a Presidência da República em 1985, tornando-se o primeiro presidente civil após o regime militar.",
+    "gabarito": "CERTO",
+    "explicacao": "Eleito vice na chapa de Tancredo Neves, assumiu em razão da doença e da morte deste. Sua presidência marcou a transição para a Constituição de 1988.",
+    "dificuldade": "FACIL"
+  },
+  {
+    "materia": "historia-do-maranhao",
+    "enunciado": "O município de Alcântara, no Maranhão, abriga a maior refinaria de petróleo do Norte e Nordeste do país.",
+    "gabarito": "ERRADO",
+    "explicacao": "Alcântara abriga o CENTRO DE LANÇAMENTO DE ALCÂNTARA (CLA), base espacial privilegiada pela proximidade da linha do Equador. O município também preserva relevante conjunto arquitetônico colonial.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "historia-do-maranhao",
+    "enunciado": "O Estado do Maranhão e Grão-Pará teve Belém como sede administrativa desde a sua criação, jamais tendo São Luís exercido essa função.",
+    "gabarito": "ERRADO",
+    "explicacao": "SÃO LUÍS foi a sede na primeira fase. A capital só depois se transferiu para Belém, acompanhando o deslocamento do eixo econômico para a Amazônia.",
+    "dificuldade": "DIFICIL"
+  },
+  {
+    "materia": "geografia-do-maranhao",
+    "enunciado": "O Maranhão integra a região Nordeste do Brasil, segundo a divisão regional oficial do IBGE.",
+    "gabarito": "CERTO",
+    "explicacao": "Apesar de apresentar características naturais de transição para a Amazônia e o Cerrado, o estado é oficialmente nordestino.",
+    "dificuldade": "FACIL"
+  },
+  {
+    "materia": "geografia-do-maranhao",
+    "enunciado": "O Maranhão faz divisa com os estados do Piauí, a leste, do Tocantins, ao sul e sudoeste, e do Pará, a oeste, sendo banhado ao norte pelo oceano Atlântico.",
+    "gabarito": "CERTO",
+    "explicacao": "São apenas três estados limítrofes. O Maranhão não faz divisa com o Ceará nem com o Amazonas.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "geografia-do-maranhao",
+    "enunciado": "O Maranhão faz divisa com o estado do Ceará, a leste, e com o Amazonas, a oeste.",
+    "gabarito": "ERRADO",
+    "explicacao": "A leste o Maranhão faz divisa com o PIAUÍ e a oeste com o PARÁ. Não há fronteira com Ceará nem com Amazonas.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "geografia-do-maranhao",
+    "enunciado": "O Maranhão possui o maior litoral do Brasil em extensão, superando o do estado da Bahia.",
+    "gabarito": "ERRADO",
+    "explicacao": "O litoral maranhense é o SEGUNDO maior do país, com cerca de 640 km, superado pelo da BAHIA. Destaca-se pelo recorte bastante irregular, com golfões, baías e manguezais.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "geografia-do-maranhao",
+    "enunciado": "A cidade de São Luís está situada em uma ilha, denominada Ilha de Upaon-Açu ou Ilha do Maranhão, entre as baías de São Marcos e de São José.",
+    "gabarito": "CERTO",
+    "explicacao": "A ilha abriga ainda os municípios de São José de Ribamar, Paço do Lumiar e Raposa.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "geografia-do-maranhao",
+    "enunciado": "O Parque Nacional dos Lençóis Maranhenses caracteriza-se por um extenso campo de dunas entremeado por lagoas de água doce que se formam no período chuvoso.",
+    "gabarito": "CERTO",
+    "explicacao": "As lagoas resultam do acúmulo de água da chuva sobre um lençol freático raso e camada impermeável, e tendem a secar no segundo semestre. O principal município de acesso é Barreirinhas.",
+    "dificuldade": "FACIL"
+  },
+  {
+    "materia": "geografia-do-maranhao",
+    "enunciado": "As lagoas dos Lençóis Maranhenses são de água salgada, formadas pela infiltração da água do mar sob o campo de dunas.",
+    "gabarito": "ERRADO",
+    "explicacao": "São lagoas de ÁGUA DOCE, formadas pelo acúmulo de água das chuvas retida por uma camada impermeável do subsolo.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "geografia-do-maranhao",
+    "enunciado": "O Delta do Parnaíba, situado na divisa entre o Maranhão e o Piauí, é considerado o único delta em mar aberto das Américas.",
+    "gabarito": "CERTO",
+    "explicacao": "O rio Parnaíba desemboca formando um conjunto de ilhas e canais diretamente no oceano, e não em um golfo ou mar interior.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "geografia-do-maranhao",
+    "enunciado": "O rio Itapecuru constitui o limite natural entre os estados do Maranhão e do Piauí.",
+    "gabarito": "ERRADO",
+    "explicacao": "O limite com o Piauí é o rio PARNAÍBA. O Itapecuru corre integralmente em território maranhense. Os demais rios de divisa são o Gurupi, com o Pará, e o Tocantins.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "geografia-do-maranhao",
+    "enunciado": "Os rios Itapecuru, Mearim, Pindaré e Grajaú integram a rede hidrográfica genuinamente maranhense, com nascente e foz no território do estado.",
+    "gabarito": "CERTO",
+    "explicacao": "Diferentemente do Parnaíba, do Tocantins e do Gurupi, que são rios de divisa, esses correm integralmente dentro do Maranhão.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "geografia-do-maranhao",
+    "enunciado": "O fenômeno da pororoca, encontro violento entre as águas do rio e a maré oceânica, ocorre no rio Mearim, no Maranhão.",
+    "gabarito": "CERTO",
+    "explicacao": "O fenômeno é favorecido pela grande amplitude das marés na baía de São Marcos, das maiores do mundo.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "geografia-do-maranhao",
+    "enunciado": "A vegetação do Maranhão é homogênea, sendo integralmente ocupada pelo bioma Caatinga.",
+    "gabarito": "ERRADO",
+    "explicacao": "O Maranhão é justamente um estado de TRANSIÇÃO: apresenta Amazônia a oeste, Cerrado ao sul, Caatinga a leste e a Mata dos Cocais na faixa intermediária.",
+    "dificuldade": "FACIL"
+  },
+  {
+    "materia": "geografia-do-maranhao",
+    "enunciado": "A Mata dos Cocais, formação vegetal de transição presente no Maranhão, tem como espécies características o babaçu e a carnaúba.",
+    "gabarito": "CERTO",
+    "explicacao": "O babaçu predomina na porção mais úmida, a oeste; a carnaúba, na porção mais seca, a leste, próxima ao Piauí.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "geografia-do-maranhao",
+    "enunciado": "As quebradeiras de coco babaçu constituem categoria de trabalhadoras extrativistas de grande relevância social e econômica no Maranhão.",
+    "gabarito": "CERTO",
+    "explicacao": "A atividade envolve a quebra manual do coco para extração da amêndoa, e a categoria organizou-se politicamente na luta pelo livre acesso aos babaçuais.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "geografia-do-maranhao",
+    "enunciado": "Por integrar a região Nordeste, nenhuma porção do território maranhense pertence à Amazônia Legal.",
+    "gabarito": "ERRADO",
+    "explicacao": "A porção do Maranhão situada a OESTE DO MERIDIANO 44° integra a Amazônia Legal. O estado é o único do Nordeste nessa condição.",
+    "dificuldade": "DIFICIL"
+  },
+  {
+    "materia": "geografia-do-maranhao",
+    "enunciado": "O clima do Maranhão é uniformemente semiárido, estando a totalidade do estado inserida no Polígono das Secas.",
+    "gabarito": "ERRADO",
+    "explicacao": "Predominam os climas tropical e equatorial úmido, com elevada pluviosidade a oeste e ao norte. Apenas a porção LESTE apresenta características semiáridas e integra o Polígono das Secas.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "geografia-do-maranhao",
+    "enunciado": "O Maranhão integra o MATOPIBA, região reconhecida como a mais recente fronteira agrícola brasileira, voltada sobretudo à produção de grãos.",
+    "gabarito": "CERTO",
+    "explicacao": "A sigla reúne as iniciais de Maranhão, Tocantins, Piauí e Bahia. No Maranhão, a expansão da soja concentra-se no sul do estado, sobre áreas de Cerrado.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "geografia-do-maranhao",
+    "enunciado": "A sigla MATOPIBA designa a região formada pelos estados do Maranhão, Tocantins, Pará e Bahia.",
+    "gabarito": "ERRADO",
+    "explicacao": "O PI corresponde ao PIAUÍ, e não ao Pará. A região é formada por Maranhão, Tocantins, Piauí e Bahia.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "geografia-do-maranhao",
+    "enunciado": "O Porto do Itaqui, localizado em São Luís, é um dos principais complexos portuários do país, beneficiado pela grande profundidade natural de suas águas.",
+    "gabarito": "CERTO",
+    "explicacao": "A profundidade permite receber navios de grande calado, o que o torna estratégico para o escoamento de minério de ferro, grãos e combustíveis.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "geografia-do-maranhao",
+    "enunciado": "A Estrada de Ferro Carajás liga a província mineral de Carajás, no Pará, ao Porto de Suape, em Pernambuco.",
+    "gabarito": "ERRADO",
+    "explicacao": "A ferrovia termina no Porto da PONTA DA MADEIRA, em SÃO LUÍS. É a principal via de escoamento do minério de ferro extraído em Carajás e transporta também passageiros.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "geografia-do-maranhao",
+    "enunciado": "Imperatriz é o segundo município mais populoso do Maranhão, situando-se no oeste do estado, às margens do rio Tocantins.",
+    "gabarito": "CERTO",
+    "explicacao": "A cidade se consolidou como polo regional a partir da abertura da rodovia Belém-Brasília.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "geografia-do-maranhao",
+    "enunciado": "O Maranhão apresenta um dos mais elevados Índices de Desenvolvimento Humano entre as unidades da Federação, superando a média nacional.",
+    "gabarito": "ERRADO",
+    "explicacao": "O estado registra historicamente um dos MENORES IDH do país, com indicadores de renda, escolaridade e saneamento abaixo da média nacional.",
+    "dificuldade": "FACIL"
+  },
+  {
+    "materia": "geografia-do-maranhao",
+    "enunciado": "Em área territorial, o Maranhão é o maior estado da região Nordeste, superando inclusive a Bahia.",
+    "gabarito": "ERRADO",
+    "explicacao": "O Maranhão é o SEGUNDO maior do Nordeste, com cerca de 330 mil km², atrás da BAHIA, que supera 560 mil km². Ainda assim, figura entre os dez maiores estados do país.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "geografia-do-maranhao",
+    "enunciado": "O relevo maranhense é dominado por cadeias montanhosas de grande altitude, com diversos pontos acima de 2.000 metros.",
+    "gabarito": "ERRADO",
+    "explicacao": "Predominam PLANÍCIES no litoral e PLANALTOS e chapadas no interior, com altitudes modestas. O ponto culminante do estado não alcança 900 metros.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "historia-do-brasil",
+    "enunciado": "O sistema de capitanias hereditárias, implantado a partir de 1534, transferia a particulares a incumbência de colonizar o território, mantendo-se a propriedade da terra com a Coroa portuguesa.",
+    "gabarito": "CERTO",
+    "explicacao": "O donatário recebia a posse e a administração, mas não a propriedade: não podia vender nem dividir a capitania. Apenas São Vicente e Pernambuco prosperaram.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "historia-do-brasil",
+    "enunciado": "O Governo-Geral foi instituído em 1549, tendo Mem de Sá como primeiro governador-geral e Olinda como sede.",
+    "gabarito": "ERRADO",
+    "explicacao": "O primeiro governador-geral foi TOMÉ DE SOUSA, e a sede foi SALVADOR. Mem de Sá foi o terceiro a ocupar o cargo.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "historia-do-brasil",
+    "enunciado": "Durante a União Ibérica (1580-1640), a linha estabelecida pelo Tratado de Tordesilhas foi rigorosamente respeitada, o que impediu qualquer expansão do território colonial rumo ao interior.",
+    "gabarito": "ERRADO",
+    "explicacao": "Ocorreu justamente o oposto: com as duas coroas unidas, Tordesilhas perdeu efeito prático, e o período foi marcado pelo AVANÇO de bandeirantes e missionários para o interior.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "historia-do-brasil",
+    "enunciado": "A Inconfidência Mineira, ocorrida em 1789, teve como uma de suas causas imediatas a ameaça de cobrança da derrama, e resultou no enforcamento de Joaquim José da Silva Xavier, o Tiradentes.",
+    "gabarito": "CERTO",
+    "explicacao": "A derrama era a cobrança forçada dos atrasados do quinto. Tiradentes foi o único executado; os demais conjurados tiveram penas comutadas em degredo.",
+    "dificuldade": "FACIL"
+  },
+  {
+    "materia": "historia-do-brasil",
+    "enunciado": "A transferência da Corte portuguesa para o Brasil, em 1808, decorreu da invasão de Portugal pelas tropas napoleônicas e foi seguida da abertura dos portos às nações amigas.",
+    "gabarito": "CERTO",
+    "explicacao": "A abertura dos portos encerrou na prática o pacto colonial e beneficiou sobretudo a Inglaterra, que escoltara a família real na travessia.",
+    "dificuldade": "FACIL"
+  },
+  {
+    "materia": "historia-do-brasil",
+    "enunciado": "A Constituição de 1824, primeira do Brasil independente, foi elaborada e aprovada pela Assembleia Constituinte eleita em 1823.",
+    "gabarito": "ERRADO",
+    "explicacao": "D. Pedro I DISSOLVEU a Assembleia Constituinte em novembro de 1823 e OUTORGOU a Constituição em 1824, elaborada por um Conselho de Estado de sua confiança.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "historia-do-brasil",
+    "enunciado": "A Constituição de 1824 previa quatro poderes, entre eles o Poder Moderador, exercido privativamente pelo imperador.",
+    "gabarito": "CERTO",
+    "explicacao": "Além dos três poderes clássicos, o Moderador conferia ao imperador a chave de todo o sistema político, permitindo-lhe dissolver a Câmara e nomear senadores vitalícios.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "historia-do-brasil",
+    "enunciado": "O período regencial (1831-1840) caracterizou-se pela estabilidade política e pela ausência de revoltas provinciais de vulto.",
+    "gabarito": "ERRADO",
+    "explicacao": "Foi justamente o período mais CONVULSIONADO do Império, com Cabanagem, Sabinada, Balaiada, Revolta dos Malês e Farroupilha.",
+    "dificuldade": "FACIL"
+  },
+  {
+    "materia": "historia-do-brasil",
+    "enunciado": "A Guerra do Paraguai (1864-1870) foi o maior conflito armado da história da América do Sul e contribuiu para o fortalecimento político do Exército brasileiro.",
+    "gabarito": "CERTO",
+    "explicacao": "O prestígio adquirido pelos militares e o atrito posterior com o governo imperial — a chamada Questão Militar — foram fatores relevantes na Proclamação da República.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "historia-do-brasil",
+    "enunciado": "A Lei Áurea, que aboliu a escravidão no Brasil, foi assinada em 1888 pela princesa Isabel e previu indenização aos ex-proprietários de pessoas escravizadas.",
+    "gabarito": "ERRADO",
+    "explicacao": "A Lei Áurea NÃO previu indenização a proprietários — tampouco qualquer política de amparo aos libertos. Era um texto de apenas dois artigos.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "historia-do-brasil",
+    "enunciado": "A Lei do Ventre Livre, de 1871, declarava livres todas as pessoas escravizadas que contassem mais de 60 anos de idade.",
+    "gabarito": "ERRADO",
+    "explicacao": "A Lei do Ventre Livre alcançava os FILHOS de mulheres escravizadas nascidos a partir de 1871. A libertação dos maiores de 60 anos foi objeto da Lei dos Sexagenários, de 1885.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "historia-do-brasil",
+    "enunciado": "A Proclamação da República, em 15 de novembro de 1889, resultou de amplo movimento popular armado, com participação decisiva das camadas urbanas.",
+    "gabarito": "ERRADO",
+    "explicacao": "Foi um golpe essencialmente MILITAR, com escassa participação popular — daí a célebre observação de Aristides Lobo de que o povo assistiu a tudo bestializado.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "historia-do-brasil",
+    "enunciado": "Durante a República Velha, a política dos governadores e o coronelismo asseguraram o controle eleitoral das oligarquias, valendo-se, entre outros mecanismos, do voto de cabresto.",
+    "gabarito": "CERTO",
+    "explicacao": "O voto era aberto, o que permitia a fiscalização direta do eleitor pelo coronel. A Comissão Verificadora de Poderes completava o sistema, invalidando eleições adversas.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "historia-do-brasil",
+    "enunciado": "A Revolução de 1930 encerrou a República Velha e levou Getúlio Vargas ao poder.",
+    "gabarito": "CERTO",
+    "explicacao": "O movimento articulou-se após a vitória de Júlio Prestes, contestada pela Aliança Liberal, e foi precipitado pelo assassinato de João Pessoa.",
+    "dificuldade": "FACIL"
+  },
+  {
+    "materia": "historia-do-brasil",
+    "enunciado": "O Estado Novo, instaurado em 1937, foi um regime autoritário marcado pelo fechamento do Congresso Nacional, pela censura e pela outorga de uma nova Constituição.",
+    "gabarito": "CERTO",
+    "explicacao": "A Constituição de 1937, apelidada de Polaca por inspirar-se na carta polonesa, concentrava poderes no Executivo. O DIP era o órgão de propaganda e censura.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "historia-do-brasil",
+    "enunciado": "A Consolidação das Leis do Trabalho (CLT) foi promulgada durante o governo de Juscelino Kubitschek, no âmbito do Plano de Metas.",
+    "gabarito": "ERRADO",
+    "explicacao": "A CLT é de 1943, do governo de GETÚLIO VARGAS, durante o Estado Novo. O Plano de Metas de JK é da segunda metade dos anos 1950.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "historia-do-brasil",
+    "enunciado": "O Plano de Metas do governo Juscelino Kubitschek tinha como lema 'cinquenta anos em cinco' e teve entre suas realizações a construção de Brasília.",
+    "gabarito": "CERTO",
+    "explicacao": "O plano priorizou energia, transportes, alimentação, indústrias de base e educação, com a construção da nova capital como meta-síntese.",
+    "dificuldade": "FACIL"
+  },
+  {
+    "materia": "historia-do-brasil",
+    "enunciado": "O Ato Institucional nº 5, editado em 1968, representou o momento de maior endurecimento do regime militar, permitindo o fechamento do Congresso e a suspensão do habeas corpus para crimes políticos.",
+    "gabarito": "CERTO",
+    "explicacao": "O AI-5 vigorou até 1978 e inaugurou o período mais repressivo do regime, os chamados anos de chumbo.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "historia-do-brasil",
+    "enunciado": "A campanha das Diretas Já, ocorrida entre 1983 e 1984, obteve êxito, tendo o Congresso aprovado a Emenda Dante de Oliveira e realizado eleição direta para presidente em 1985.",
+    "gabarito": "ERRADO",
+    "explicacao": "A Emenda Dante de Oliveira foi REJEITADA pela Câmara. A eleição de 1985, que consagrou Tancredo Neves, foi INDIRETA, feita pelo Colégio Eleitoral.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "historia-do-brasil",
+    "enunciado": "A Constituição de 1988, denominada Constituição Cidadã, ampliou os direitos sociais e individuais e restabeleceu a eleição direta para todos os níveis de governo.",
+    "gabarito": "CERTO",
+    "explicacao": "A alcunha foi cunhada por Ulysses Guimarães, presidente da Assembleia Nacional Constituinte.",
+    "dificuldade": "FACIL"
+  },
+  {
+    "materia": "historia-do-brasil",
+    "enunciado": "As invasões holandesas no Nordeste brasileiro, no século XVII, tinham como principal objetivo o controle das minas de ouro descobertas em Minas Gerais.",
+    "gabarito": "ERRADO",
+    "explicacao": "O objetivo era o AÇÚCAR: os holandeses dominavam o refino e a distribuição na Europa e perderam esse acesso com a União Ibérica. O ouro de Minas só seria descoberto no final do século XVII, muito depois do início da ocupação.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "historia-do-brasil",
+    "enunciado": "O Quilombo dos Palmares, situado na região da serra da Barriga, foi destruído em 1695, após existência efêmera de pouco mais de uma década.",
+    "gabarito": "ERRADO",
+    "explicacao": "Palmares resistiu por QUASE TODO O SÉCULO XVII, cerca de cem anos — foi o mais duradouro quilombo das Américas. Zumbi, seu último líder, foi morto em 20 de novembro de 1695, data hoje celebrada como Dia da Consciência Negra.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "historia-do-brasil",
+    "enunciado": "O Tratado de Madri, firmado em 1750, substituiu o Tratado de Tordesilhas e adotou o princípio do uti possidetis, segundo o qual a terra pertence a quem efetivamente a ocupa.",
+    "gabarito": "CERTO",
+    "explicacao": "O tratado consolidou juridicamente a expansão territorial promovida por bandeirantes, missionários e criadores de gado.",
+    "dificuldade": "DIFICIL"
+  },
+  {
+    "materia": "historia-do-brasil",
+    "enunciado": "A economia mineradora do século XVIII provocou o deslocamento do eixo econômico da colônia e motivou a transferência da capital de Salvador para São Paulo, em 1763.",
+    "gabarito": "ERRADO",
+    "explicacao": "A capital foi transferida para o RIO DE JANEIRO, porto por onde escoava o ouro das Minas, o que aproximava a administração da região aurífera. São Paulo jamais foi capital da colônia.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "geografia-do-brasil",
+    "enunciado": "O Brasil é dividido, segundo o IBGE, em cinco grandes regiões: Norte, Nordeste, Centro-Oeste, Sudeste e Sul.",
+    "gabarito": "CERTO",
+    "explicacao": "A divisão vigente foi estabelecida em 1970 e ajustada posteriormente, com a criação de Tocantins (Norte) e a transformação de Fernando de Noronha em distrito de Pernambuco.",
+    "dificuldade": "FACIL"
+  },
+  {
+    "materia": "geografia-do-brasil",
+    "enunciado": "O Brasil faz fronteira terrestre com todos os países da América do Sul, sem exceção.",
+    "gabarito": "ERRADO",
+    "explicacao": "O Brasil faz fronteira com dez países, mas NÃO com o Chile nem com o Equador — os dois únicos da América do Sul continental sem limite com o território brasileiro.",
+    "dificuldade": "FACIL"
+  },
+  {
+    "materia": "geografia-do-brasil",
+    "enunciado": "O território brasileiro é cortado pela linha do Equador, ao norte, e pelo Trópico de Capricórnio, ao sul, o que lhe confere predominância de climas de baixas latitudes.",
+    "gabarito": "CERTO",
+    "explicacao": "A maior parte do território situa-se na zona intertropical, o que explica as elevadas temperaturas médias na maior parte do país.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "geografia-do-brasil",
+    "enunciado": "O relevo brasileiro caracteriza-se pela predominância de planaltos e depressões, com altitudes modestas e ausência de grandes cadeias montanhosas recentes.",
+    "gabarito": "CERTO",
+    "explicacao": "O território assenta-se sobre estruturas geológicas antigas, muito desgastadas pela erosão. O ponto culminante, o Pico da Neblina, não chega a 3.000 metros.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "geografia-do-brasil",
+    "enunciado": "O ponto culminante do território brasileiro é o Pico da Bandeira, situado na divisa entre Minas Gerais e Espírito Santo.",
+    "gabarito": "ERRADO",
+    "explicacao": "O ponto culminante é o PICO DA NEBLINA, no Amazonas, na serra do Imeri, junto à fronteira com a Venezuela. O Pico da Bandeira é o terceiro mais alto.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "geografia-do-brasil",
+    "enunciado": "A Amazônia é o maior bioma brasileiro em extensão territorial, seguida pelo Cerrado.",
+    "gabarito": "CERTO",
+    "explicacao": "A Amazônia ocupa cerca de 49% do território nacional e o Cerrado, cerca de 24%. Seguem-se Mata Atlântica, Caatinga, Pampa e Pantanal.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "geografia-do-brasil",
+    "enunciado": "O Pantanal é o maior bioma brasileiro em extensão territorial, ocupando quase metade do território nacional.",
+    "gabarito": "ERRADO",
+    "explicacao": "O Pantanal é o MENOR bioma brasileiro em extensão. Quem ocupa cerca de metade do território é a AMAZÔNIA.",
+    "dificuldade": "FACIL"
+  },
+  {
+    "materia": "geografia-do-brasil",
+    "enunciado": "A Caatinga é o único bioma exclusivamente brasileiro, ocorrendo predominantemente na região Nordeste.",
+    "gabarito": "CERTO",
+    "explicacao": "Caracteriza-se pelo clima semiárido, pela vegetação xerófila e por rios majoritariamente intermitentes.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "geografia-do-brasil",
+    "enunciado": "A bacia Amazônica é a maior bacia hidrográfica do mundo, e o rio Amazonas tem sua nascente na cordilheira dos Andes, no Peru.",
+    "gabarito": "CERTO",
+    "explicacao": "No Brasil, o rio recebe o nome de Solimões desde a fronteira até o encontro com o rio Negro, em Manaus, passando a chamar-se Amazonas a partir daí.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "geografia-do-brasil",
+    "enunciado": "O rio São Francisco, conhecido como rio da integração nacional, nasce no estado da Bahia e desemboca no litoral do Ceará.",
+    "gabarito": "ERRADO",
+    "explicacao": "Nasce em MINAS GERAIS, na serra da Canastra, e desemboca na divisa entre ALAGOAS E SERGIPE. Atravessa a Bahia, mas não nasce nela, e em nenhum trecho alcança o Ceará.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "geografia-do-brasil",
+    "enunciado": "A matriz elétrica brasileira é predominantemente térmica, baseada na queima de carvão mineral e de derivados de petróleo.",
+    "gabarito": "ERRADO",
+    "explicacao": "A matriz elétrica brasileira é predominantemente RENOVÁVEL, com destaque histórico para a hidreletricidade e crescimento expressivo das fontes eólica e solar.",
+    "dificuldade": "FACIL"
+  },
+  {
+    "materia": "geografia-do-brasil",
+    "enunciado": "A usina hidrelétrica de Itaipu, situada no rio Paraná, é um empreendimento binacional mantido pelo Brasil e pela Argentina.",
+    "gabarito": "ERRADO",
+    "explicacao": "A parceria é com o PARAGUAI. Itaipu foi por muitos anos a maior hidrelétrica do mundo em geração, posição hoje disputada com a chinesa Três Gargantas.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "geografia-do-brasil",
+    "enunciado": "O processo de urbanização brasileiro foi lento e gradual, de modo que somente a partir da década de 2000 a população urbana passou a superar a rural.",
+    "gabarito": "ERRADO",
+    "explicacao": "A urbanização brasileira foi TARDIA E ACELERADA: já o Censo de 1970 registrou pela primeira vez maioria urbana. Hoje mais de 84% da população vive em cidades.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "geografia-do-brasil",
+    "enunciado": "A pirâmide etária brasileira vem se estreitando na base e alargando no topo, o que evidencia o envelhecimento da população e a queda da taxa de natalidade.",
+    "gabarito": "CERTO",
+    "explicacao": "O Brasil concluiu sua transição demográfica em ritmo acelerado, com reflexos diretos sobre a previdência e sobre a demanda por serviços de saúde.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "geografia-do-brasil",
+    "enunciado": "A região Nordeste é a mais populosa do Brasil, concentrando mais de 40% da população nacional.",
+    "gabarito": "ERRADO",
+    "explicacao": "A região mais populosa é o SUDESTE, com cerca de 42% da população. O Nordeste é a segunda, com aproximadamente 27%.",
+    "dificuldade": "FACIL"
+  },
+  {
+    "materia": "geografia-do-brasil",
+    "enunciado": "O clima semiárido, predominante no sertão nordestino, caracteriza-se por baixos índices pluviométricos, chuvas irregulares e elevada taxa de evaporação.",
+    "gabarito": "CERTO",
+    "explicacao": "A irregularidade das chuvas, mais que o volume total, é o principal fator das secas periódicas na região.",
+    "dificuldade": "FACIL"
+  },
+  {
+    "materia": "geografia-do-brasil",
+    "enunciado": "O Aquífero Guarani, uma das maiores reservas subterrâneas de água doce do mundo, situa-se integralmente em território brasileiro.",
+    "gabarito": "ERRADO",
+    "explicacao": "O aquífero é TRANSFRONTEIRIÇO: estende-se também por Argentina, Uruguai e Paraguai, embora a maior parte de sua área esteja no Brasil.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "geografia-do-brasil",
+    "enunciado": "O Brasil é o maior produtor e exportador mundial de café, condição que mantém há mais de um século.",
+    "gabarito": "CERTO",
+    "explicacao": "A liderança se mantém desde o século XIX, embora o café já não represente a principal pauta de exportações do país.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "geografia-do-brasil",
+    "enunciado": "O pré-sal corresponde a reservas de petróleo situadas sob espessa camada de sal, em águas profundas da costa brasileira, entre os estados de Santa Catarina e Espírito Santo.",
+    "gabarito": "CERTO",
+    "explicacao": "A exploração exige tecnologia de perfuração em lâmina d'água superior a 2.000 metros, na qual a Petrobras desenvolveu competência reconhecida.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "geografia-do-brasil",
+    "enunciado": "A Zona Franca de Manaus é um polo industrial incentivado situado na região Norte, criado com o objetivo de promover a ocupação e o desenvolvimento da Amazônia Ocidental.",
+    "gabarito": "CERTO",
+    "explicacao": "Baseia-se em incentivos fiscais e concentra sobretudo a produção de bens eletroeletrônicos e de motocicletas.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "geografia-do-brasil",
+    "enunciado": "A região Centro-Oeste destaca-se na produção de grãos, especialmente soja e milho, tendo Goiás como maior produtor nacional de soja.",
+    "gabarito": "ERRADO",
+    "explicacao": "O maior produtor nacional de soja é MATO GROSSO. Goiás também é grande produtor, mas ocupa posição inferior no ranking. A expansão decorreu da incorporação do Cerrado à agricultura.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "geografia-do-brasil",
+    "enunciado": "Todo o território brasileiro adota um único fuso horário, correspondente a três horas a menos que o Meridiano de Greenwich.",
+    "gabarito": "ERRADO",
+    "explicacao": "O Brasil possui QUATRO fusos horários oficiais, embora apenas três incidam sobre o território continental. O de Brasília (UTC-3) é o de referência legal.",
+    "dificuldade": "MEDIO"
+  },
+  {
+    "materia": "geografia-do-brasil",
+    "enunciado": "Os manguezais são ecossistemas de transição entre os ambientes terrestre e marinho, com elevada importância como berçário de espécies e proteção da linha de costa.",
+    "gabarito": "CERTO",
+    "explicacao": "O Brasil concentra uma das maiores extensões de manguezal do mundo, com destaque para o litoral do Maranhão e do Pará.",
+    "dificuldade": "MEDIO"
+  }
+]

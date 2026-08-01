@@ -1,7 +1,7 @@
 "use server";
 
 import { redirect } from "next/navigation";
-import { CHECKOUT_URL, PAYMENT_PROVIDER, isCheckoutConfigured } from "@/lib/billing/config";
+import { PAYMENT_PROVIDER, getCheckoutUrl } from "@/lib/billing/config";
 import { formatRetryAfter, getClientIp, rateLimit } from "@/lib/rate-limit";
 import { requireUser } from "@/services/auth-guard";
 import { getUserWithPlan } from "@/services/users";
@@ -29,14 +29,17 @@ export async function startCheckoutAction(): Promise<void> {
     );
   }
 
-  if (!isCheckoutConfigured()) {
+  const url = getCheckoutUrl();
+  if (!url) {
+    console.error(
+      "[checkout] CHECKOUT_URL ausente ou inválida — precisa ser URL absoluta com https://",
+    );
     redirect("/planos?erro=checkout_indisponivel");
   }
 
   const user = await getUserWithPlan(authUser.id);
   if (!user) redirect("/login");
 
-  const url = new URL(CHECKOUT_URL);
   if (PAYMENT_PROVIDER === "cakto") {
     url.searchParams.set("email", user.email);
     if (user.name) url.searchParams.set("name", user.name);

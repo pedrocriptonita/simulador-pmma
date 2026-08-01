@@ -31,6 +31,30 @@ export function getWebhookSecret(): string {
   return process.env.CHECKOUT_WEBHOOK_SECRET ?? "";
 }
 
+/**
+ * URL absoluta do checkout, ou `null` se não configurada ou inválida.
+ *
+ * Valida o esquema de propósito: um valor sem protocolo
+ * ("pay.cakto.com.br/abc") ou um valor trocado de campo ("cakto", que
+ * pertence a PAYMENT_PROVIDER) passava no antigo teste de string não-vazia,
+ * o botão renderizava habilitado e só então `new URL()` lançava dentro da
+ * Server Action — o clique morria sem nada na tela. Aqui a configuração
+ * inválida cai no mesmo estado visível de "não configurado".
+ *
+ * Retorna sempre uma instância nova: quem chama adiciona query params, e um
+ * objeto URL de módulo seria compartilhado entre requisições — o e-mail de
+ * um usuário vazaria no link de checkout do seguinte.
+ */
+export function getCheckoutUrl(): URL | null {
+  if (!CHECKOUT_URL) return null;
+  try {
+    const url = new URL(CHECKOUT_URL);
+    return url.protocol === "https:" || url.protocol === "http:" ? url : null;
+  } catch {
+    return null;
+  }
+}
+
 export function isCheckoutConfigured(): boolean {
-  return CHECKOUT_URL.length > 0;
+  return getCheckoutUrl() !== null;
 }
