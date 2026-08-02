@@ -112,12 +112,17 @@ via `lib/gtm.ts`; o GTM escuta e dispara as tags.
 
 ## 5. Conteúdo
 
-- [ ] 🔴 **Revisar as 56 questões** geradas por IA em `/admin/questoes` (gabaritos e
-      explicações). Qualquer item pode ser editado ou despublicado.
-- [ ] 🟡 Ampliar o banco: meta de ~20–30 questões por matéria prioritária (Português, RLM,
-      Legislação) para não repetir questão em simulados seguidos. Use o **Importar JSON**.
-- [ ] 🟡 Subir os primeiros **PDFs de resumo** em `/admin/materiais` (a biblioteca mostra
-      empty state até ter conteúdo).
+- [x] 🔴 **Revisar as questões** em `/admin/questoes`. Banco em **379 questões ativas**,
+      100% com gabarito comentado. Qualquer item pode ser editado ou despublicado.
+- [x] 🟡 Ampliar o banco. Todas as 8 matérias cobertas — a menor tem 26 questões:
+      Legislação 130 · Informática 50 · Português 47 · RLM 33 · Hist. MA 32 ·
+      Geo. BR 31 · Hist. BR 30 · Geo. MA 26. Fontes em `docs/questoes-lote-*.json`.
+- [x] 🟡 Subir os **PDFs de resumo** em `/admin/materiais`. **9 publicados**, sendo 1
+      gratuito (Mapa de Pegadinhas). Fontes editáveis em `docs/materiais/src/`;
+      regerar com `npx tsx scripts/build-materiais.ts`.
+- [ ] 🟡 **Legislação é o gargalo de repetição**: 18 questões por simulado misto de 30,
+      então ~7 simulados distintos antes de esgotar as 130. Suficiente para as
+      primeiras semanas; engrossar com a campanha rodando.
 - [x] 🔴 **Preço definido: R$ 39,90** (âncora R$ 97). Banco, seed e `/planos` já conferem
       (`priceCents: 3990`).
 - [ ] 🔴 Conferir se o produto **na Cakto** também está R$ 39,90 — se o payload vier sem
@@ -141,6 +146,14 @@ via `lib/gtm.ts`; o GTM escuta e dispara as tags.
 
 O webhook já foi validado com os eventos de teste da Cakto, mas o caminho que **libera
 acesso** ainda não foi exercitado (os testes usam e-mail fictício → `user_not_found`).
+
+**Estado em 02/08/2026:** a única compra do banco é de 30/07 (R$ 8,97), anterior a todas
+as correções — checkout, normalização de e-mail e painel de órfãos. Ou seja: o caminho do
+dinheiro **nunca rodou na versão que vai receber tráfego pago**. É o último bloqueador.
+
+Rede de proteção já instalada, caso o e-mail do pagamento divergir do cadastro:
+`/admin/pagamentos` registra o pagamento órfão para vinculação manual, em vez de o
+webhook responder 200 e o dinheiro sumir do sistema.
 
 - [ ] 🔴 **Compra real ponta a ponta**: cupom de 100% na Cakto → cadastrar conta com um
       e-mail seu → comprar com **exatamente o mesmo e-mail**. Conferir os 4 sinais:
