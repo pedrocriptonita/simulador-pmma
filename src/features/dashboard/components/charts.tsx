@@ -19,3 +19,8 @@ export const EvolutionLineChart = dynamic(
   () => import("./evolution-line-chart").then((m) => m.EvolutionLineChart),
   { ssr: false, loading: chartLoading },
 );
+
+export const AnswersDonutChart = dynamic(
+  () => import("./answers-donut-chart").then((m) => m.AnswersDonutChart),
+  { ssr: false, loading: () => <Skeleton className="h-[180px] w-full" /> },
+);

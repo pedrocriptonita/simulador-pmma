@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Table,
@@ -27,7 +28,8 @@ export default async function AdminMateriaisPage() {
     }),
     prisma.pdfResource.findMany({
       where: { deletedAt: null },
-      orderBy: { createdAt: "desc" },
+      // Gratuitos no topo, espelhando a ordem que o aluno vê na biblioteca.
+      orderBy: [{ isPremium: "asc" }, { createdAt: "desc" }],
       include: { subject: { select: { name: true } } },
     }),
   ]);
@@ -73,12 +75,23 @@ export default async function AdminMateriaisPage() {
                     </TableRow>
                   </TableHeader>
                   <TableBody>
+                    {/* Zebra em vez de card cinza: o fundo da página já é um
+                        cinza claro, então escurecer o card inteiro apagaria a
+                        separação de superfície. Alternar a linha é o que de
+                        fato faz cada material virar um bloco distinto. */}
                     {pdfs.map((pdf) => (
-                      <TableRow key={pdf.id}>
-                        <TableCell>
-                          <p className="text-sm font-medium">{pdf.title}</p>
+                      <TableRow key={pdf.id} className="odd:bg-muted/40">
+                        <TableCell className="max-w-[320px] py-3">
+                          <p className="flex items-center gap-2 text-sm font-medium">
+                            <span className="truncate">{pdf.title}</span>
+                            {!pdf.isPremium ? (
+                              <Badge variant="secondary" className="shrink-0">
+                                Grátis
+                              </Badge>
+                            ) : null}
+                          </p>
                           {pdf.description ? (
-                            <p className="text-muted-foreground line-clamp-1 text-xs">
+                            <p className="text-muted-foreground truncate text-xs">
                               {pdf.description}
                             </p>
                           ) : null}

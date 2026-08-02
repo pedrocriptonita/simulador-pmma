@@ -24,6 +24,16 @@ export type PerformanceSummary = {
   averageScoreNet: number | null;
   lastScoreNet: number | null;
   bestScoreNet: number | null;
+  /**
+   * Aproveitamento líquido médio, em % (pode ser negativo).
+   *
+   * A nota líquida absoluta não diz se o desempenho é bom: +12 é ótimo num
+   * simulado de 15 itens e fraco num de 30. Só com o percentual dá para
+   * atribuir um juízo — e, portanto, uma cor.
+   */
+  averageNetPercent: number | null;
+  /** Aproveitamento líquido do último simulado, em %. */
+  lastNetPercent: number | null;
 };
 
 /**
@@ -107,7 +117,13 @@ export async function getSummary(userId: string): Promise<PerformanceSummary> {
   const exams = await prisma.exam.findMany({
     where: { userId, status: ExamStatus.COMPLETED },
     orderBy: { finishedAt: "asc" },
-    select: { scoreNet: true, correctCount: true, wrongCount: true, finishedAt: true },
+    select: {
+      scoreNet: true,
+      correctCount: true,
+      wrongCount: true,
+      totalQuestions: true,
+      finishedAt: true,
+    },
   });
 
   if (exams.length === 0) {
@@ -117,6 +133,8 @@ export async function getSummary(userId: string): Promise<PerformanceSummary> {
       averageScoreNet: null,
       lastScoreNet: null,
       bestScoreNet: null,
+      averageNetPercent: null,
+      lastNetPercent: null,
     };
   }
 
@@ -127,11 +145,21 @@ export async function getSummary(userId: string): Promise<PerformanceSummary> {
   );
   const average = scores.reduce((sum, score) => sum + score, 0) / scores.length;
 
+  // Percentual ponderado pelo total de itens, não a média das médias: um
+  // simulado de 30 questões deve pesar o dobro de um de 15.
+  const totalQuestions = exams.reduce((sum, exam) => sum + (exam.totalQuestions ?? 0), 0);
+  const totalNet = scores.reduce((sum, score) => sum + score, 0);
+
+  const last = exams[exams.length - 1]!;
+  const lastTotal = last.totalQuestions ?? 0;
+
   return {
     totalExams: exams.length,
     totalAnswered,
     averageScoreNet: Math.round(average * 10) / 10,
     lastScoreNet: scores[scores.length - 1]!,
     bestScoreNet: Math.max(...scores),
+    averageNetPercent: totalQuestions > 0 ? Math.round((totalNet / totalQuestions) * 100) : null,
+    lastNetPercent: lastTotal > 0 ? Math.round(((last.scoreNet ?? 0) / lastTotal) * 100) : null,
   };
 }

@@ -19,11 +19,18 @@ export type PdfGroup = {
   items: PdfItem[];
 };
 
-/** PDFs publicados, agrupados por matéria (geral por último). */
+/**
+ * PDFs publicados, agrupados por matéria (geral por último).
+ *
+ * Dentro de cada grupo os gratuitos vêm primeiro: são o que o usuário do
+ * plano free realmente consegue abrir, e enterrá-los sob materiais
+ * bloqueados faz a biblioteca parecer um paywall inteiro. Só depois é que
+ * ordena por mais recente.
+ */
 export async function listPdfs(): Promise<PdfGroup[]> {
   const pdfs = await prisma.pdfResource.findMany({
     where: { isPublished: true, deletedAt: null },
-    orderBy: { createdAt: "desc" },
+    orderBy: [{ isPremium: "asc" }, { createdAt: "desc" }],
     include: { subject: { select: { id: true, name: true, order: true } } },
   });
 

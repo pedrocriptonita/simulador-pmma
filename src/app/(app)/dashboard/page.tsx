@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { Suspense } from "react";
-import { TrendingDown } from "lucide-react";
+import { ClipboardList, Target, TrendingDown, TrendingUp } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -11,6 +11,7 @@ import { createClient } from "@/lib/supabase/server";
 import { getUserWithPlan } from "@/services/users";
 import { getEvolution, getPerformanceBySubject, getSummary } from "@/services/performance";
 import { EvolutionLineChart, SubjectBarChart } from "@/features/dashboard/components/charts";
+import { ScoreBadge, scoreStatus } from "@/features/dashboard/score-status";
 
 export const metadata: Metadata = { title: "Dashboard" };
 
@@ -87,39 +88,61 @@ export default async function DashboardPage() {
         </Card>
       ) : (
         <>
-          {/* Cards de resumo */}
+          {/* Cards de resumo. O chip de ícone tingido é o que tira o aspecto
+              chapado sem recorrer a card colorido inteiro — a cor fica no
+              elemento pequeno e o texto continua em tinta neutra. */}
           <div className="grid gap-4 sm:grid-cols-3">
-            <Card>
-              <CardHeader className="pb-2">
-                <CardDescription>Simulados feitos</CardDescription>
-                <CardTitle className="text-3xl tabular-nums">{summary.totalExams}</CardTitle>
-              </CardHeader>
-              <CardContent className="text-muted-foreground text-xs">
-                {summary.totalAnswered} questões respondidas
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader className="pb-2">
-                <CardDescription>Nota média</CardDescription>
-                <CardTitle className="text-3xl tabular-nums">
-                  {formatScore(summary.averageScoreNet)}
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="text-muted-foreground text-xs">
-                Melhor: {formatScore(summary.bestScoreNet)}
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader className="pb-2">
-                <CardDescription>Última nota</CardDescription>
-                <CardTitle className="text-3xl tabular-nums">
-                  {formatScore(summary.lastScoreNet)}
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="text-muted-foreground text-xs">
-                Nota líquida (acertos − erros)
-              </CardContent>
-            </Card>
+            {[
+              {
+                icon: ClipboardList,
+                label: "Simulados feitos",
+                value: String(summary.totalExams),
+                foot: `${summary.totalAnswered} questões respondidas`,
+                netPercent: null,
+              },
+              {
+                icon: TrendingUp,
+                label: "Nota média",
+                value: formatScore(summary.averageScoreNet),
+                foot: `Melhor: ${formatScore(summary.bestScoreNet)}`,
+                netPercent: summary.averageNetPercent,
+              },
+              {
+                icon: Target,
+                label: "Última nota",
+                value: formatScore(summary.lastScoreNet),
+                foot: "Nota líquida (acertos − erros)",
+                netPercent: summary.lastNetPercent,
+              },
+            ].map((item) => {
+              const Icon = item.icon;
+              // "Simulados feitos" é contagem, não desempenho: não recebe cor
+              // de status — pintar de vermelho quem fez poucos simulados
+              // seria juízo sobre um dado que não tem qualidade nenhuma.
+              const status = item.netPercent !== null ? scoreStatus(item.netPercent) : null;
+              return (
+                <Card key={item.label}>
+                  <CardHeader className="pb-2">
+                    <span className="bg-primary/10 text-primary mb-1 flex size-9 items-center justify-center rounded-lg">
+                      <Icon className="size-4.5" aria-hidden />
+                    </span>
+                    <CardDescription>{item.label}</CardDescription>
+                    <CardTitle
+                      className={`text-3xl tabular-nums ${status ? status.text : ""}`}
+                    >
+                      {item.value}
+                      {item.netPercent !== null ? (
+                        <span className="text-muted-foreground ml-2 text-sm font-normal">
+                          {item.netPercent}%
+                        </span>
+                      ) : null}
+                    </CardTitle>
+                    {status ? <ScoreBadge status={status} className="justify-self-start" /> : null}
+                  </CardHeader>
+                  <CardContent className="text-muted-foreground text-xs">{item.foot}</CardContent>
+                </Card>
+              );
+            })}
           </div>
 
           <Button size="lg" className="self-start" asChild>

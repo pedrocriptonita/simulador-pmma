@@ -70,12 +70,22 @@ export default async function MateriaisPage({
                 {group.items.map((pdf) => {
                   const locked = pdf.isPremium && !paid;
                   return (
-                    <Card key={pdf.id}>
+                    <Card
+                      key={pdf.id}
+                      /* Material aberto ganha borda de destaque: é o que o
+                         usuário do plano free consegue abrir agora, e some no
+                         meio dos bloqueados se não tiver marcação. */
+                      className={!pdf.isPremium ? "border-primary/40" : undefined}
+                    >
                       <CardContent className="flex items-center justify-between gap-4 pt-6">
                         <div className="min-w-0">
-                          <p className="flex items-center gap-2 font-medium">
+                          <p className="flex flex-wrap items-center gap-2 font-medium">
                             {pdf.title}
-                            {pdf.isPremium ? <Badge variant="secondary">Premium</Badge> : null}
+                            {pdf.isPremium ? (
+                              <Badge variant="secondary">Premium</Badge>
+                            ) : (
+                              <Badge>Grátis</Badge>
+                            )}
                           </p>
                           {pdf.description ? (
                             <p className="text-muted-foreground line-clamp-2 text-sm">

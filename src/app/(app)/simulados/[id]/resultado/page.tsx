@@ -6,6 +6,8 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { AnswersDonutChart } from "@/features/dashboard/components/charts";
+import { ScoreBadge, scoreStatus } from "@/features/dashboard/score-status";
 import { getAuthUser } from "@/services/auth-guard";
 import { getExamResult } from "@/services/exams";
 
@@ -22,6 +24,9 @@ export default async function ResultadoPage({ params }: { params: Promise<{ id: 
 
   const { exam, answers } = result;
   const scoreNet = exam.scoreNet ?? 0;
+  const totalQuestions = exam.totalQuestions ?? 0;
+  const netPercent = totalQuestions > 0 ? Math.round((scoreNet / totalQuestions) * 100) : null;
+  const status = netPercent !== null ? scoreStatus(netPercent) : null;
 
   return (
     <main className="mx-auto flex w-full max-w-2xl flex-1 flex-col gap-6 px-4 py-10">
@@ -29,10 +34,16 @@ export default async function ResultadoPage({ params }: { params: Promise<{ id: 
       <Card>
         <CardHeader className="items-center text-center">
           <CardDescription>Sua nota líquida (estilo Cebraspe)</CardDescription>
-          <CardTitle className="text-5xl tabular-nums">
+          <CardTitle className={`text-5xl tabular-nums ${status ? status.text : ""}`}>
             {scoreNet > 0 ? "+" : ""}
             {scoreNet}
+            {netPercent !== null ? (
+              <span className="text-muted-foreground ml-2 text-lg font-normal">
+                {netPercent}%
+              </span>
+            ) : null}
           </CardTitle>
+          {status ? <ScoreBadge status={status} className="justify-self-center" /> : null}
           <CardDescription>
             {exam.title ?? "Simulado"} ·{" "}
             {exam.finishedAt?.toLocaleDateString("pt-BR", {
@@ -43,24 +54,11 @@ export default async function ResultadoPage({ params }: { params: Promise<{ id: 
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="grid grid-cols-3 gap-2 text-center">
-            <div className="rounded-lg border p-3">
-              <p className="text-2xl font-bold tabular-nums">{exam.correctCount ?? 0}</p>
-              <p className="text-muted-foreground text-xs">Acertos</p>
-            </div>
-            <div className="rounded-lg border p-3">
-              <p className="text-destructive text-2xl font-bold tabular-nums">
-                {exam.wrongCount ?? 0}
-              </p>
-              <p className="text-muted-foreground text-xs">Erros</p>
-            </div>
-            <div className="rounded-lg border p-3">
-              <p className="text-muted-foreground text-2xl font-bold tabular-nums">
-                {exam.blankCount ?? 0}
-              </p>
-              <p className="text-muted-foreground text-xs">Em branco</p>
-            </div>
-          </div>
+          <AnswersDonutChart
+            correct={exam.correctCount ?? 0}
+            wrong={exam.wrongCount ?? 0}
+            blank={exam.blankCount ?? 0}
+          />
         </CardContent>
       </Card>
 
