@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Raciocínio Lógico — Proposições e Tabelas-Verdade</title>
+<style>
+  @page { size: A4; margin: 18mm 16mm 16mm; }
+
+  :root { --tinta: #16181d; --suave: #5b6270; --linha: #d8dce3; --marca: #1e4fd8; --alerta: #b42318; }
+
+  * { box-sizing: border-box; }
+  body {
+    font-family: "Segoe UI", -apple-system, Roboto, Helvetica, Arial, sans-serif;
+    color: var(--tinta); background: #fff;
+    font-size: 10.7pt; line-height: 1.5;
+    margin: 0 auto; max-width: 190mm; padding: 0 4mm;
+  }
+
+  header.capa { border-bottom: 3px solid var(--marca); padding-bottom: 10px; margin-bottom: 22px; }
+  header.capa .eyebrow { font-size: 8.5pt; letter-spacing: .12em; text-transform: uppercase; color: var(--marca); font-weight: 700; }
+  header.capa h1 { font-size: 21pt; line-height: 1.15; margin: 6px 0 4px; letter-spacing: -.01em; }
+  header.capa p { margin: 0; color: var(--suave); font-size: 10pt; }
+
+  h2 {
+    font-size: 13.5pt; margin: 26px 0 10px; padding-bottom: 5px;
+    border-bottom: 1px solid var(--linha); letter-spacing: -.01em;
+    break-after: avoid; page-break-after: avoid;
+  }
+  h3 { font-size: 11.4pt; margin: 18px 0 6px; break-after: avoid; page-break-after: avoid; }
+  p { margin: 0 0 9px; }
+  ul, ol { margin: 0 0 10px; padding-left: 20px; }
+  li { margin-bottom: 4px; }
+  strong { font-weight: 700; }
+  code { font-family: Consolas, monospace; font-size: 9.6pt; background: #f1f3f7; padding: 1px 4px; border-radius: 3px; }
+
+  table { width: 100%; border-collapse: collapse; margin: 0 0 14px; font-size: 9.8pt; break-inside: avoid; page-break-inside: avoid; }
+  caption { text-align: left; font-weight: 700; padding-bottom: 5px; font-size: 10.2pt; }
+  th, td { border: 1px solid var(--linha); padding: 5px 8px; text-align: left; vertical-align: top; }
+  th { background: #eef1f6; font-weight: 700; }
+  tbody tr:nth-child(even) td { background: #fafbfd; }
+
+  .box { border-left: 3px solid var(--marca); background: #f4f7fe; padding: 9px 12px; margin: 0 0 13px; break-inside: avoid; page-break-inside: avoid; }
+  .box.perigo { border-left-color: var(--alerta); background: #fef4f3; }
+  .box .rotulo { font-size: 8.2pt; letter-spacing: .1em; text-transform: uppercase; font-weight: 700; color: var(--marca); display: block; margin-bottom: 3px; }
+  .box.perigo .rotulo { color: var(--alerta); }
+  .box p:last-child { margin-bottom: 0; }
+
+  .art { color: var(--suave); font-size: 9.2pt; font-weight: 600; white-space: nowrap; }
+  .certo { color: #0a7d3f; font-weight: 700; }
+  .errado { color: var(--alerta); font-weight: 700; }
+
+  footer.rodape { margin-top: 26px; padding-top: 9px; border-top: 1px solid var(--linha); color: var(--suave); font-size: 8.6pt; display: flex; justify-content: space-between; }
+
+  section { break-inside: auto; }
+  .quebra { break-before: page; page-break-before: page; }
+
+  @media print { a { color: inherit; text-decoration: none; } }
+</style>
+</head>
+<body>
+<header class="capa">
+  <div class="eyebrow">Simulador PM MA 2026</div>
+  <h1>Raciocínio Lógico — Proposições e Tabelas-Verdade</h1>
+  <p>Do zero à equivalência lógica, no formato que o Cebraspe cobra · Peso 8 no edital</p>
+</header>
+<p>Raciocínio Lógico assusta quem nunca viu, mas é a matéria mais mecânica da prova: as regras são poucas e não mudam. Domine as tabelas-verdade e você resolve a maioria dos itens no automático.</p>
+
+<h2>1. O que é proposição</h2>
+
+<p>Proposição é toda sentença <strong>declarativa</strong> à qual se pode atribuir <strong>verdadeiro</strong> ou <strong>falso</strong>.</p>
+
+<table>
+  <thead><tr><th style="width:50%">É proposição</th><th style="width:50%">Não é proposição</th></tr></thead>
+  <tbody>
+    <tr><td>A prova será em outubro.</td><td>Que horas são? <span class="art">(interrogativa)</span></td></tr>
+    <tr><td>2 + 2 = 5.</td><td>Estude bastante! <span class="art">(imperativa)</span></td></tr>
+    <tr><td>Todo policial é servidor público.</td><td>Que belo dia! <span class="art">(exclamativa)</span></td></tr>
+    <tr><td></td><td>x + 1 = 3 <span class="art">(sentença aberta)</span></td></tr>
+  </tbody>
+</table>
+
+<h2>2. Os cinco conectivos</h2>
+
+<table>
+  <thead><tr><th style="width:20%">Nome</th><th style="width:16%">Símbolo</th><th style="width:30%">Leitura</th><th style="width:34%">Quando é VERDADEIRO</th></tr></thead>
+  <tbody>
+    <tr><td>Negação</td><td>~p</td><td>não p</td><td>quando p é falso</td></tr>
+    <tr><td>Conjunção</td><td>p ∧ q</td><td>p <strong>e</strong> q</td><td>só quando <strong>ambos</strong> são V</td></tr>
+    <tr><td>Disjunção</td><td>p ∨ q</td><td>p <strong>ou</strong> q</td><td>quando <strong>ao menos um</strong> é V</td></tr>
+    <tr><td>Condicional</td><td>p → q</td><td><strong>se</strong> p, <strong>então</strong> q</td><td>sempre, <strong>exceto</strong> V → F</td></tr>
+    <tr><td>Bicondicional</td><td>p ↔ q</td><td>p <strong>se e somente se</strong> q</td><td>quando ambos têm o <strong>mesmo</strong> valor</td></tr>
+  </tbody>
+</table>
+
+<h3>Tabelas-verdade completas</h3>
+
+<table>
+  <thead><tr><th>p</th><th>q</th><th>p ∧ q</th><th>p ∨ q</th><th>p → q</th><th>p ↔ q</th></tr></thead>
+  <tbody>
+    <tr><td>V</td><td>V</td><td class="certo">V</td><td class="certo">V</td><td class="certo">V</td><td class="certo">V</td></tr>
+    <tr><td>V</td><td>F</td><td class="errado">F</td><td class="certo">V</td><td class="errado">F</td><td class="errado">F</td></tr>
+    <tr><td>F</td><td>V</td><td class="errado">F</td><td class="certo">V</td><td class="certo">V</td><td class="errado">F</td></tr>
+    <tr><td>F</td><td>F</td><td class="errado">F</td><td class="errado">F</td><td class="certo">V</td><td class="certo">V</td></tr>
+  </tbody>
+</table>
+
+<div class="box perigo">
+  <span class="rotulo">O ponto que mais confunde</span>
+  <p>A <strong>condicional só é falsa em um caso</strong>: verdadeiro levando a falso (V → F). Todos os outros três casos são verdadeiros — inclusive quando p é falso, não importa o que seja q.</p>
+  <p>Memorize assim: <em>“Se eu passar, te pago um jantar.”</em> Você só mente se passar e não pagar. Se não passar, a promessa não foi quebrada, pagando ou não.</p>
+</div>
+
+<h2>3. Quantas linhas tem a tabela</h2>
+
+<p>Com <strong>n</strong> proposições simples, a tabela tem <strong>2<sup>n</sup></strong> linhas.</p>
+
+<table>
+  <thead><tr><th style="width:50%">Proposições simples</th><th style="width:50%">Linhas</th></tr></thead>
+  <tbody>
+    <tr><td>2 (p, q)</td><td>4</td></tr>
+    <tr><td>3 (p, q, r)</td><td>8</td></tr>
+    <tr><td>4</td><td>16</td></tr>
+    <tr><td>5</td><td>32</td></tr>
+  </tbody>
+</table>
+
+<h2>4. Negações — o assunto mais cobrado</h2>
+
+<p>Negar corretamente uma proposição composta vale mais pontos que qualquer outro tópico da matéria.</p>
+
+<table>
+  <thead><tr><th style="width:40%">Proposição</th><th style="width:60%">Negação correta</th></tr></thead>
+  <tbody>
+    <tr><td>p ∧ q</td><td><strong>~p ∨ ~q</strong> — troca <em>e</em> por <em>ou</em> e nega as duas</td></tr>
+    <tr><td>p ∨ q</td><td><strong>~p ∧ ~q</strong> — troca <em>ou</em> por <em>e</em> e nega as duas</td></tr>
+    <tr><td>p → q</td><td><strong>p ∧ ~q</strong> — mantém a primeira e nega a segunda</td></tr>
+    <tr><td>p ↔ q</td><td>(p ∧ ~q) ∨ (~p ∧ q)</td></tr>
+  </tbody>
+</table>
+
+<div class="box">
+  <span class="rotulo">Leis de De Morgan</span>
+  <p>As duas primeiras linhas são De Morgan: <strong>nega tudo e troca o conectivo</strong>. A terceira é a que mais cai — negar “se p então q” <strong>não</strong> é “se p então não q”. É <strong>p e não q</strong>.</p>
+  <p><em>“Se chover, levo guarda-chuva.”</em> A negação é: <em>“Choveu <strong>e</strong> não levei guarda-chuva.”</em></p>
+</div>
+
+<h3>Negação de quantificadores</h3>
+<table>
+  <thead><tr><th style="width:50%">Proposição</th><th style="width:50%">Negação</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Todo</strong> A é B</td><td><strong>Algum</strong> A não é B</td></tr>
+    <tr><td><strong>Nenhum</strong> A é B</td><td><strong>Algum</strong> A é B</td></tr>
+    <tr><td><strong>Algum</strong> A é B</td><td><strong>Nenhum</strong> A é B</td></tr>
+  </tbody>
+</table>
+<p>Erro clássico: negar “Todo A é B” com “Nenhum A é B”. Está <span class="errado">ERRADO</span> — basta <strong>um</strong> contraexemplo para derrubar um “todo”.</p>
+
+<h2>5. Equivalências que caem</h2>
+
+<table>
+  <thead><tr><th style="width:34%">Nome</th><th style="width:66%">Equivalência</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Condicional → disjunção</strong></td><td>p → q  ≡  <strong>~p ∨ q</strong></td></tr>
+    <tr><td><strong>Contrapositiva</strong></td><td>p → q  ≡  <strong>~q → ~p</strong></td></tr>
+    <tr><td>Bicondicional</td><td>p ↔ q  ≡  (p → q) ∧ (q → p)</td></tr>
+    <tr><td>Dupla negação</td><td>~(~p)  ≡  p</td></tr>
+  </tbody>
+</table>
+
+<div class="box perigo">
+  <span class="rotulo">Contrapositiva × recíproca</span>
+  <p><strong>Contrapositiva</strong> (equivalente): “Se p então q” ≡ “Se <strong>não</strong> q então <strong>não</strong> p”.<br>
+  <strong>Recíproca</strong> (NÃO equivalente): “Se q então p”.</p>
+  <p><em>“Se é policial, é servidor público”</em> equivale a <em>“Se não é servidor público, não é policial”</em>. Mas <strong>não</strong> equivale a <em>“Se é servidor público, é policial”</em>.</p>
+</div>
+
+<h2>6. Tautologia, contradição e contingência</h2>
+
+<ul>
+  <li><strong>Tautologia</strong>: verdadeira em <strong>todas</strong> as linhas. Ex.: p ∨ ~p</li>
+  <li><strong>Contradição</strong>: falsa em todas as linhas. Ex.: p ∧ ~p</li>
+  <li><strong>Contingência</strong>: tem V e F. É o caso da maioria das proposições</li>
+</ul>
+
+<h2>7. Como resolver rápido em prova</h2>
+
+<p>Quando o item fornece os valores lógicos, não monte a tabela inteira. Vá direto:</p>
+
+<ol>
+  <li><strong>Marque o que já é dado</strong> como V ou F</li>
+  <li><strong>Comece pelo conectivo mais restritivo.</strong> Uma conjunção verdadeira obriga as duas partes a serem V — isso costuma travar toda a questão de uma vez</li>
+  <li><strong>Se a condicional é falsa</strong>, você já sabe tudo: primeira V, segunda F. É o caso mais informativo</li>
+  <li><strong>Resolva de dentro para fora</strong>, respeitando os parênteses</li>
+</ol>
+
+<div class="box">
+  <span class="rotulo">Exemplo resolvido</span>
+  <p>Sabendo que <strong>(p ∧ q) → r</strong> é <strong>FALSA</strong>, determine p, q e r.</p>
+  <p>Condicional falsa só ocorre em V → F. Logo: <strong>(p ∧ q) = V</strong> e <strong>r = F</strong>.<br>
+  Se a conjunção é verdadeira, ambas as partes são verdadeiras: <strong>p = V</strong> e <strong>q = V</strong>.<br>
+  Resposta: p = V, q = V, r = F. Sem montar tabela alguma.</p>
+</div>
+
+<h2>8. Argumentos válidos</h2>
+
+<p>Um argumento é <strong>válido</strong> quando, sendo as premissas verdadeiras, a conclusão obrigatoriamente é verdadeira.</p>
+
+<table>
+  <thead><tr><th style="width:30%">Regra</th><th style="width:40%">Premissas</th><th style="width:30%">Conclusão</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Modus ponens</strong></td><td>p → q · p</td><td>q</td></tr>
+    <tr><td><strong>Modus tollens</strong></td><td>p → q · ~q</td><td>~p</td></tr>
+    <tr><td><strong>Silogismo hipotético</strong></td><td>p → q · q → r</td><td>p → r</td></tr>
+    <tr><td><strong>Silogismo disjuntivo</strong></td><td>p ∨ q · ~p</td><td>q</td></tr>
+  </tbody>
+</table>
+
+<p>Duas <strong>falácias</strong> que a banca disfarça de argumento válido:</p>
+<ul>
+  <li><strong>Afirmar o consequente</strong>: p → q, q, logo p. <span class="errado">Inválido</span></li>
+  <li><strong>Negar o antecedente</strong>: p → q, ~p, logo ~q. <span class="errado">Inválido</span></li>
+</ul>
+
+<div class="box">
+  <span class="rotulo">Como treinar</span>
+  <p>Refaça as tabelas-verdade de memória até acertar sem consultar. São 4 linhas e 5 conectivos — meia hora de treino resolve a matéria inteira, e ela não muda de edital para edital.</p>
+</div>
+<footer class="rodape"><span>Simulador PM MA 2026 · pmma.barvoxdigital.com.br</span><span>Concurso PM MA · prova em 11/10/2026</span></footer>
+</body>
+</html>

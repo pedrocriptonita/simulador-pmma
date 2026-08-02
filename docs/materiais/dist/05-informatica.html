@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Informática — Segurança da Informação e Redes</title>
+<style>
+  @page { size: A4; margin: 18mm 16mm 16mm; }
+
+  :root { --tinta: #16181d; --suave: #5b6270; --linha: #d8dce3; --marca: #1e4fd8; --alerta: #b42318; }
+
+  * { box-sizing: border-box; }
+  body {
+    font-family: "Segoe UI", -apple-system, Roboto, Helvetica, Arial, sans-serif;
+    color: var(--tinta); background: #fff;
+    font-size: 10.7pt; line-height: 1.5;
+    margin: 0 auto; max-width: 190mm; padding: 0 4mm;
+  }
+
+  header.capa { border-bottom: 3px solid var(--marca); padding-bottom: 10px; margin-bottom: 22px; }
+  header.capa .eyebrow { font-size: 8.5pt; letter-spacing: .12em; text-transform: uppercase; color: var(--marca); font-weight: 700; }
+  header.capa h1 { font-size: 21pt; line-height: 1.15; margin: 6px 0 4px; letter-spacing: -.01em; }
+  header.capa p { margin: 0; color: var(--suave); font-size: 10pt; }
+
+  h2 {
+    font-size: 13.5pt; margin: 26px 0 10px; padding-bottom: 5px;
+    border-bottom: 1px solid var(--linha); letter-spacing: -.01em;
+    break-after: avoid; page-break-after: avoid;
+  }
+  h3 { font-size: 11.4pt; margin: 18px 0 6px; break-after: avoid; page-break-after: avoid; }
+  p { margin: 0 0 9px; }
+  ul, ol { margin: 0 0 10px; padding-left: 20px; }
+  li { margin-bottom: 4px; }
+  strong { font-weight: 700; }
+  code { font-family: Consolas, monospace; font-size: 9.6pt; background: #f1f3f7; padding: 1px 4px; border-radius: 3px; }
+
+  table { width: 100%; border-collapse: collapse; margin: 0 0 14px; font-size: 9.8pt; break-inside: avoid; page-break-inside: avoid; }
+  caption { text-align: left; font-weight: 700; padding-bottom: 5px; font-size: 10.2pt; }
+  th, td { border: 1px solid var(--linha); padding: 5px 8px; text-align: left; vertical-align: top; }
+  th { background: #eef1f6; font-weight: 700; }
+  tbody tr:nth-child(even) td { background: #fafbfd; }
+
+  .box { border-left: 3px solid var(--marca); background: #f4f7fe; padding: 9px 12px; margin: 0 0 13px; break-inside: avoid; page-break-inside: avoid; }
+  .box.perigo { border-left-color: var(--alerta); background: #fef4f3; }
+  .box .rotulo { font-size: 8.2pt; letter-spacing: .1em; text-transform: uppercase; font-weight: 700; color: var(--marca); display: block; margin-bottom: 3px; }
+  .box.perigo .rotulo { color: var(--alerta); }
+  .box p:last-child { margin-bottom: 0; }
+
+  .art { color: var(--suave); font-size: 9.2pt; font-weight: 600; white-space: nowrap; }
+  .certo { color: #0a7d3f; font-weight: 700; }
+  .errado { color: var(--alerta); font-weight: 700; }
+
+  footer.rodape { margin-top: 26px; padding-top: 9px; border-top: 1px solid var(--linha); color: var(--suave); font-size: 8.6pt; display: flex; justify-content: space-between; }
+
+  section { break-inside: auto; }
+  .quebra { break-before: page; page-break-before: page; }
+
+  @media print { a { color: inherit; text-decoration: none; } }
+</style>
+</head>
+<body>
+<header class="capa">
+  <div class="eyebrow">Simulador PM MA 2026</div>
+  <h1>Informática — Segurança da Informação e Redes</h1>
+  <p>Os blocos que mais caem em concurso policial · Peso 7 no edital</p>
+</header>
+<p>Em prova de carreira policial, Informática concentra as questões em <strong>segurança da informação</strong>. Este material prioriza esse bloco e cobre redes na sequência — juntos, respondem pela maior parte dos itens.</p>
+
+<h2>1. Códigos maliciosos</h2>
+
+<p>Primeiro, a hierarquia: <strong>malware</strong> é o gênero, que abrange todo código malicioso. <strong>Vírus</strong> é apenas uma das espécies. Item que trata os dois como sinônimos está <span class="errado">ERRADO</span>.</p>
+
+<table>
+  <thead><tr><th style="width:22%">Tipo</th><th style="width:78%">O que faz — e o que distingue dos demais</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Vírus</strong></td><td>Insere cópias de si mesmo em outros arquivos. <strong>Depende da execução do hospedeiro</strong> pelo usuário.</td></tr>
+    <tr><td><strong>Worm</strong></td><td><strong>Autônomo</strong>: propaga-se sozinho pela rede, sem hospedeiro e sem ação do usuário. É esta a diferença cobrada.</td></tr>
+    <tr><td><strong>Trojan</strong></td><td>Disfarça-se de programa legítimo. O usuário <strong>instala voluntariamente</strong>, sem saber da função maliciosa.</td></tr>
+    <tr><td><strong>Ransomware</strong></td><td>Criptografa os dados e exige resgate. Defesa mais eficaz: <strong>backup desconectado</strong>.</td></tr>
+    <tr><td><strong>Spyware</strong></td><td>Monitora atividades e envia a terceiros. É o gênero de keylogger e screenlogger.</td></tr>
+    <tr><td><strong>Keylogger</strong></td><td>Captura as <strong>teclas digitadas</strong>. Depende de passar despercebido — não apaga nada.</td></tr>
+    <tr><td><strong>Backdoor</strong></td><td>Abre acesso remoto para retorno futuro do atacante.</td></tr>
+    <tr><td><strong>Botnet</strong></td><td>Rede de máquinas infectadas controladas remotamente.</td></tr>
+  </tbody>
+</table>
+
+<div class="box perigo">
+  <span class="rotulo">A troca clássica</span>
+  <p><strong>Vírus depende de hospedeiro. Worm não.</strong> A banca escreve “o worm depende da execução de um arquivo hospedeiro” e espera que você não perceba a inversão.</p>
+</div>
+
+<h2>2. Ataques que não dependem de código</h2>
+
+<ul>
+  <li><strong>Engenharia social</strong> — explora o <strong>fator humano</strong> (confiança, pressa, medo, autoridade), não falhas técnicas. Item que a define como exploração de vulnerabilidade de sistema está errado.</li>
+  <li><strong>Phishing</strong> — mensagem fraudulenta que se passa por instituição legítima para que <strong>a própria vítima</strong> entregue seus dados. Depende da interação dela.</li>
+  <li><strong>Pharming</strong> — redireciona para site falso mesmo com o endereço digitado corretamente, via manipulação de DNS.</li>
+  <li><strong>Força bruta</strong> — tentativa exaustiva de senhas.</li>
+  <li><strong>Credential stuffing</strong> — testa em vários serviços as senhas vazadas de um. É a razão de não repetir senha.</li>
+</ul>
+
+<h2>3. Princípios da segurança da informação</h2>
+
+<table>
+  <thead><tr><th style="width:28%">Princípio</th><th style="width:72%">Garante que</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Confidencialidade</strong></td><td>só quem tem autorização acessa a informação</td></tr>
+    <tr><td><strong>Integridade</strong></td><td>a informação não foi alterada indevidamente</td></tr>
+    <tr><td><strong>Disponibilidade</strong></td><td>a informação está acessível quando necessária</td></tr>
+    <tr><td>Autenticidade</td><td>a origem é comprovadamente quem alega ser</td></tr>
+    <tr><td>Não repúdio</td><td>o autor não pode negar a autoria</td></tr>
+  </tbody>
+</table>
+
+<p>Os três primeiros formam a tríade <strong>CID</strong>. A banca troca as definições de integridade e disponibilidade entre si com frequência.</p>
+
+<h2>4. Criptografia, assinatura e certificado</h2>
+
+<table>
+  <thead><tr><th style="width:28%">Conceito</th><th style="width:72%">Funcionamento</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Simétrica</strong></td><td><strong>Mesma chave</strong> cifra e decifra. Mais rápida, mas há o problema de distribuir a chave com segurança.</td></tr>
+    <tr><td><strong>Assimétrica</strong></td><td>Par de chaves. Cifra-se com a <strong>pública</strong>, decifra-se com a <strong>privada</strong> → garante <strong>confidencialidade</strong>.</td></tr>
+    <tr><td><strong>Assinatura digital</strong></td><td>Cifra-se com a <strong>privada</strong>, verifica-se com a <strong>pública</strong> → garante autenticidade, integridade e não repúdio.</td></tr>
+    <tr><td><strong>Certificado digital</strong></td><td>Documento emitido por Autoridade Certificadora que <strong>vincula uma chave pública ao seu titular</strong>.</td></tr>
+    <tr><td><strong>Hash</strong></td><td>Resumo de tamanho fixo, <strong>irreversível</strong>. Verifica integridade; não é criptografia.</td></tr>
+  </tbody>
+</table>
+
+<div class="box perigo">
+  <span class="rotulo">Item de alto nível que já caiu</span>
+  <p>A <strong>assinatura digital não garante confidencialidade</strong>. O documento assinado continua legível por qualquer um — para torná-lo sigiloso é preciso cifrá-lo adicionalmente.</p>
+</div>
+
+<h2>5. Autenticação em dois fatores</h2>
+
+<p>Fator é sempre uma destas três categorias:</p>
+<ul>
+  <li>O que o usuário <strong>SABE</strong> — senha, PIN</li>
+  <li>O que o usuário <strong>TEM</strong> — token, celular, cartão</li>
+  <li>O que o usuário <strong>É</strong> — biometria</li>
+</ul>
+<p>Dois fatores exigem <strong>categorias diferentes</strong>. Duas senhas não são dois fatores. E biometria é o que você <strong>é</strong>, jamais o que você sabe.</p>
+
+<h2>6. Backup</h2>
+
+<table>
+  <thead><tr><th style="width:22%">Tipo</th><th style="width:44%">O que copia</th><th style="width:34%">Para restaurar, precisa de</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Completo</strong></td><td>tudo</td><td>só ele</td></tr>
+    <tr><td><strong>Incremental</strong></td><td>o que mudou desde o <strong>último backup qualquer</strong></td><td>o completo + <strong>todos</strong> os incrementais, em ordem</td></tr>
+    <tr><td><strong>Diferencial</strong></td><td>o que mudou desde o <strong>último completo</strong></td><td>o completo + <strong>só o último</strong> diferencial</td></tr>
+  </tbody>
+</table>
+
+<p>Consequência prática: o <strong>incremental</strong> é o mais rápido de gravar e o mais lento de restaurar. O <strong>diferencial</strong> é o inverso — cresce a cada dia, mas a restauração usa apenas dois conjuntos.</p>
+
+<p>Regra <strong>3-2-1</strong>: três cópias, em dois tipos de mídia, uma delas fora do local. Guardar o backup no mesmo disco dos dados originais não é backup.</p>
+
+<h2>7. Ferramentas de defesa</h2>
+
+<table>
+  <thead><tr><th style="width:24%">Ferramenta</th><th style="width:76%">Função — e o que NÃO faz</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Firewall</strong></td><td>Filtra <strong>tráfego de rede</strong> por regras. <strong>Não</strong> examina arquivos em busca de código malicioso.</td></tr>
+    <tr><td><strong>Antivírus</strong></td><td>Examina arquivos e processos. <strong>Não</strong> controla tráfego, e <strong>não</strong> protege contra ameaça desconhecida (dia zero).</td></tr>
+    <tr><td><strong>VPN</strong></td><td>Túnel criptografado sobre rede pública.</td></tr>
+    <tr><td><strong>IDS / IPS</strong></td><td>Detecta (IDS) ou detecta e bloqueia (IPS) intrusões.</td></tr>
+  </tbody>
+</table>
+<p>São <strong>complementares</strong>. Item dizendo que o firewall dispensa o antivírus — ou o contrário — está errado.</p>
+
+<h2>8. Redes</h2>
+
+<table>
+  <thead><tr><th style="width:20%">Sigla</th><th style="width:80%">Alcance</th></tr></thead>
+  <tbody>
+    <tr><td><strong>PAN</strong></td><td>pessoal — poucos metros (Bluetooth)</td></tr>
+    <tr><td><strong>LAN</strong></td><td>local — um edifício</td></tr>
+    <tr><td><strong>MAN</strong></td><td>metropolitana — uma cidade</td></tr>
+    <tr><td><strong>WAN</strong></td><td>ampla — países. A internet é a maior WAN</td></tr>
+  </tbody>
+</table>
+
+<h3>Equipamentos</h3>
+<ul>
+  <li><strong>Hub</strong> — replica o sinal para <strong>todas</strong> as portas. Obsoleto e inseguro</li>
+  <li><strong>Switch</strong> — envia apenas para a porta do destinatário</li>
+  <li><strong>Roteador</strong> — interliga <strong>redes diferentes</strong></li>
+</ul>
+
+<h3>Endereços e protocolos</h3>
+<ul>
+  <li><strong>IP</strong> — lógico, atribuído (manual ou por DHCP), pode mudar</li>
+  <li><strong>MAC</strong> — físico, gravado pelo fabricante na placa, não muda a cada conexão</li>
+  <li><strong>TCP</strong> — orientado à conexão, garante entrega ordenada</li>
+  <li><strong>UDP</strong> — sem garantia, mais rápido. Preferido em voz e vídeo ao vivo</li>
+  <li><strong>DNS</strong> — traduz nome de domínio em IP</li>
+  <li><strong>SMTP</strong> envia e-mail · <strong>POP3</strong> e <strong>IMAP</strong> recebem</li>
+  <li><strong>HTTPS</strong> — HTTP + criptografia TLS/SSL</li>
+</ul>
+
+<table>
+  <thead><tr><th style="width:50%">Modelo OSI</th><th style="width:50%">Modelo TCP/IP</th></tr></thead>
+  <tbody>
+    <tr><td><strong>7 camadas</strong></td><td><strong>4 camadas</strong></td></tr>
+    <tr><td>Física, Enlace, Rede, Transporte, Sessão, Apresentação, Aplicação</td><td>Acesso à rede, Internet, Transporte, Aplicação</td></tr>
+  </tbody>
+</table>
+
+<div class="box perigo">
+  <span class="rotulo">Duas pegadinhas frequentes</span>
+  <p><strong>Wi-Fi:</strong> WEP é obsoleto e quebrável em minutos. Use WPA2 ou WPA3. Item dizendo que WEP é superior ao WPA2 está errado.</p>
+  <p><strong>HTTPS não atesta idoneidade.</strong> Ele garante que o canal está cifrado — sites de phishing também usam HTTPS. O cadeado não significa que o site é confiável.</p>
+</div>
+
+<h2>9. Internet, intranet e extranet</h2>
+
+<ul>
+  <li><strong>Intranet</strong> — rede privada com os <strong>mesmos protocolos</strong> da internet, acesso restrito. Funciona mesmo <strong>sem</strong> conexão externa</li>
+  <li><strong>Extranet</strong> — extensão <strong>controlada</strong> da intranet a parceiros externos autorizados, sempre com autenticação</li>
+  <li><strong>Deep web</strong> — conteúdo <strong>não indexado</strong> pelos buscadores</li>
+</ul>
+
+<p><strong>Navegação anônima</strong> atua apenas no dispositivo: não grava histórico nem cookies localmente. O provedor, o empregador e o site visitado continuam enxergando o tráfego.</p>
+
+<p><strong>Cookies</strong> são <strong>arquivos de texto</strong>, não programas. Não executam nada e não infectam o computador — mas rastreiam a navegação.</p>
+
+<div class="box">
+  <span class="rotulo">Boas práticas que viram item de prova</span>
+  <p>Senha longa e única por serviço · autenticação em dois fatores · atualizações instaladas assim que saem (elas corrigem falhas <strong>já exploradas</strong>) · desconfiar de anexos <code>.exe</code>, <code>.bat</code>, <code>.scr</code> e de documentos com macros.</p>
+</div>
+<footer class="rodape"><span>Simulador PM MA 2026 · pmma.barvoxdigital.com.br</span><span>Concurso PM MA · prova em 11/10/2026</span></footer>
+</body>
+</html>
