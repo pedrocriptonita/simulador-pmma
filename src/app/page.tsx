@@ -4,10 +4,14 @@ import {
   BarChart3,
   BookOpenCheck,
   CalendarDays,
+  Check,
   CheckCircle2,
   ChevronDown,
   FileText,
+  Gift,
+  ShieldCheck,
   Target,
+  X,
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -43,11 +47,32 @@ const STEPS = [
 ];
 
 const COMPARISON = [
-  { feature: "Simula a penalização do Cebraspe", alone: "❌", courses: "❌ Genérico", us: "✅" },
-  { feature: "Focado 100% no edital PM MA", alone: "❌", courses: "❌", us: "✅" },
-  { feature: "Mostra sua nota líquida real", alone: "❌", courses: "❌", us: "✅" },
-  { feature: "Diz em qual matéria focar", alone: "❌", courses: "❌", us: "✅" },
+  { feature: "Simula a penalização do Cebraspe", courseNote: "Genérico" },
+  { feature: "Focado 100% no edital PM MA" },
+  { feature: "Mostra sua nota líquida real" },
+  { feature: "Diz em qual matéria focar" },
 ];
+
+/** Marcadores da tabela comparativa. Ícone em vez de emoji: o emoji varia de
+ *  desenho entre sistemas e destoa da tipografia do resto da página. */
+function Nao({ nota }: { nota?: string }) {
+  return (
+    <span className="text-muted-foreground inline-flex items-center justify-center gap-1.5">
+      <X className="size-4 shrink-0" aria-hidden />
+      <span className="sr-only">Não</span>
+      {nota ? <span className="text-xs">{nota}</span> : null}
+    </span>
+  );
+}
+
+function Sim() {
+  return (
+    <span className="text-primary inline-flex items-center justify-center">
+      <Check className="size-5 shrink-0" aria-hidden />
+      <span className="sr-only">Sim</span>
+    </span>
+  );
+}
 
 /** Objeções reais do público (nível médio, sensível a preço, desconfiado com compra online). */
 const FAQ = [
@@ -191,28 +216,44 @@ export default async function Home() {
             <strong className="text-foreground">vale menos um</strong>. Quem treina em simulados
             comuns chega na prova com uma falsa sensação de preparo.
           </p>
-          <Card className="w-full max-w-md">
-            <CardContent className="pt-6">
-              <div className="grid grid-cols-3 gap-2 text-center">
-                <div className="flex flex-col gap-1">
-                  <span className="text-2xl font-bold tabular-nums">70</span>
-                  <span className="text-muted-foreground text-xs">acertos</span>
-                </div>
-                <div className="flex flex-col gap-1">
-                  <span className="text-destructive text-2xl font-bold tabular-nums">30</span>
-                  <span className="text-muted-foreground text-xs">erros</span>
-                </div>
-                <div className="flex flex-col gap-1">
-                  <span className="text-primary text-2xl font-bold tabular-nums">40</span>
-                  <span className="text-muted-foreground text-xs">nota final</span>
-                </div>
+          {/* Âncora visual da página: é o argumento que sustenta a oferta
+              inteira, então tem peso tipográfico maior que qualquer outro
+              bloco. O "40" é vermelho de propósito — antes era azul, a mesma
+              cor dos elementos positivos, e isso contradizia a mensagem. */}
+          <div className="bg-card w-full max-w-2xl rounded-xl border p-6 sm:p-8">
+            <div className="flex items-end justify-center gap-3 sm:gap-6">
+              <div className="flex flex-col items-center gap-1">
+                <span className="text-4xl font-bold tabular-nums sm:text-6xl">70</span>
+                <span className="text-muted-foreground text-xs sm:text-sm">acertos</span>
               </div>
-              <p className="text-muted-foreground mt-4 text-sm">
-                70 acertos − 30 erros = <strong className="text-foreground">40 pontos</strong>, e
-                não 70. É assim que a banca corrige — e é assim que treinamos você.
-              </p>
-            </CardContent>
-          </Card>
+              <span className="text-muted-foreground pb-6 text-2xl font-light sm:pb-9 sm:text-4xl">
+                −
+              </span>
+              <div className="flex flex-col items-center gap-1">
+                <span className="text-4xl font-bold tabular-nums sm:text-6xl">30</span>
+                <span className="text-muted-foreground text-xs sm:text-sm">erros</span>
+              </div>
+              <span className="text-muted-foreground pb-6 text-2xl font-light sm:pb-9 sm:text-4xl">
+                =
+              </span>
+              <div className="flex flex-col items-center gap-1">
+                <span className="text-destructive text-5xl font-bold tabular-nums sm:text-7xl">
+                  40
+                </span>
+                <span className="text-destructive text-xs font-semibold sm:text-sm">
+                  nota real
+                </span>
+              </div>
+            </div>
+            <p className="mt-6 border-t pt-5 text-center text-base text-balance sm:text-lg">
+              Você achou que tinha <strong>70</strong>. A banca contou{" "}
+              <strong className="text-destructive">40</strong>.
+            </p>
+            <p className="text-muted-foreground mt-2 text-center text-sm text-balance">
+              É assim que o Cebraspe corrige — e é assim que treinamos você desde o primeiro
+              simulado.
+            </p>
+          </div>
         </section>
 
         {/* Como funciona */}
@@ -221,19 +262,26 @@ export default async function Home() {
             <h2 className="text-center text-2xl font-bold tracking-tight sm:text-3xl">
               Como funciona
             </h2>
-            <div className="grid w-full gap-4 sm:grid-cols-3">
+            {/* Trilha numerada em vez de cards: a seção seguinte (Features) já
+                é uma grade de cards, e duas grades iguais coladas fazem o olho
+                escorregar sem encontrar hierarquia. */}
+            <ol className="grid w-full gap-8 sm:grid-cols-3 sm:gap-6">
               {STEPS.map((step, index) => (
-                <Card key={step.title}>
-                  <CardHeader>
-                    <span className="bg-primary text-primary-foreground flex size-8 items-center justify-center rounded-full text-sm font-bold">
+                <li key={step.title} className="relative flex flex-col gap-2">
+                  <div className="flex items-center gap-3">
+                    <span className="bg-primary text-primary-foreground flex size-9 shrink-0 items-center justify-center rounded-full text-sm font-bold tabular-nums">
                       {index + 1}
                     </span>
-                    <CardTitle className="text-base">{step.title}</CardTitle>
-                    <CardDescription>{step.description}</CardDescription>
-                  </CardHeader>
-                </Card>
+                    {/* Linha de conexão entre as etapas, só no desktop */}
+                    {index < STEPS.length - 1 ? (
+                      <span className="bg-border hidden h-px flex-1 sm:block" aria-hidden />
+                    ) : null}
+                  </div>
+                  <h3 className="text-base font-semibold">{step.title}</h3>
+                  <p className="text-muted-foreground text-sm">{step.description}</p>
+                </li>
               ))}
-            </div>
+            </ol>
           </div>
         </section>
 
@@ -265,8 +313,9 @@ export default async function Home() {
         <section className="border-t">
           <div className="mx-auto flex w-full max-w-3xl flex-col items-center gap-3 px-4 py-12 text-center">
             {examsCorrected !== null ? (
-              <p className="text-2xl font-bold tracking-tight tabular-nums sm:text-3xl">
-                📊 {examsCorrected.toLocaleString("pt-BR")} simulados já corrigidos na plataforma
+              <p className="flex flex-wrap items-center justify-center gap-2 text-2xl font-bold tracking-tight tabular-nums sm:text-3xl">
+                <BarChart3 className="text-primary size-7 shrink-0" aria-hidden />
+                {examsCorrected.toLocaleString("pt-BR")} simulados já corrigidos na plataforma
               </p>
             ) : null}
             <p className="text-muted-foreground max-w-xl text-balance">
@@ -302,9 +351,15 @@ export default async function Home() {
                   {COMPARISON.map((row) => (
                     <tr key={row.feature} className="border-b">
                       <td className="p-3 font-medium">{row.feature}</td>
-                      <td className="text-muted-foreground p-3 text-center">{row.alone}</td>
-                      <td className="text-muted-foreground p-3 text-center">{row.courses}</td>
-                      <td className="p-3 text-center font-medium">{row.us}</td>
+                      <td className="p-3 text-center">
+                        <Nao />
+                      </td>
+                      <td className="p-3 text-center">
+                        <Nao nota={row.courseNote} />
+                      </td>
+                      <td className="p-3 text-center">
+                        <Sim />
+                      </td>
                     </tr>
                   ))}
                   <tr>
@@ -358,13 +413,16 @@ export default async function Home() {
                   Gabarito comentado em cada questão
                 </li>
                 <li className="flex items-start gap-2">
-                  <CheckCircle2 className="text-primary mt-0.5 size-4 shrink-0" aria-hidden />
-                  🎁 Biblioteca de PDFs por matéria do edital (incluída)
+                  <Gift className="text-primary mt-0.5 size-4 shrink-0" aria-hidden />
+                  Biblioteca de PDFs por matéria do edital (incluída)
                 </li>
               </ul>
-              <p className="bg-secondary/60 rounded-lg p-3 text-center text-sm">
-                🛡️ <strong>7 dias de garantia incondicional.</strong> Não gostou? Devolvemos 100%,
-                sem perguntas.
+              <p className="bg-secondary/60 flex items-start gap-2 rounded-lg p-3 text-sm">
+                <ShieldCheck className="text-primary mt-0.5 size-4 shrink-0" aria-hidden />
+                <span>
+                  <strong>7 dias de garantia incondicional.</strong> Não gostou? Devolvemos 100%,
+                  sem perguntas.
+                </span>
               </p>
               <div className="flex flex-col items-center gap-2 pt-1">
                 <Button size="lg" asChild>
@@ -403,9 +461,12 @@ export default async function Home() {
                 </details>
               ))}
             </div>
-            <p className="text-muted-foreground text-center text-sm text-balance">
-              🛡️ <strong className="text-foreground">7 dias de garantia incondicional</strong> no
-              acesso pago. Não gostou? Devolvemos 100%, sem perguntas.
+            <p className="text-muted-foreground flex flex-wrap items-center justify-center gap-1.5 text-center text-sm text-balance">
+              <ShieldCheck className="text-primary size-4 shrink-0" aria-hidden />
+              <span>
+                <strong className="text-foreground">7 dias de garantia incondicional</strong> no
+                acesso pago. Não gostou? Devolvemos 100%, sem perguntas.
+              </span>
             </p>
           </div>
         </section>

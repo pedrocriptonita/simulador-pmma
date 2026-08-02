@@ -49,14 +49,20 @@
 }
 
 :root {
-  --background: oklch(1 0 0);
+  /* Fundo levemente frio, um degrau abaixo do branco do card. Antes os dois
+     eram oklch(1 0 0): sem separação de superfície, o card só existia pela
+     borda de 1px — é a causa principal do aspecto "cru". O modo escuro já
+     tinha essa separação (0.145 x 0.205); o claro não. */
+  --background: oklch(0.979 0.002 250);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  /* Identidade: azul institucional (combina com a paleta dos gráficos) */
-  --primary: oklch(0.488 0.243 264.376);
+  /* Identidade: azul institucional. Croma reduzido e matiz puxado para o azul
+     verdadeiro (252) em vez do índigo saturado do tema padrão — lê como
+     instituição, não como dashboard de SaaS. */
+  --primary: oklch(0.452 0.152 252);
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
@@ -91,8 +97,8 @@
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.205 0 0);
   --popover-foreground: oklch(0.985 0 0);
-  /* Identidade: azul claro sobre fundo escuro (texto escuro no botão) */
-  --primary: oklch(0.707 0.165 254.624);
+  /* Identidade: mesmo matiz institucional, clareado para o fundo escuro */
+  --primary: oklch(0.706 0.128 252);
   --primary-foreground: oklch(0.205 0 0);
   --secondary: oklch(0.269 0 0);
   --secondary-foreground: oklch(0.985 0 0);
